@@ -1,0 +1,577 @@
+{
+  "fecha_utc": "2026-11-22T23:18:39.863096+00:00",
+  "objetivo": "Verificar rutas del gateway, exposición de puertos y /salud por capa",
+  "configuracion": {
+    "escenarios_de_falla": true,
+    "maquina": {
+      "sistema": "Windows-10-10.0.19045-SP0",
+      "procesador": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+      "cpus": 8,
+      "python": "3.13.13"
+    },
+    "gateway": "http://localhost:8000"
+  },
+  "comando": "python.exe pruebas/p1_api_salud.py",
+  "resultado": {
+    "puertos_host": {
+      "gateway": true,
+      "mongodb": false,
+      "valkey": false
+    },
+    "solo_gateway_expuesto": true,
+    "rutas": [
+      {
+        "paso": "siguiente anotador A",
+        "codigo": 200,
+        "esperado": 200,
+        "correcto": true
+      },
+      {
+        "paso": "borrador",
+        "codigo": 200,
+        "esperado": 200,
+        "correcto": true
+      },
+      {
+        "paso": "recuperar sesión",
+        "codigo": 200,
+        "esperado": 200,
+        "correcto": true
+      },
+      {
+        "paso": "recuperar sin sesión",
+        "codigo": 404,
+        "esperado": 404,
+        "correcto": true
+      },
+      {
+        "paso": "enviar",
+        "codigo": 200,
+        "esperado": 200,
+        "correcto": true
+      },
+      {
+        "paso": "segundo envío",
+        "codigo": 409,
+        "esperado": 409,
+        "correcto": true
+      },
+      {
+        "paso": "iniciar revisión",
+        "codigo": 200,
+        "esperado": 200,
+        "correcto": true
+      },
+      {
+        "paso": "rechazo sin código",
+        "codigo": 400,
+        "esperado": 400,
+        "correcto": true
+      },
+      {
+        "paso": "rechazo con código",
+        "codigo": 200,
+        "esperado": 200,
+        "correcto": true
+      },
+      {
+        "paso": "siguiente anotador B (retrabajo)",
+        "codigo": 200,
+        "esperado": 200,
+        "correcto": true
+      },
+      {
+        "paso": "liberar",
+        "codigo": 200,
+        "esperado": 200,
+        "correcto": true
+      },
+      {
+        "paso": "siguiente anotador C",
+        "codigo": 200,
+        "esperado": 200,
+        "correcto": true
+      },
+      {
+        "paso": "enviar C",
+        "codigo": 200,
+        "esperado": 200,
+        "correcto": true
+      },
+      {
+        "paso": "iniciar revisión C",
+        "codigo": 200,
+        "esperado": 200,
+        "correcto": true
+      },
+      {
+        "paso": "aprobar",
+        "codigo": 200,
+        "esperado": 200,
+        "correcto": true
+      },
+      {
+        "paso": "exportar",
+        "codigo": 200,
+        "esperado": 200,
+        "correcto": true,
+        "tareas_exportadas": 1
+      },
+      {
+        "paso": "siguiente sin tareas",
+        "codigo": 204,
+        "esperado": 204,
+        "correcto": true
+      }
+    ],
+    "rutas_correctas": true,
+    "salud": [
+      {
+        "escenario": "normal",
+        "estado": "operativo",
+        "segundos": 0.0,
+        "salud": {
+          "estado": "operativo",
+          "capas": {
+            "valkey": {
+              "estado": "operativo"
+            },
+            "registro": {
+              "estado": "operativo",
+              "replica": {
+                "primario": "mongo2:27017",
+                "miembros_sanos": 3,
+                "miembros_totales": 3,
+                "miembros": [
+                  {
+                    "nombre": "mongo1:27017",
+                    "estado": "SECONDARY"
+                  },
+                  {
+                    "nombre": "mongo2:27017",
+                    "estado": "PRIMARY"
+                  },
+                  {
+                    "nombre": "mongo3:27017",
+                    "estado": "SECONDARY"
+                  }
+                ]
+              },
+              "ts": 1795389480861
+            },
+            "sesion": {
+              "estado": "operativo",
+              "ts": 1795389483986
+            }
+          }
+        }
+      },
+      {
+        "escenario": "mongo3 detenido",
+        "estado": "degradado",
+        "segundos": 2.0,
+        "salud": {
+          "estado": "degradado",
+          "capas": {
+            "valkey": {
+              "estado": "operativo"
+            },
+            "registro": {
+              "estado": "degradado",
+              "replica": {
+                "primario": "mongo2:27017",
+                "miembros_sanos": 2,
+                "miembros_totales": 3,
+                "miembros": [
+                  {
+                    "nombre": "mongo1:27017",
+                    "estado": "SECONDARY"
+                  },
+                  {
+                    "nombre": "mongo2:27017",
+                    "estado": "PRIMARY"
+                  },
+                  {
+                    "nombre": "mongo3:27017",
+                    "estado": "(not reachable/healthy)"
+                  }
+                ]
+              },
+              "ts": 1795389490869
+            },
+            "sesion": {
+              "estado": "operativo",
+              "ts": 1795389488986
+            }
+          }
+        }
+      },
+      {
+        "escenario": "mongo3 restaurado",
+        "estado": "operativo",
+        "segundos": 6.0,
+        "salud": {
+          "estado": "operativo",
+          "capas": {
+            "valkey": {
+              "estado": "operativo"
+            },
+            "registro": {
+              "estado": "operativo",
+              "replica": {
+                "primario": "mongo2:27017",
+                "miembros_sanos": 3,
+                "miembros_totales": 3,
+                "miembros": [
+                  {
+                    "nombre": "mongo1:27017",
+                    "estado": "SECONDARY"
+                  },
+                  {
+                    "nombre": "mongo2:27017",
+                    "estado": "PRIMARY"
+                  },
+                  {
+                    "nombre": "mongo3:27017",
+                    "estado": "SECONDARY"
+                  }
+                ]
+              },
+              "ts": 1795389495877
+            },
+            "sesion": {
+              "estado": "operativo",
+              "ts": 1795389493987
+            }
+          }
+        }
+      },
+      {
+        "escenario": "servicio de sesión detenido",
+        "estado": "caido",
+        "segundos": 14.0,
+        "salud": {
+          "estado": "caido",
+          "capas": {
+            "valkey": {
+              "estado": "operativo"
+            },
+            "registro": {
+              "estado": "operativo",
+              "replica": {
+                "primario": "mongo2:27017",
+                "miembros_sanos": 3,
+                "miembros_totales": 3,
+                "miembros": [
+                  {
+                    "nombre": "mongo1:27017",
+                    "estado": "SECONDARY"
+                  },
+                  {
+                    "nombre": "mongo2:27017",
+                    "estado": "PRIMARY"
+                  },
+                  {
+                    "nombre": "mongo3:27017",
+                    "estado": "SECONDARY"
+                  }
+                ]
+              },
+              "ts": 1795389510950
+            },
+            "sesion": {
+              "estado": "sin_reporte"
+            }
+          }
+        }
+      },
+      {
+        "escenario": "sesión restaurada",
+        "estado": "operativo",
+        "segundos": 2.0,
+        "salud": {
+          "estado": "operativo",
+          "capas": {
+            "valkey": {
+              "estado": "operativo"
+            },
+            "registro": {
+              "estado": "operativo",
+              "replica": {
+                "primario": "mongo2:27017",
+                "miembros_sanos": 3,
+                "miembros_totales": 3,
+                "miembros": [
+                  {
+                    "nombre": "mongo1:27017",
+                    "estado": "SECONDARY"
+                  },
+                  {
+                    "nombre": "mongo2:27017",
+                    "estado": "PRIMARY"
+                  },
+                  {
+                    "nombre": "mongo3:27017",
+                    "estado": "SECONDARY"
+                  }
+                ]
+              },
+              "ts": 1795389515957
+            },
+            "sesion": {
+              "estado": "operativo",
+              "ts": 1795389516184
+            }
+          }
+        }
+      },
+      {
+        "escenario": "valkey detenido",
+        "estado": "caido",
+        "segundos": 1.0,
+        "salud": {
+          "estado": "caido",
+          "capas": {
+            "valkey": {
+              "estado": "caido"
+            }
+          },
+          "ultimo_estado_conocido": {
+            "estado": "operativo",
+            "capas": {
+              "valkey": {
+                "estado": "operativo"
+              },
+              "registro": {
+                "estado": "operativo",
+                "replica": {
+                  "primario": "mongo2:27017",
+                  "miembros_sanos": 3,
+                  "miembros_totales": 3,
+                  "miembros": [
+                    {
+                      "nombre": "mongo1:27017",
+                      "estado": "SECONDARY"
+                    },
+                    {
+                      "nombre": "mongo2:27017",
+                      "estado": "PRIMARY"
+                    },
+                    {
+                      "nombre": "mongo3:27017",
+                      "estado": "SECONDARY"
+                    }
+                  ]
+                },
+                "ts": 1795389515957
+              },
+              "sesion": {
+                "estado": "operativo",
+                "ts": 1795389516184
+              }
+            }
+          }
+        }
+      },
+      {
+        "escenario": "valkey restaurado",
+        "estado": "operativo",
+        "segundos": 0.0,
+        "salud": {
+          "estado": "operativo",
+          "capas": {
+            "valkey": {
+              "estado": "operativo"
+            },
+            "registro": {
+              "estado": "operativo",
+              "replica": {
+                "primario": "mongo2:27017",
+                "miembros_sanos": 3,
+                "miembros_totales": 3,
+                "miembros": [
+                  {
+                    "nombre": "mongo1:27017",
+                    "estado": "SECONDARY"
+                  },
+                  {
+                    "nombre": "mongo2:27017",
+                    "estado": "PRIMARY"
+                  },
+                  {
+                    "nombre": "mongo3:27017",
+                    "estado": "SECONDARY"
+                  }
+                ]
+              },
+              "ts": 1795389515957
+            },
+            "sesion": {
+              "estado": "operativo",
+              "ts": 1795389516184
+            }
+          }
+        }
+      }
+    ],
+    "docker_ps": "proyecto2-gateway-1\t0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp\nproyecto2-sesion-1\t8000/tcp\nproyecto2-registro-1\t8000/tcp\nproyecto2-mongo1-1\t27017/tcp\nproyecto2-mongo2-1\t27017/tcp\nproyecto2-mongo3-1\t27017/tcp\nproyecto2-valkey-1\t6379/tcp",
+    "redes": {
+      "publica": [
+        {
+          "Name": "proyecto2_publica",
+          "Id": "dff47205a32ab768e54d94d9f69f584273cee1efb572beed945edc3e8dd3536a",
+          "Created": "2026-11-22T23:12:35.685168187Z",
+          "Scope": "local",
+          "Driver": "bridge",
+          "EnableIPv4": true,
+          "EnableIPv6": false,
+          "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+              {
+                "Subnet": "172.23.0.0/16",
+                "Gateway": "172.23.0.1"
+              }
+            ]
+          },
+          "Internal": false,
+          "Attachable": false,
+          "Ingress": false,
+          "ConfigFrom": {
+            "Network": ""
+          },
+          "ConfigOnly": false,
+          "Options": {
+            "com.docker.network.enable_ipv4": "true",
+            "com.docker.network.enable_ipv6": "false"
+          },
+          "Labels": {
+            "com.docker.compose.config-hash": "14ae4a2309ee69db6878a58ced6a7f5ca0118311faa89af801f3d451b7772da0",
+            "com.docker.compose.network": "publica",
+            "com.docker.compose.project": "proyecto2",
+            "com.docker.compose.version": "5.3.1"
+          },
+          "Containers": {
+            "6902bb009cf015faf47d6fdfc712f5f90742780ea26be3150fbe001505c1f67d": {
+              "Name": "proyecto2-gateway-1",
+              "EndpointID": "ba9a79d894231aba9c83a6531d4d5eae3fe7958462826cf8457ccf1b480503e9",
+              "MacAddress": "be:56:42:1d:31:3c",
+              "IPv4Address": "172.23.0.2/16",
+              "IPv6Address": ""
+            }
+          },
+          "Status": {
+            "IPAM": {
+              "Subnets": {
+                "172.23.0.0/16": {
+                  "IPsInUse": 4,
+                  "DynamicIPsAvailable": 65532
+                }
+              }
+            }
+          }
+        }
+      ],
+      "interna": [
+        {
+          "Name": "proyecto2_interna",
+          "Id": "9dc2f2765192cf3b46407025fffc38f8060430e4bc2669532d20558f7ff64a45",
+          "Created": "2026-11-22T22:45:09.676517893Z",
+          "Scope": "local",
+          "Driver": "bridge",
+          "EnableIPv4": true,
+          "EnableIPv6": false,
+          "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+              {
+                "Subnet": "172.22.0.0/16",
+                "Gateway": "172.22.0.1"
+              }
+            ]
+          },
+          "Internal": true,
+          "Attachable": false,
+          "Ingress": false,
+          "ConfigFrom": {
+            "Network": ""
+          },
+          "ConfigOnly": false,
+          "Options": {
+            "com.docker.network.enable_ipv4": "true",
+            "com.docker.network.enable_ipv6": "false"
+          },
+          "Labels": {
+            "com.docker.compose.config-hash": "2f9cac06d8e4b7f71abcac572c0116103fc9b7254ae8bfcfdf3f38342b0766c7",
+            "com.docker.compose.network": "interna",
+            "com.docker.compose.project": "proyecto2",
+            "com.docker.compose.version": "5.3.1"
+          },
+          "Containers": {
+            "08067f2210a312bbc1d9068d9faa0135f88e3452f4814d1997c5a9080f561074": {
+              "Name": "proyecto2-mongo1-1",
+              "EndpointID": "1ef189a5e61bd846608d157db76ea2deccf47c870ad4e9e7b0bb6b95f3c35a8b",
+              "MacAddress": "02:56:f3:c8:6b:ba",
+              "IPv4Address": "172.22.0.2/16",
+              "IPv6Address": ""
+            },
+            "0ae81a354e88c713a2d089ed197100497a1ca3be1a1f3d8c1c76258bd9462443": {
+              "Name": "proyecto2-mongo3-1",
+              "EndpointID": "15fff304f625cc97b567e48d679907c6706caeec6968f2d785d4456367a899a2",
+              "MacAddress": "66:a5:66:ad:1e:5b",
+              "IPv4Address": "172.22.0.5/16",
+              "IPv6Address": ""
+            },
+            "50e6e39679aeefa7e074728db5d9fe935643ab696f8702b30a88116640e335f8": {
+              "Name": "proyecto2-mongo2-1",
+              "EndpointID": "e3438fb4291b9fc2028c7cbb6a10352cb3b83bb3eb953df0831d0307e1e251f5",
+              "MacAddress": "5e:f1:02:f5:59:a9",
+              "IPv4Address": "172.22.0.3/16",
+              "IPv6Address": ""
+            },
+            "6902bb009cf015faf47d6fdfc712f5f90742780ea26be3150fbe001505c1f67d": {
+              "Name": "proyecto2-gateway-1",
+              "EndpointID": "13ce92b3fc2db824c52fb07db101d525319a2346dce7200a8850a859ca61cf12",
+              "MacAddress": "8a:94:ad:e5:09:69",
+              "IPv4Address": "172.22.0.8/16",
+              "IPv6Address": ""
+            },
+            "84280f917ee6a4e60f8b23c12b17453d0839fcfdf0c65285f3d3badc5f962ccb": {
+              "Name": "proyecto2-registro-1",
+              "EndpointID": "46efe4855410d99b82db6c981c6c248da3932696ebee67c4efcbe0c27e5b2c16",
+              "MacAddress": "9e:16:d8:af:01:82",
+              "IPv4Address": "172.22.0.7/16",
+              "IPv6Address": ""
+            },
+            "c780e0bf1e78f05cdc00ad9b5cceec33af872046049a77863dcc080fe3f9ad27": {
+              "Name": "proyecto2-sesion-1",
+              "EndpointID": "0d072f9ac2b91f6e397479ff4582aae8644f55adb1901e85cbed385cc0dc423e",
+              "MacAddress": "4e:77:f6:45:55:db",
+              "IPv4Address": "172.22.0.6/16",
+              "IPv6Address": ""
+            },
+            "e8a21f5d3dd7a0814e3232c625b48f62c26c24bf562bd2d4ab99d7bb62824e6b": {
+              "Name": "proyecto2-valkey-1",
+              "EndpointID": "359f7e8ea6bd2183d6ab6c43e1af74d4dea598c87df0bf6c67c3bbcfaffcbbfc",
+              "MacAddress": "fe:2c:a2:c6:8a:05",
+              "IPv4Address": "172.22.0.4/16",
+              "IPv6Address": ""
+            }
+          },
+          "Status": {
+            "IPAM": {
+              "Subnets": {
+                "172.22.0.0/16": {
+                  "IPsInUse": 10,
+                  "DynamicIPsAvailable": 65526
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
