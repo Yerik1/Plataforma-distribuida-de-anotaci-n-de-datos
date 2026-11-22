@@ -1,0 +1,62 @@
+name: proyecto2
+
+x-mongo: &mongo
+  image: mongo:7.0
+  command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
+  networks: [interna]
+  restart: unless-stopped
+  healthcheck:
+    test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+    interval: 5s
+    timeout: 5s
+    retries: 20
+
+services:
+  mongo1:
+    <<: *mongo
+    hostname: mongo1
+    volumes: [mongo1-datos:/data/db]
+
+  mongo2:
+    <<: *mongo
+    hostname: mongo2
+    volumes: [mongo2-datos:/data/db]
+
+  mongo3:
+    <<: *mongo
+    hostname: mongo3
+    volumes: [mongo3-datos:/data/db]
+
+  mongo-init:
+    image: mongo:7.0
+    entrypoint: ["mongosh", "--host", "mongo1:27017", "--quiet", "/init-replica.js"]
+    volumes: [./infra/mongo/init-replica.js:/init-replica.js:ro]
+    networks: [interna]
+    restart: "no"
+    depends_on:
+      mongo1: {condition: service_healthy}
+      mongo2: {condition: service_healthy}
+      mongo3: {condition: service_healthy}
+
+  valkey:
+    image: valkey/valkey:8.0
+    command: ["valkey-server", "--appendonly", "yes", "--appendfsync", "everysec"]
+    volumes: [valkey-datos:/data]
+    networks: [interna]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+networks:
+  publica: {}
+  interna:
+    internal: true
+
+volumes:
+  mongo1-datos:
+  mongo2-datos:
+  mongo3-datos:
+  valkey-datos:
