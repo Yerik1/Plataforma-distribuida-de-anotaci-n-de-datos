@@ -28,7 +28,7 @@ Script con semilla fija en `proyecto2/dataset/`:
 1. Catálogo en MongoDB con los volúmenes de §9; las 60 000 tareas inician en `disponible`.
 2. Historial de 100 000 tareas de los 180 proyectos, escrito en pocos archivos por mes con el esquema de ADR-008.
 3. Duraciones por modalidad, probabilidad de rechazo e incumplimientos de SLA parametrizados y documentados.
-4. Un conjunto `validacion` pequeño con resultados de Q1 a Q5 calculados a mano, seleccionado con `?conjunto=validacion`.
+4. El conjunto `validacion` es el de casos controlados de `servicios/analitica/spark/datos_prueba/` (descritos en `casos.md`), con resultados de Q1 a Q5 calculados a mano en `esperados.json` y seleccionado con `?conjunto=validacion`.
 
 ## Justificación
 
@@ -36,6 +36,7 @@ La semilla fija hace los conteos exactos y repetibles, como exige §9. Escribir 
 
 ## Consecuencias
 
-- Cada ciclo de una tarea produce 4 eventos; llegar a unos 800 000 eventos con 100 000 tareas exige un promedio de 8 por tarea. La probabilidad de rechazo se calibra para ese total y se documenta.
+- Cada ciclo de una tarea produce 4 eventos; llegar a unos 800 000 eventos con 100 000 tareas exige un promedio de 8 por tarea. Con una probabilidad de rechazo de 0,52 y un máximo de 6 ciclos se obtienen 798 736 eventos; el valor se documenta como parámetro del generador.
+- El historial se genera con `generador_historial.py`, que reconstruye el catálogo con la misma semilla para que proyectos, clientes y anotadores coincidan con MongoDB.
 - Si las pruebas de carga agotan las tareas, se vuelve a correr el generador y se anotan fecha, motivo y efecto sobre la comparabilidad (§9).
 - El conjunto ampliado de hasta 10 millones de eventos usa el mismo generador con otro factor de escala (§8).
