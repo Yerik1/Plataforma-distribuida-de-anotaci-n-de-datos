@@ -1,0 +1,407 @@
+{
+  "fecha_utc": "2026-11-23T17:57:06.279618+00:00",
+  "objetivo": "50 solicitudes concurrentes con 10 tareas libres; segundo envío responde 409",
+  "configuracion": {
+    "solicitudes": 50,
+    "tareas": 10,
+    "proyecto_id": "a2062b83-16f1-4fa2-b9fd-1cda7164dd27",
+    "maquina": {
+      "sistema": "Windows-11-10.0.26200-SP0",
+      "procesador": "Intel64 Family 6 Model 204 Stepping 3, GenuineIntel",
+      "cpus": 8,
+      "python": "3.13.15"
+    },
+    "gateway": "http://localhost:8000"
+  },
+  "comando": "python.exe pruebas/p2_concurrencia.py",
+  "resultado": {
+    "replica_set": {
+      "primario": "mongo1:27017",
+      "miembros_sanos": 3,
+      "miembros_totales": 3,
+      "miembros": [
+        {
+          "nombre": "mongo1:27017",
+          "estado": "PRIMARY"
+        },
+        {
+          "nombre": "mongo2:27017",
+          "estado": "SECONDARY"
+        },
+        {
+          "nombre": "mongo3:27017",
+          "estado": "SECONDARY"
+        }
+      ]
+    },
+    "codigos": {
+      "200": 10,
+      "204": 40
+    },
+    "asignaciones": 10,
+    "sin_tarea_204": 40,
+    "tareas_distintas_asignadas": 10,
+    "tareas_con_dos_duenos": [],
+    "latencias": {
+      "muestras": 50,
+      "p50_ms": 947.5,
+      "p95_ms": 992.99,
+      "p99_ms": 1005.39
+    },
+    "primer_envio": 200,
+    "segundo_envio": 409,
+    "cumple": true,
+    "detalle": [
+      {
+        "anotador_id": "p2-b8e843-000",
+        "codigo": 200,
+        "tarea_id": "1afa3508-5457-4f94-a82a-afc168e67706",
+        "token": "6f51c200-9b68-49c3-9869-5f7fa600e0b0",
+        "latencia_ms": 598.8096999935806
+      },
+      {
+        "anotador_id": "p2-b8e843-001",
+        "codigo": 200,
+        "tarea_id": "20ef5bb3-e50f-4d26-9203-2472ca5343f7",
+        "token": "5885afa0-de78-4d34-90d4-34460b99309e",
+        "latencia_ms": 1005.3912999574095
+      },
+      {
+        "anotador_id": "p2-b8e843-002",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 905.2498999517411
+      },
+      {
+        "anotador_id": "p2-b8e843-003",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 955.5005000438541
+      },
+      {
+        "anotador_id": "p2-b8e843-004",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 978.8442000281066
+      },
+      {
+        "anotador_id": "p2-b8e843-005",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 916.1224999697879
+      },
+      {
+        "anotador_id": "p2-b8e843-006",
+        "codigo": 200,
+        "tarea_id": "6b3c9e51-e67c-4568-987c-6fc644fd4353",
+        "token": "8eaf5155-475c-4b7c-8111-b5feeae11d23",
+        "latencia_ms": 594.6420000400394
+      },
+      {
+        "anotador_id": "p2-b8e843-007",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 940.3650999302045
+      },
+      {
+        "anotador_id": "p2-b8e843-008",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 981.9747000001371
+      },
+      {
+        "anotador_id": "p2-b8e843-009",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 952.6474999729544
+      },
+      {
+        "anotador_id": "p2-b8e843-010",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 948.6544999526814
+      },
+      {
+        "anotador_id": "p2-b8e843-011",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 943.0489999940619
+      },
+      {
+        "anotador_id": "p2-b8e843-012",
+        "codigo": 200,
+        "tarea_id": "f91acd22-1d33-4037-b9b7-4ba549faad21",
+        "token": "7043432a-03ba-4f9d-b814-84232604985e",
+        "latencia_ms": 705.6367000332102
+      },
+      {
+        "anotador_id": "p2-b8e843-013",
+        "codigo": 200,
+        "tarea_id": "81b35520-cebc-4056-946f-cd60af86be99",
+        "token": "bc4e460e-0feb-4570-a860-862452aea885",
+        "latencia_ms": 967.6716999383643
+      },
+      {
+        "anotador_id": "p2-b8e843-014",
+        "codigo": 200,
+        "tarea_id": "e701c66a-e389-4bdb-97ba-38af4d62c362",
+        "token": "7c7926e7-29bb-44ae-9817-51783b428509",
+        "latencia_ms": 563.4313999908045
+      },
+      {
+        "anotador_id": "p2-b8e843-015",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 978.9715999504551
+      },
+      {
+        "anotador_id": "p2-b8e843-016",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 948.299300041981
+      },
+      {
+        "anotador_id": "p2-b8e843-017",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 979.2984999949113
+      },
+      {
+        "anotador_id": "p2-b8e843-018",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 966.1865999223664
+      },
+      {
+        "anotador_id": "p2-b8e843-019",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 992.9856000235304
+      },
+      {
+        "anotador_id": "p2-b8e843-020",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 925.9339000564069
+      },
+      {
+        "anotador_id": "p2-b8e843-021",
+        "codigo": 200,
+        "tarea_id": "e79bf04d-6ebf-4f61-9075-1b5631ca683c",
+        "token": "f569febb-7a58-4f17-acce-e4ef6ca87069",
+        "latencia_ms": 842.0806999783963
+      },
+      {
+        "anotador_id": "p2-b8e843-022",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 928.3778000390157
+      },
+      {
+        "anotador_id": "p2-b8e843-023",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 902.2502999287099
+      },
+      {
+        "anotador_id": "p2-b8e843-024",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 957.4278999352828
+      },
+      {
+        "anotador_id": "p2-b8e843-025",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 925.3049000399187
+      },
+      {
+        "anotador_id": "p2-b8e843-026",
+        "codigo": 200,
+        "tarea_id": "d5f0bd30-86a9-4177-aadf-c1bf4af5a5a3",
+        "token": "bb8a600a-675d-4902-a381-dc52541a1132",
+        "latencia_ms": 990.910500055179
+      },
+      {
+        "anotador_id": "p2-b8e843-027",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 972.5903000216931
+      },
+      {
+        "anotador_id": "p2-b8e843-028",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 971.9496000325307
+      },
+      {
+        "anotador_id": "p2-b8e843-029",
+        "codigo": 200,
+        "tarea_id": "28a5e1bb-aa86-4942-8077-263bf3898ca1",
+        "token": "dba6d63f-2c86-4e97-ac92-dbdd9d40b4d4",
+        "latencia_ms": 774.1381999803707
+      },
+      {
+        "anotador_id": "p2-b8e843-030",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 914.0521999215707
+      },
+      {
+        "anotador_id": "p2-b8e843-031",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 923.3790000434965
+      },
+      {
+        "anotador_id": "p2-b8e843-032",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 975.909800035879
+      },
+      {
+        "anotador_id": "p2-b8e843-033",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 933.6498000193387
+      },
+      {
+        "anotador_id": "p2-b8e843-034",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 940.141599974595
+      },
+      {
+        "anotador_id": "p2-b8e843-035",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 946.2538999505341
+      },
+      {
+        "anotador_id": "p2-b8e843-036",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 963.1961999693885
+      },
+      {
+        "anotador_id": "p2-b8e843-037",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 978.1170000787824
+      },
+      {
+        "anotador_id": "p2-b8e843-038",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 915.8508999971673
+      },
+      {
+        "anotador_id": "p2-b8e843-039",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 910.717700025998
+      },
+      {
+        "anotador_id": "p2-b8e843-040",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 922.1409000456333
+      },
+      {
+        "anotador_id": "p2-b8e843-041",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 958.641599980183
+      },
+      {
+        "anotador_id": "p2-b8e843-042",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 954.1864000493661
+      },
+      {
+        "anotador_id": "p2-b8e843-043",
+        "codigo": 200,
+        "tarea_id": "279250b3-d823-4ea7-a26d-bd878eb62ace",
+        "token": "49c0a474-d64a-4a6c-b008-0892efe2c129",
+        "latencia_ms": 870.0071000494063
+      },
+      {
+        "anotador_id": "p2-b8e843-044",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 947.2962999716401
+      },
+      {
+        "anotador_id": "p2-b8e843-045",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 947.4998000077903
+      },
+      {
+        "anotador_id": "p2-b8e843-046",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 943.4160999953747
+      },
+      {
+        "anotador_id": "p2-b8e843-047",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 956.103099975735
+      },
+      {
+        "anotador_id": "p2-b8e843-048",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 955.6905999779701
+      },
+      {
+        "anotador_id": "p2-b8e843-049",
+        "codigo": 204,
+        "tarea_id": null,
+        "token": null,
+        "latencia_ms": 996.6165000805631
+      }
+    ]
+  }
+}
