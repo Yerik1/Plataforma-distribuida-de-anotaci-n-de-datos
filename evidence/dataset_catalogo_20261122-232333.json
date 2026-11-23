@@ -1,0 +1,32 @@
+{
+  "fecha_utc": "2026-11-22T23:23:33.572765+00:00",
+  "semilla": 2026,
+  "fecha_referencia": "2026-11-01T00:00:00+00:00",
+  "comando": "generador_catalogo.py --mongo-uri mongodb://mongo1:27017,mongo2:27017,mongo3:27017/?replicaSet=rs0 --salida /dataset/salida --evidencia /evidence --limpiar",
+  "conteos_mongodb": {
+    "clientes": 60,
+    "proyectos": 120,
+    "batches": 600,
+    "tareas": 60000,
+    "anotadores": 300
+  },
+  "proyectos_solo_historial": 60,
+  "tareas_por_modalidad": {
+    "video": 12000,
+    "texto": 18000,
+    "imagen": 18000,
+    "lidar": 12000
+  },
+  "tareas_por_tipo": {
+    "bbox_video": 12000,
+    "span": 18000,
+    "poligono": 9000,
+    "cuboide_3d": 12000,
+    "bbox": 9000
+  },
+  "anotadores_por_rol": {
+    "revisor": 30,
+    "anotador": 270
+  },
+  "equipos": 30
+}

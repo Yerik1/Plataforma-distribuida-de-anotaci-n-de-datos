@@ -84,6 +84,25 @@ services:
     restart: unless-stopped
     depends_on: [registro, sesion]
 
+  generador-catalogo:
+    build: ./dataset
+    profiles: [datos]
+    entrypoint:
+      - python
+      - generador_catalogo.py
+      - --mongo-uri
+      - mongodb://mongo1:27017,mongo2:27017,mongo3:27017/?replicaSet=rs0
+      - --salida
+      - /dataset/salida
+      - --evidencia
+      - /evidence
+    volumes:
+      - ./dataset/salida:/dataset/salida
+      - ./evidence:/evidence
+    networks: [interna]
+    depends_on:
+      mongo-init: {condition: service_completed_successfully}
+
 networks:
   publica: {}
   interna:
