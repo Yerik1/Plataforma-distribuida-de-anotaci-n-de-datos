@@ -7,7 +7,7 @@ from typing import Any
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 from valkey.exceptions import ConnectionError as ValkeyConnectionError
 from valkey.exceptions import TimeoutError as ValkeyTimeoutError
 
@@ -17,10 +17,11 @@ from .almacen import (
     cliente,
     llave_borrador,
     llave_editando,
+    llave_envio,
     llave_lock,
     llave_sesion,
 )
-from .config import LOCK_MS, SALUD_INTERVALO_S, SALUD_TTL_S
+from .config import LOCK_MS, SALUD_INTERVALO_S, SALUD_TTL_S, STREAM_EVENTOS
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("sesion")
@@ -81,10 +82,34 @@ class SesionIn(BaseModel):
     etapa: str = "anotacion"
 
 
+def leer_envio(tarea_id: str, anotador_id: str) -> dict | None:
+    datos = cliente.hgetall(llave_envio(tarea_id))
+    if not datos or datos.get("anotador_id") != anotador_id:
+        return None
+    return json.loads(datos["datos"]) | {"ts": int(datos["ts"]), "token": datos["token"]}
+
+
+class EnvioPendiente(BaseModel):
+    event_id: str = Field(min_length=1)
+    anotacion: dict[str, Any]
+
+
 class BorradorIn(BaseModel):
     anotador_id: str = Field(min_length=1)
     token: str = Field(min_length=1)
-    contenido: dict[str, Any]
+    contenido: dict[str, Any] | None = None
+    envio: EnvioPendiente | None = None
+
+    @model_validator(mode="after")
+    def un_solo_contenido(self):
+        if (self.contenido is None) == (self.envio is None):
+            raise ValueError("se requiere exactamente uno de contenido o envio")
+        return self
+
+
+class EventoIn(BaseModel):
+    evento: dict[str, Any]
+    limpiar_envio: str | None = None
 
 
 @app.post("/locks", status_code=201)
@@ -108,6 +133,7 @@ def liberar_lock(
             llave_borrador(tarea_id),
             llave_sesion(anotador_id),
             llave_editando(proyecto_id or ""),
+            llave_envio(tarea_id),
         ],
         args=[token, "1" if limpiar else "0", tarea_id, anotador_id],
     )
@@ -150,19 +176,39 @@ def consultar_sesion(anotador_id: str):
         "etapa": sesion.get("etapa"),
         "lock_valido": lock == sesion["token"],
         "borrador": leer_borrador(sesion["tarea_id"], anotador_id),
+        "envio_pendiente": leer_envio(sesion["tarea_id"], anotador_id),
     }
 
 
 @app.put("/tareas/{tarea_id}/borrador")
 def guardar_borrador(tarea_id: str, datos: BorradorIn):
+    """Guarda el borrador o el envío pendiente y renueva el lock si el token coincide (latido, ADR-005)."""
     sesion = cliente.hgetall(llave_sesion(datos.anotador_id))
     if not sesion or sesion.get("tarea_id") != tarea_id:
         raise HTTPException(409, "la tarea no corresponde a la sesión activa")
     ts = ahora_ms()
+    envio = json.dumps(datos.envio.model_dump()) if datos.envio else ""
+    contenido = json.dumps(datos.contenido) if datos.contenido is not None else ""
     guardado = GUARDAR_BORRADOR(
-        keys=[llave_lock(tarea_id), llave_borrador(tarea_id), llave_editando(sesion["proyecto_id"])],
-        args=[datos.token, LOCK_MS, json.dumps(datos.contenido), ts, datos.anotador_id, ts - LOCK_MS],
+        keys=[
+            llave_lock(tarea_id),
+            llave_borrador(tarea_id),
+            llave_editando(sesion["proyecto_id"]),
+            llave_envio(tarea_id),
+        ],
+        args=[datos.token, LOCK_MS, contenido, ts, datos.anotador_id, ts - LOCK_MS, envio],
     )
     if not guardado:
         raise HTTPException(409, "el token no corresponde al lock")
-    return {"guardado": True, "ts": ts}
+    return {"guardado": True, "tipo": "envio" if envio else "borrador", "ts": ts}
+
+
+@app.post("/eventos", status_code=201)
+def registrar_evento(datos: EventoIn):
+    """Agrega un evento confirmado por MongoDB al stream que consume Historial (ADR-007)."""
+    with cliente.pipeline() as tx:
+        tx.xadd(STREAM_EVENTOS, {"evento": json.dumps(datos.evento)})
+        if datos.limpiar_envio:
+            tx.delete(llave_envio(datos.limpiar_envio))
+        entrada, *_ = tx.execute()
+    return {"id": entrada}

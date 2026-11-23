@@ -7,6 +7,7 @@ def lista(variable: str, defecto: str) -> list[str]:
 
 REGISTRO_URL = os.getenv("REGISTRO_URL", "http://registro:8000")
 SESION_URL = os.getenv("SESION_URL", "http://sesion:8000")
+HISTORIAL_URL = os.getenv("HISTORIAL_URL", "http://historial:8000")
 VALKEY_HOST = os.getenv("VALKEY_HOST", "valkey")
 VALKEY_PORT = int(os.getenv("VALKEY_PORT", "6379"))
 
@@ -16,7 +17,7 @@ CANDIDATAS = int(os.getenv("CANDIDATAS", "20"))
 
 SALUD_INTERVALO_S = float(os.getenv("SALUD_INTERVALO_S", "5"))
 SALUD_TTL_S = int(os.getenv("SALUD_TTL_S", "15"))
-CAPAS = lista("CAPAS", "registro,sesion")
+CAPAS = lista("CAPAS", "registro,sesion,historial")
 CAPAS_CRITICAS = lista("CAPAS_CRITICAS", "registro,sesion")
 
 MOTIVOS_RECHAZO = {

@@ -5,5 +5,4 @@ venv/
 .env
 .idea/
 .vscode/
-servicios/analitica/spark/datos_prueba/parquet/
-
+datalake/

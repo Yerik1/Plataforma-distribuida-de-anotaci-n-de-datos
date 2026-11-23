@@ -13,6 +13,7 @@ from .clientes import ServicioNoDisponible, llamar, reenviar
 from .config import CANDIDATAS, MOTIVOS_RECHAZO, REGISTRO_URL, SESION_URL
 
 logging.basicConfig(level=logging.INFO)
+log = logging.getLogger("gateway")
 
 
 @asynccontextmanager
@@ -96,18 +97,30 @@ async def soltar_lock(tarea_id: str, token: str, anotador_id: str = "", limpiar:
         )
 
 
+async def publicar_evento(evento: dict, limpiar_envio: str | None = None) -> None:
+    """Agrega el evento confirmado al stream. Si falla, la conciliación lo recupera desde MongoDB (ADR-007)."""
+    try:
+        respuesta = await llamar(
+            "POST", f"{SESION_URL}/eventos", json={"evento": evento, "limpiar_envio": limpiar_envio}
+        )
+        if respuesta.status_code != 201:
+            log.warning("evento %s no publicado: %s", evento["event_id"], respuesta.status_code)
+    except ServicioNoDisponible:
+        log.warning("evento %s no publicado: sesión no disponible", evento["event_id"])
+
+
 def conflicto(mensaje: str) -> JSONResponse:
     return JSONResponse(status_code=409, content={"detail": mensaje})
 
 
-async def validar_dueno(tarea_id: str, anotador_id: str, token: str) -> JSONResponse | None:
+async def validar_dueno(tarea_id: str, anotador_id: str, token: str) -> tuple[dict | None, JSONResponse | None]:
     """Comprueba que el token coincide con la sesión y con el lock vigente (§5)."""
     sesion = await sesion_activa(anotador_id)
     if sesion is None or sesion["tarea_id"] != tarea_id or sesion["token"] != token:
-        return conflicto("el token no corresponde a la sesión del anotador")
+        return None, conflicto("el token no corresponde a la sesión del anotador")
     if not sesion["lock_valido"]:
-        return conflicto("el lock de la tarea venció")
-    return None
+        return None, conflicto("el lock de la tarea venció")
+    return sesion, None
 
 
 @app.post("/proyectos")
@@ -165,6 +178,7 @@ async def siguiente_tarea(datos: SiguienteIn):
                 f"{REGISTRO_URL}/tareas/{tarea_id}/transicion",
                 json={
                     "tipo": "asignar",
+                    "event_id": str(uuid4()),
                     "anotador_id": datos.anotador_id,
                     "token": token,
                     "token_anterior": candidata["token_anterior"],
@@ -185,13 +199,15 @@ async def siguiente_tarea(datos: SiguienteIn):
             f"{SESION_URL}/sesiones/{datos.anotador_id}",
             json={"tarea_id": tarea_id, "proyecto_id": datos.proyecto_id, "token": token},
         )
+        cuerpo = asignacion.json()
+        await publicar_evento(cuerpo["evento"])
         if apertura.status_code != 200:
             return reenviar(apertura)
         return {
             "tarea_id": tarea_id,
             "proyecto_id": datos.proyecto_id,
             "token": token,
-            "tarea": asignacion.json(),
+            "tarea": cuerpo["tarea"],
             "borrador": apertura.json()["borrador"],
             "reanudada": False,
         }
@@ -209,30 +225,54 @@ async def guardar_borrador(tarea_id: str, datos: BorradorIn):
 
 @app.post("/tareas/{tarea_id}/enviar")
 async def enviar_tarea(tarea_id: str, datos: EnvioIn):
-    rechazo = await validar_dueno(tarea_id, datos.anotador_id, datos.token)
+    sesion, rechazo = await validar_dueno(tarea_id, datos.anotador_id, datos.token)
     if rechazo:
         return rechazo
+
+    pendiente = sesion.get("envio_pendiente")
+    event_id = pendiente["event_id"] if pendiente and pendiente["token"] == datos.token else str(uuid4())
+    guardado = await llamar(
+        "PUT",
+        f"{SESION_URL}/tareas/{tarea_id}/borrador",
+        json={
+            "anotador_id": datos.anotador_id,
+            "token": datos.token,
+            "envio": {"event_id": event_id, "anotacion": datos.anotacion},
+        },
+        reintentar=True,
+    )
+    if guardado.status_code != 200:
+        return reenviar(guardado)
+
     respuesta = await llamar(
         "POST",
         f"{REGISTRO_URL}/tareas/{tarea_id}/transicion",
-        json={"tipo": "enviar", "anotador_id": datos.anotador_id, "token": datos.token, "anotacion": datos.anotacion},
+        json={
+            "tipo": "enviar",
+            "event_id": event_id,
+            "anotador_id": datos.anotador_id,
+            "token": datos.token,
+            "anotacion": datos.anotacion,
+        },
     )
     if respuesta.status_code == 200:
+        await publicar_evento(respuesta.json()["evento"], limpiar_envio=tarea_id)
         await soltar_lock(tarea_id, datos.token, datos.anotador_id, limpiar=True)
     return reenviar(respuesta)
 
 
 @app.post("/tareas/{tarea_id}/liberar")
 async def liberar_tarea(tarea_id: str, datos: LiberarIn):
-    rechazo = await validar_dueno(tarea_id, datos.anotador_id, datos.token)
+    _, rechazo = await validar_dueno(tarea_id, datos.anotador_id, datos.token)
     if rechazo:
         return rechazo
     respuesta = await llamar(
         "POST",
         f"{REGISTRO_URL}/tareas/{tarea_id}/transicion",
-        json={"tipo": "liberar", "anotador_id": datos.anotador_id, "token": datos.token},
+        json={"tipo": "liberar", "event_id": str(uuid4()), "anotador_id": datos.anotador_id, "token": datos.token},
     )
     if respuesta.status_code == 200:
+        await publicar_evento(respuesta.json()["evento"])
         await soltar_lock(tarea_id, datos.token, datos.anotador_id, limpiar=True)
     return reenviar(respuesta)
 
@@ -245,10 +285,13 @@ async def revisar_tarea(tarea_id: str, datos: RevisionIn):
             content={"detail": "el rechazo requiere un código de motivo válido", "motivos": sorted(MOTIVOS_RECHAZO)},
         )
     tipo = {"iniciar": "iniciar_revision", "aprobar": "aprobar", "rechazar": "rechazar"}[datos.accion]
-    cuerpo = {"tipo": tipo, "revisor_id": datos.revisor_id}
+    cuerpo = {"tipo": tipo, "event_id": str(uuid4()), "revisor_id": datos.revisor_id}
     if datos.accion == "rechazar":
         cuerpo["motivo"] = datos.motivo
-    return reenviar(await llamar("POST", f"{REGISTRO_URL}/tareas/{tarea_id}/transicion", json=cuerpo))
+    respuesta = await llamar("POST", f"{REGISTRO_URL}/tareas/{tarea_id}/transicion", json=cuerpo)
+    if respuesta.status_code == 200:
+        await publicar_evento(respuesta.json()["evento"])
+    return reenviar(respuesta)
 
 
 @app.post("/sesiones/recuperar")

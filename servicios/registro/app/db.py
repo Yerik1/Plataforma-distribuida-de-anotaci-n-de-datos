@@ -31,6 +31,7 @@ INDICES = [
     ("tareas", [("batch_id", ASCENDING)], "batch"),
     ("proyectos", [("cliente_id", ASCENDING), ("estado", ASCENDING)], "cliente_estado"),
     ("tareas", [("proyecto_id", ASCENDING), ("estado", ASCENDING), ("_id", ASCENDING)], "proyecto_estado_id"),
+    ("tareas", [("actualizada_en", ASCENDING)], "actualizada"),
 ]
 
 
