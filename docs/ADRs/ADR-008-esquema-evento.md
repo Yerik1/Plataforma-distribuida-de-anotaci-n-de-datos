@@ -50,5 +50,6 @@ Es la única opción compatible con §8 que evita joins, y permite que el genera
 ## Consecuencias
 
 - Registro calcula `duracion_anotacion_ms` al generar el evento.
+- `liberar` también cambia el estado (de `abierta` a `disponible`), por lo que genera una fila `disponible` con `tipo_evento` `tarea_liberada` (§6.1: cada transición que cambia el estado escribe una fila). Ninguna de Q1 a Q5 usa esas filas.
 - Se conservan `ts_toma` y `ts_primera_toma` para recalcular duraciones al validar las consultas (§8).
 - El generador usa este mismo esquema (ADR-013).
