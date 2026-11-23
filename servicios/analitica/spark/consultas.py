@@ -6,7 +6,7 @@ import io
 import json
 import platform
 import time
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from pyspark.sql import DataFrame, SparkSession, Window
@@ -15,9 +15,21 @@ from pyspark.sql import functions as F
 PRECISION_PERCENTIL = 10_000
 
 
-def leer_eventos(spark: SparkSession, ruta: str) -> DataFrame:
-    """Lee los eventos publicados y descarta duplicados por event_id (§6.3)."""
-    return spark.read.parquet(ruta).dropDuplicates(["event_id"])
+def leer_eventos(spark: SparkSession, ruta: str, desde_mes: str | None = None) -> DataFrame:
+    """Lee los eventos publicados y descarta duplicados por event_id (§6.3).
+
+    Con `desde_mes`, el filtro sobre la columna de partición se aplica antes de deduplicar, para que
+    Spark descarte los directorios mes=AAAA-MM anteriores sin leerlos. Es seguro porque los duplicados
+    de un evento tienen el mismo `ts` y, por lo tanto, están en la misma partición.
+    """
+    eventos = spark.read.parquet(ruta)
+    if desde_mes:
+        eventos = eventos.where(F.col("mes") >= desde_mes)
+    return eventos.dropDuplicates(["event_id"])
+
+
+def mes_inicio_q1(referencia: date) -> str:
+    return (referencia - timedelta(days=89)).strftime("%Y-%m")
 
 
 def q1(eventos: DataFrame, referencia: date) -> DataFrame:
@@ -143,23 +155,26 @@ def main() -> None:
     )
     spark.sparkContext.setLogLevel("WARN")
 
-    eventos = leer_eventos(spark, args.datos)
-    consultas = {
-        "q1": q1(eventos, referencia),
-        "q2": q2(eventos),
-        "q3": q3(eventos),
-        "q4": q4(eventos),
-        "q5": q5(eventos),
+    constructores = {
+        "q1": lambda: q1(leer_eventos(spark, args.datos, mes_inicio_q1(referencia)), referencia),
+        "q2": lambda: q2(leer_eventos(spark, args.datos)),
+        "q3": lambda: q3(leer_eventos(spark, args.datos)),
+        "q4": lambda: q4(leer_eventos(spark, args.datos)),
+        "q5": lambda: q5(leer_eventos(spark, args.datos)),
     }
 
+    # Cada repetición vuelve a leer el Parquet y construye un plan nuevo, para que Spark no
+    # reutilice resultados intermedios de la ejecución anterior. La primera incluye la
+    # inicialización (listado de archivos, arranque de ejecutores, compilación de código).
     resultados, tiempos = {}, {}
-    for nombre, df in consultas.items():
+    for nombre, construir in constructores.items():
         tiempos[nombre] = []
         for _ in range(args.repeticiones):
             inicio = time.perf_counter()
-            resultados[nombre] = filas(df)
+            resultados[nombre] = filas(construir())
             tiempos[nombre].append(round(time.perf_counter() - inicio, 3))
 
+    eventos = leer_eventos(spark, args.datos)
     salida = {
         "fecha_utc": datetime.now(timezone.utc).isoformat(),
         "objetivo": "Ejecutar Q1 a Q5 sobre Parquet y validarlas contra resultados conocidos",
@@ -179,11 +194,11 @@ def main() -> None:
 
     if args.esperados:
         esperados = json.loads(Path(args.esperados).read_text(encoding="utf-8"))
-        salida["validacion"] = {q: resultados[q] == esperados[q] for q in consultas}
+        salida["validacion"] = {q: resultados[q] == esperados[q] for q in constructores}
         salida["validacion"]["todas"] = all(salida["validacion"].values())
 
     if args.planes:
-        salida["planes"] = {"q1": plan(consultas["q1"]), "q3": plan(consultas["q3"])}
+        salida["planes"] = {"q1": plan(constructores["q1"]()), "q3": plan(constructores["q3"]())}
 
     texto = json.dumps(salida, indent=2, ensure_ascii=False)
     if args.evidencia:
