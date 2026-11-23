@@ -1,0 +1,9 @@
+﻿{
+  "fecha_utc": "2026-11-23T20:25:34.414928+00:00",
+  "mes": "2026-06",
+  "archivos_originales": 10,
+  "filas_leidas": 66974,
+  "duplicados_eliminados": 0,
+  "filas_compactadas": 66974,
+  "compactado": "compactado-ef3b7e8068d3f6f595b3.parquet"
+}
