@@ -245,6 +245,20 @@ def main() -> None:
     (salida / "proyectos_cerrados.json").write_text(
         json.dumps(datos["proyectos_cerrados"], default=a_json, indent=2, ensure_ascii=False), encoding="utf-8"
     )
+    simulacion = {
+        "proyectos": [
+            {
+                "proyecto_id": p["_id"],
+                "modalidad": p["modalidad"],
+                "tipo_tarea": p["tipo_tarea"],
+                "etiquetas": [e["etiqueta"] for e in p["taxonomia"]],
+            }
+            for p in datos["proyectos"]
+        ],
+        "anotadores": [a["_id"] for a in datos["anotadores"] if a["rol"] == "anotador"],
+        "revisores": [a["_id"] for a in datos["anotadores"] if a["rol"] == "revisor"],
+    }
+    (salida / "simulacion.json").write_text(json.dumps(simulacion, indent=2), encoding="utf-8")
     (salida / "resumen_catalogo.json").write_text(json.dumps(resumen, indent=2, ensure_ascii=False), encoding="utf-8")
     if args.evidencia:
         destino = Path(args.evidencia)
