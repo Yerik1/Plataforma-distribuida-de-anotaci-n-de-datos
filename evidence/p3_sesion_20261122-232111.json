@@ -1,0 +1,86 @@
+{
+  "fecha_utc": "2026-11-22T23:21:11.965881+00:00",
+  "objetivo": "Recuperar borrador tras interrupción, conservarlo tras reiniciar Valkey y reasignar la tarea al vencer el lock",
+  "configuracion": {
+    "espera_lock_s": 125,
+    "reinicio_valkey": true,
+    "maquina": {
+      "sistema": "Windows-10-10.0.19045-SP0",
+      "procesador": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+      "cpus": 8,
+      "python": "3.13.13"
+    },
+    "gateway": "http://localhost:8000"
+  },
+  "comando": "python.exe pruebas/p3_sesion.py",
+  "resultado": {
+    "interrupcion": {
+      "codigo_recuperacion": 200,
+      "secuencia_enviada": 3,
+      "secuencia_recuperada": 3,
+      "antiguedad_borrador_s": 2.05,
+      "cumple": true
+    },
+    "reinicio_valkey": {
+      "acciones": {
+        "kill": "Container proyecto2-valkey-1 Killing \n Container proyecto2-valkey-1 Killed",
+        "start": "Container proyecto2-valkey-1 Starting \n Container proyecto2-valkey-1 Started"
+      },
+      "restauracion": {
+        "estado": "operativo",
+        "segundos": 0.0,
+        "salud": {
+          "estado": "operativo",
+          "capas": {
+            "valkey": {
+              "estado": "operativo"
+            },
+            "registro": {
+              "estado": "operativo",
+              "replica": {
+                "primario": "mongo2:27017",
+                "miembros_sanos": 3,
+                "miembros_totales": 3,
+                "miembros": [
+                  {
+                    "nombre": "mongo1:27017",
+                    "estado": "SECONDARY"
+                  },
+                  {
+                    "nombre": "mongo2:27017",
+                    "estado": "PRIMARY"
+                  },
+                  {
+                    "nombre": "mongo3:27017",
+                    "estado": "SECONDARY"
+                  }
+                ]
+              },
+              "ts": 1795389541041
+            },
+            "sesion": {
+              "estado": "operativo",
+              "ts": 1795389541217
+            }
+          }
+        }
+      },
+      "codigo_recuperacion": 200,
+      "secuencia_antes_del_reinicio": 4,
+      "secuencia_recuperada": 4,
+      "envio_tras_reinicio": 200,
+      "cumple": true
+    },
+    "lock_vencido": {
+      "espera_s": 125,
+      "siguiente_b_con_lock_vigente": 204,
+      "siguiente_b_tras_vencimiento": 200,
+      "misma_tarea": true,
+      "envio_dueno_anterior": 409,
+      "recuperar_dueno_anterior": 409,
+      "envio_nuevo_dueno": 200,
+      "cumple": true
+    },
+    "cumple": true
+  }
+}

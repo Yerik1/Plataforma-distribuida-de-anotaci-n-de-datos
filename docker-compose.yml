@@ -50,6 +50,40 @@ services:
       timeout: 3s
       retries: 20
 
+  registro:
+    build: ./servicios/registro
+    environment:
+      MONGO_URI: mongodb://mongo1:27017,mongo2:27017,mongo3:27017/?replicaSet=rs0
+      MONGO_W: ${MONGO_W:-majority}
+      LOCK_MS: ${LOCK_MS:-120000}
+    networks: [interna]
+    restart: unless-stopped
+    depends_on:
+      mongo-init: {condition: service_completed_successfully}
+
+  sesion:
+    build: ./servicios/sesion
+    environment:
+      VALKEY_HOST: valkey
+      LOCK_MS: ${LOCK_MS:-120000}
+    networks: [interna]
+    restart: unless-stopped
+    depends_on:
+      valkey: {condition: service_healthy}
+
+  gateway:
+    build: ./servicios/gateway
+    ports: ["8000:8000"]
+    environment:
+      REGISTRO_URL: http://registro:8000
+      SESION_URL: http://sesion:8000
+      VALKEY_HOST: valkey
+      CAPAS: registro,sesion
+      CAPAS_CRITICAS: registro,sesion
+    networks: [publica, interna]
+    restart: unless-stopped
+    depends_on: [registro, sesion]
+
 networks:
   publica: {}
   interna:
