@@ -1,0 +1,162 @@
+{
+  "fecha_utc": "2026-11-23T00:46:59.987086+00:00",
+  "objetivo": "Ejecutar Q1 a Q5 sobre Parquet y validarlas contra resultados conocidos",
+  "configuracion": {
+    "datos": "/opt/analitica/datos_prueba/parquet/eventos",
+    "fecha_referencia_q1": "2026-11-20",
+    "spark_version": "3.5.9",
+    "master": "spark://spark-master:7077",
+    "paralelismo_por_defecto": 2,
+    "repeticiones": 1,
+    "python": "3.10.12"
+  },
+  "eventos_unicos": 46,
+  "tiempos_s": {
+    "q1": [
+      10.253
+    ],
+    "q2": [
+      4.518
+    ],
+    "q3": [
+      3.405
+    ],
+    "q4": [
+      2.512
+    ],
+    "q5": [
+      6.411
+    ]
+  },
+  "resultados": {
+    "q1": [
+      {
+        "dia": "2026-11-02",
+        "modalidad": "lidar",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-05",
+        "modalidad": "imagen",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-05",
+        "modalidad": "lidar",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-08",
+        "modalidad": "texto",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-09",
+        "modalidad": "texto",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-12",
+        "modalidad": "imagen",
+        "aprobadas": 1
+      }
+    ],
+    "q2": [
+      {
+        "equipo_id": "eqA",
+        "mes": "2026-07",
+        "aprobadas": 1,
+        "revisadas": 1,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "eqA",
+        "mes": "2026-11",
+        "aprobadas": 3,
+        "revisadas": 3,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "eqB",
+        "mes": "2026-11",
+        "aprobadas": 3,
+        "revisadas": 4,
+        "proporcion_aprobadas": 0.75
+      }
+    ],
+    "q3": [
+      {
+        "modalidad": "imagen",
+        "tipo_tarea": "bbox",
+        "anotaciones": 5,
+        "duracion_media_ms": 1440000.0,
+        "duracion_p95_ms": 2700000.0
+      },
+      {
+        "modalidad": "lidar",
+        "tipo_tarea": "cuboide_3d",
+        "anotaciones": 4,
+        "duracion_media_ms": 2250000.0,
+        "duracion_p95_ms": 3600000.0
+      },
+      {
+        "modalidad": "texto",
+        "tipo_tarea": "span",
+        "anotaciones": 3,
+        "duracion_media_ms": 1000000.0,
+        "duracion_p95_ms": 1800000.0
+      }
+    ],
+    "q4": [
+      {
+        "cliente_id": "c1",
+        "proyecto_id": "p1",
+        "rechazadas": 1,
+        "revisadas": 4,
+        "proporcion_rechazadas": 0.25
+      },
+      {
+        "cliente_id": "c1",
+        "proyecto_id": "p2",
+        "rechazadas": 3,
+        "revisadas": 5,
+        "proporcion_rechazadas": 0.6
+      },
+      {
+        "cliente_id": "c2",
+        "proyecto_id": "p3",
+        "rechazadas": 0,
+        "revisadas": 2,
+        "proporcion_rechazadas": 0.0
+      }
+    ],
+    "q5": [
+      {
+        "cliente_id": "c1",
+        "tareas_aprobadas": 5,
+        "p50_horas": 2.0,
+        "p95_horas": 49.0,
+        "porcentaje_incumple_sla": 20.0
+      },
+      {
+        "cliente_id": "c2",
+        "tareas_aprobadas": 2,
+        "p50_horas": 1.5,
+        "p95_horas": 50.0,
+        "porcentaje_incumple_sla": 50.0
+      }
+    ]
+  },
+  "validacion": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "todas": true
+  },
+  "planes": {
+    "q1": "== Physical Plan ==\nAdaptiveSparkPlan (35)\n+- == Final Plan ==\n   * Sort (21)\n   +- AQEShuffleRead (20)\n      +- ShuffleQueryStage (19), Statistics(sizeInBytes=240.0 B, rowCount=6)\n         +- Exchange (18)\n            +- * HashAggregate (17)\n               +- AQEShuffleRead (16)\n                  +- ShuffleQueryStage (15), Statistics(sizeInBytes=240.0 B, rowCount=6)\n                     +- Exchange (14)\n                        +- * HashAggregate (13)\n                           +- * Project (12)\n                              +- * Filter (11)\n                                 +- SortAggregate (10)\n                                    +- * Sort (9)\n                                       +- AQEShuffleRead (8)\n                                          +- ShuffleQueryStage (7), Statistics(sizeInBytes=5.5 KiB, rowCount=46)\n                                             +- Exchange (6)\n                                                +- SortAggregate (5)\n                                                   +- * Sort (4)\n                                                      +- * Project (3)\n                                                         +- * ColumnarToRow (2)\n                                                            +- Scan parquet  (1)\n+- == Initial Plan ==\n   Sort (34)\n   +- Exchange (33)\n      +- HashAggregate (32)\n         +- Exchange (31)\n            +- HashAggregate (30)\n               +- Project (29)\n                  +- Filter (28)\n                     +- SortAggregate (27)\n                        +- Sort (26)\n                           +- Exchange (25)\n                              +- SortAggregate (24)\n                                 +- Sort (23)\n                                    +- Project (22)\n                                       +- Scan parquet  (1)\n\n\n(1) Scan parquet \nOutput [5]: [event_id#0, estado#2, ts#3, modalidad#8, mes#20]\nBatched: true\nLocation: InMemoryFileIndex [file:/opt/analitica/datos_prueba/parquet/eventos]\nReadSchema: struct<event_id:string,estado:string,ts:timestamp,modalidad:string>\n\n(2) ColumnarToRow [codegen id : 1]\nInput [5]: [event_id#0, estado#2, ts#3, modalidad#8, mes#20]\n\n(3) Project [codegen id : 1]\nOutput [4]: [event_id#0, estado#2, ts#3, modalidad#8]\nInput [5]: [event_id#0, estado#2, ts#3, modalidad#8, mes#20]\n\n(4) Sort [codegen id : 1]\nInput [4]: [event_id#0, estado#2, ts#3, modalidad#8]\nArguments: [event_id#0 ASC NULLS FIRST], false, 0\n\n(5) SortAggregate\nInput [4]: [event_id#0, estado#2, ts#3, modalidad#8]\nKeys [1]: [event_id#0]\nFunctions [3]: [partial_first(estado#2, false), partial_first(ts#3, false), partial_first(modalidad#8, false)]\nAggregate Attributes [6]: [first#351, valueSet#352, first#353, valueSet#354, first#355, valueSet#356]\nResults [7]: [event_id#0, first#357, valueSet#358, first#359, valueSet#360, first#361, valueSet#362]\n\n(6) Exchange\nInput [7]: [event_id#0, first#357, valueSet#358, first#359, valueSet#360, first#361, valueSet#362]\nArguments: hashpartitioning(event_id#0, 200), ENSURE_REQUIREMENTS, [plan_id=83]\n\n(7) ShuffleQueryStage\nOutput [7]: [event_id#0, first#357, valueSet#358, first#359, valueSet#360, first#361, valueSet#362]\nArguments: 0\n\n(8) AQEShuffleRead\nInput [7]: [event_id#0, first#357, valueSet#358, first#359, valueSet#360, first#361, valueSet#362]\nArguments: coalesced\n\n(9) Sort [codegen id : 2]\nInput [7]: [event_id#0, first#357, valueSet#358, first#359, valueSet#360, first#361, valueSet#362]\nArguments: [event_id#0 ASC NULLS FIRST], false, 0\n\n(10) SortAggregate\nInput [7]: [event_id#0, first#357, valueSet#358, first#359, valueSet#360, first#361, valueSet#362]\nKeys [1]: [event_id#0]\nFunctions [3]: [first(estado#2, false), first(ts#3, false), first(modalidad#8, false)]\nAggregate Attributes [3]: [first(estado#2)()#311, first(ts#3)()#313, first(modalidad#8)()#323]\nResults [3]: [first(estado#2)()#311 AS estado#312, first(ts#3)()#313 AS ts#314, first(modalidad#8)()#323 AS modalidad#324]\n\n(11) Filter [codegen id : 3]\nInput [3]: [estado#312, ts#314, modalidad#324]\nCondition : ((isnotnull(estado#312) AND isnotnull(ts#314)) AND ((estado#312 = aprobada) AND ((ts#314 >= 2026-08-23 00:00:00) AND (ts#314 < 2026-11-21 00:00:00))))\n\n(12) Project [codegen id : 3]\nOutput [2]: [modalidad#324, cast(ts#314 as date) AS dia#43]\nInput [3]: [estado#312, ts#314, modalidad#324]\n\n(13) HashAggregate [codegen id : 3]\nInput [2]: [modalidad#324, dia#43]\nKeys [2]: [dia#43, modalidad#324]\nFunctions [1]: [partial_count(1)]\nAggregate Attributes [1]: [count#349L]\nResults [3]: [dia#43, modalidad#324, count#350L]\n\n(14) Exchange\nInput [3]: [dia#43, modalidad#324, count#350L]\nArguments: hashpartitioning(dia#43, modalidad#324, 200), ENSURE_REQUIREMENTS, [plan_id=157]\n\n(15) ShuffleQueryStage\nOutput [3]: [dia#43, modalidad#324, count#350L]\nArguments: 1\n\n(16) AQEShuffleRead\nInput [3]: [dia#43, modalidad#324, count#350L]\nArguments: coalesced\n\n(17) HashAggregate [codegen id : 4]\nInput [3]: [dia#43, modalidad#324, count#350L]\nKeys [2]: [dia#43, modalidad#324]\nFunctions [1]: [count(1)]\nAggregate Attributes [1]: [count(1)#88L]\nResults [3]: [dia#43, modalidad#324, count(1)#88L AS aprobadas#89L]\n\n(18) Exchange\nInput [3]: [dia#43, modalidad#324, aprobadas#89L]\nArguments: rangepartitioning(dia#43 ASC NULLS FIRST, modalidad#324 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [plan_id=195]\n\n(19) ShuffleQueryStage\nOutput [3]: [dia#43, modalidad#324, aprobadas#89L]\nArguments: 2\n\n(20) AQEShuffleRead\nInput [3]: [dia#43, modalidad#324, aprobadas#89L]\nArguments: coalesced\n\n(21) Sort [codegen id : 5]\nInput [3]: [dia#43, modalidad#324, aprobadas#89L]\nArguments: [dia#43 ASC NULLS FIRST, modalidad#324 ASC NULLS FIRST], true, 0\n\n(22) Project\nOutput [4]: [event_id#0, estado#2, ts#3, modalidad#8]\nInput [5]: [event_id#0, estado#2, ts#3, modalidad#8, mes#20]\n\n(23) Sort\nInput [4]: [event_id#0, estado#2, ts#3, modalidad#8]\nArguments: [event_id#0 ASC NULLS FIRST], false, 0\n\n(24) SortAggregate\nInput [4]: [event_id#0, estado#2, ts#3, modalidad#8]\nKeys [1]: [event_id#0]\nFunctions [3]: [partial_first(estado#2, false), partial_first(ts#3, false), partial_first(modalidad#8, false)]\nAggregate Attributes [6]: [first#351, valueSet#352, first#353, valueSet#354, first#355, valueSet#356]\nResults [7]: [event_id#0, first#357, valueSet#358, first#359, valueSet#360, first#361, valueSet#362]\n\n(25) Exchange\nInput [7]: [event_id#0, first#357, valueSet#358, first#359, valueSet#360, first#361, valueSet#362]\nArguments: hashpartitioning(event_id#0, 200), ENSURE_REQUIREMENTS, [plan_id=35]\n\n(26) Sort\nInput [7]: [event_id#0, first#357, valueSet#358, first#359, valueSet#360, first#361, valueSet#362]\nArguments: [event_id#0 ASC NULLS FIRST], false, 0\n\n(27) SortAggregate\nInput [7]: [event_id#0, first#357, valueSet#358, first#359, valueSet#360, first#361, valueSet#362]\nKeys [1]: [event_id#0]\nFunctions [3]: [first(estado#2, false), first(ts#3, false), first(modalidad#8, false)]\nAggregate Attributes [3]: [first(estado#2)()#311, first(ts#3)()#313, first(modalidad#8)()#323]\nResults [3]: [first(estado#2)()#311 AS estado#312, first(ts#3)()#313 AS ts#314, first(modalidad#8)()#323 AS modalidad#324]\n\n(28) Filter\nInput [3]: [estado#312, ts#314, modalidad#324]\nCondition : ((isnotnull(estado#312) AND isnotnull(ts#314)) AND ((estado#312 = aprobada) AND ((ts#314 >= 2026-08-23 00:00:00) AND (ts#314 < 2026-11-21 00:00:00))))\n\n(29) Project\nOutput [2]: [modalidad#324, cast(ts#314 as date) AS dia#43]\nInput [3]: [estado#312, ts#314, modalidad#324]\n\n(30) HashAggregate\nInput [2]: [modalidad#324, dia#43]\nKeys [2]: [dia#43, modalidad#324]\nFunctions [1]: [partial_count(1)]\nAggregate Attributes [1]: [count#349L]\nResults [3]: [dia#43, modalidad#324, count#350L]\n\n(31) Exchange\nInput [3]: [dia#43, modalidad#324, count#350L]\nArguments: hashpartitioning(dia#43, modalidad#324, 200), ENSURE_REQUIREMENTS, [plan_id=42]\n\n(32) HashAggregate\nInput [3]: [dia#43, modalidad#324, count#350L]\nKeys [2]: [dia#43, modalidad#324]\nFunctions [1]: [count(1)]\nAggregate Attributes [1]: [count(1)#88L]\nResults [3]: [dia#43, modalidad#324, count(1)#88L AS aprobadas#89L]\n\n(33) Exchange\nInput [3]: [dia#43, modalidad#324, aprobadas#89L]\nArguments: rangepartitioning(dia#43 ASC NULLS FIRST, modalidad#324 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [plan_id=45]\n\n(34) Sort\nInput [3]: [dia#43, modalidad#324, aprobadas#89L]\nArguments: [dia#43 ASC NULLS FIRST, modalidad#324 ASC NULLS FIRST], true, 0\n\n(35) AdaptiveSparkPlan\nOutput [3]: [dia#43, modalidad#324, aprobadas#89L]\nArguments: isFinalPlan=true\n\n\n",
+    "q3": "== Physical Plan ==\nAdaptiveSparkPlan (35)\n+- == Final Plan ==\n   * Sort (21)\n   +- AQEShuffleRead (20)\n      +- ShuffleQueryStage (19), Statistics(sizeInBytes=200.0 B, rowCount=3)\n         +- Exchange (18)\n            +- ObjectHashAggregate (17)\n               +- AQEShuffleRead (16)\n                  +- ShuffleQueryStage (15), Statistics(sizeInBytes=584.0 B, rowCount=3)\n                     +- Exchange (14)\n                        +- ObjectHashAggregate (13)\n                           +- * Project (12)\n                              +- * Filter (11)\n                                 +- SortAggregate (10)\n                                    +- * Sort (9)\n                                       +- AQEShuffleRead (8)\n                                          +- ShuffleQueryStage (7), Statistics(sizeInBytes=6.7 KiB, rowCount=46)\n                                             +- Exchange (6)\n                                                +- SortAggregate (5)\n                                                   +- * Sort (4)\n                                                      +- * Project (3)\n                                                         +- * ColumnarToRow (2)\n                                                            +- Scan parquet  (1)\n+- == Initial Plan ==\n   Sort (34)\n   +- Exchange (33)\n      +- ObjectHashAggregate (32)\n         +- Exchange (31)\n            +- ObjectHashAggregate (30)\n               +- Project (29)\n                  +- Filter (28)\n                     +- SortAggregate (27)\n                        +- Sort (26)\n                           +- Exchange (25)\n                              +- SortAggregate (24)\n                                 +- Sort (23)\n                                    +- Project (22)\n                                       +- Scan parquet  (1)\n\n\n(1) Scan parquet \nOutput [6]: [event_id#0, estado#2, modalidad#8, tipo_tarea#9, duracion_anotacion_ms#16L, mes#20]\nBatched: true\nLocation: InMemoryFileIndex [file:/opt/analitica/datos_prueba/parquet/eventos]\nReadSchema: struct<event_id:string,estado:string,modalidad:string,tipo_tarea:string,duracion_anotacion_ms:bigint>\n\n(2) ColumnarToRow [codegen id : 1]\nInput [6]: [event_id#0, estado#2, modalidad#8, tipo_tarea#9, duracion_anotacion_ms#16L, mes#20]\n\n(3) Project [codegen id : 1]\nOutput [5]: [event_id#0, estado#2, modalidad#8, tipo_tarea#9, duracion_anotacion_ms#16L]\nInput [6]: [event_id#0, estado#2, modalidad#8, tipo_tarea#9, duracion_anotacion_ms#16L, mes#20]\n\n(4) Sort [codegen id : 1]\nInput [5]: [event_id#0, estado#2, modalidad#8, tipo_tarea#9, duracion_anotacion_ms#16L]\nArguments: [event_id#0 ASC NULLS FIRST], false, 0\n\n(5) SortAggregate\nInput [5]: [event_id#0, estado#2, modalidad#8, tipo_tarea#9, duracion_anotacion_ms#16L]\nKeys [1]: [event_id#0]\nFunctions [4]: [partial_first(estado#2, false), partial_first(modalidad#8, false), partial_first(tipo_tarea#9, false), partial_first(duracion_anotacion_ms#16L, false)]\nAggregate Attributes [8]: [first#545, valueSet#546, first#547, valueSet#548, first#549, valueSet#550, first#551L, valueSet#552]\nResults [9]: [event_id#0, first#553, valueSet#554, first#555, valueSet#556, first#557, valueSet#558, first#559L, valueSet#560]\n\n(6) Exchange\nInput [9]: [event_id#0, first#553, valueSet#554, first#555, valueSet#556, first#557, valueSet#558, first#559L, valueSet#560]\nArguments: hashpartitioning(event_id#0, 200), ENSURE_REQUIREMENTS, [plan_id=713]\n\n(7) ShuffleQueryStage\nOutput [9]: [event_id#0, first#553, valueSet#554, first#555, valueSet#556, first#557, valueSet#558, first#559L, valueSet#560]\nArguments: 0\n\n(8) AQEShuffleRead\nInput [9]: [event_id#0, first#553, valueSet#554, first#555, valueSet#556, first#557, valueSet#558, first#559L, valueSet#560]\nArguments: coalesced\n\n(9) Sort [codegen id : 2]\nInput [9]: [event_id#0, first#553, valueSet#554, first#555, valueSet#556, first#557, valueSet#558, first#559L, valueSet#560]\nArguments: [event_id#0 ASC NULLS FIRST], false, 0\n\n(10) SortAggregate\nInput [9]: [event_id#0, first#553, valueSet#554, first#555, valueSet#556, first#557, valueSet#558, first#559L, valueSet#560]\nKeys [1]: [event_id#0]\nFunctions [4]: [first(estado#2, false), first(modalidad#8, false), first(tipo_tarea#9, false), first(duracion_anotacion_ms#16L, false)]\nAggregate Attributes [4]: [first(estado#2)()#499, first(modalidad#8)()#511, first(tipo_tarea#9)()#513, first(duracion_anotacion_ms#16L)()#527L]\nResults [4]: [first(estado#2)()#499 AS estado#500, first(modalidad#8)()#511 AS modalidad#512, first(tipo_tarea#9)()#513 AS tipo_tarea#514, first(duracion_anotacion_ms#16L)()#527L AS duracion_anotacion_ms#528L]\n\n(11) Filter [codegen id : 3]\nInput [4]: [estado#500, modalidad#512, tipo_tarea#514, duracion_anotacion_ms#528L]\nCondition : (isnotnull(estado#500) AND ((estado#500 = anotada) AND isnotnull(duracion_anotacion_ms#528L)))\n\n(12) Project [codegen id : 3]\nOutput [3]: [modalidad#512, tipo_tarea#514, duracion_anotacion_ms#528L]\nInput [4]: [estado#500, modalidad#512, tipo_tarea#514, duracion_anotacion_ms#528L]\n\n(13) ObjectHashAggregate\nInput [3]: [modalidad#512, tipo_tarea#514, duracion_anotacion_ms#528L]\nKeys [2]: [modalidad#512, tipo_tarea#514]\nFunctions [3]: [partial_count(1), partial_avg(duracion_anotacion_ms#528L), partial_percentile_approx(duracion_anotacion_ms#528L, 0.95, 10000, 0, 0)]\nAggregate Attributes [4]: [count#537L, sum#538, count#539L, buf#540]\nResults [6]: [modalidad#512, tipo_tarea#514, count#541L, sum#542, count#543L, buf#544]\n\n(14) Exchange\nInput [6]: [modalidad#512, tipo_tarea#514, count#541L, sum#542, count#543L, buf#544]\nArguments: hashpartitioning(modalidad#512, tipo_tarea#514, 200), ENSURE_REQUIREMENTS, [plan_id=787]\n\n(15) ShuffleQueryStage\nOutput [6]: [modalidad#512, tipo_tarea#514, count#541L, sum#542, count#543L, buf#544]\nArguments: 1\n\n(16) AQEShuffleRead\nInput [6]: [modalidad#512, tipo_tarea#514, count#541L, sum#542, count#543L, buf#544]\nArguments: coalesced\n\n(17) ObjectHashAggregate\nInput [6]: [modalidad#512, tipo_tarea#514, count#541L, sum#542, count#543L, buf#544]\nKeys [2]: [modalidad#512, tipo_tarea#514]\nFunctions [3]: [count(1), avg(duracion_anotacion_ms#528L), percentile_approx(duracion_anotacion_ms#528L, 0.95, 10000, 0, 0)]\nAggregate Attributes [3]: [count(1)#205L, avg(duracion_anotacion_ms#528L)#207, percentile_approx(duracion_anotacion_ms#528L, 0.95, 10000, 0, 0)#209L]\nResults [5]: [modalidad#512, tipo_tarea#514, count(1)#205L AS anotaciones#206L, round(avg(duracion_anotacion_ms#528L)#207, 4) AS duracion_media_ms#208, cast(percentile_approx(duracion_anotacion_ms#528L, 0.95, 10000, 0, 0)#209L as double) AS duracion_p95_ms#210]\n\n(18) Exchange\nInput [5]: [modalidad#512, tipo_tarea#514, anotaciones#206L, duracion_media_ms#208, duracion_p95_ms#210]\nArguments: rangepartitioning(modalidad#512 ASC NULLS FIRST, tipo_tarea#514 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [plan_id=821]\n\n(19) ShuffleQueryStage\nOutput [5]: [modalidad#512, tipo_tarea#514, anotaciones#206L, duracion_media_ms#208, duracion_p95_ms#210]\nArguments: 2\n\n(20) AQEShuffleRead\nInput [5]: [modalidad#512, tipo_tarea#514, anotaciones#206L, duracion_media_ms#208, duracion_p95_ms#210]\nArguments: coalesced\n\n(21) Sort [codegen id : 4]\nInput [5]: [modalidad#512, tipo_tarea#514, anotaciones#206L, duracion_media_ms#208, duracion_p95_ms#210]\nArguments: [modalidad#512 ASC NULLS FIRST, tipo_tarea#514 ASC NULLS FIRST], true, 0\n\n(22) Project\nOutput [5]: [event_id#0, estado#2, modalidad#8, tipo_tarea#9, duracion_anotacion_ms#16L]\nInput [6]: [event_id#0, estado#2, modalidad#8, tipo_tarea#9, duracion_anotacion_ms#16L, mes#20]\n\n(23) Sort\nInput [5]: [event_id#0, estado#2, modalidad#8, tipo_tarea#9, duracion_anotacion_ms#16L]\nArguments: [event_id#0 ASC NULLS FIRST], false, 0\n\n(24) SortAggregate\nInput [5]: [event_id#0, estado#2, modalidad#8, tipo_tarea#9, duracion_anotacion_ms#16L]\nKeys [1]: [event_id#0]\nFunctions [4]: [partial_first(estado#2, false), partial_first(modalidad#8, false), partial_first(tipo_tarea#9, false), partial_first(duracion_anotacion_ms#16L, false)]\nAggregate Attributes [8]: [first#545, valueSet#546, first#547, valueSet#548, first#549, valueSet#550, first#551L, valueSet#552]\nResults [9]: [event_id#0, first#553, valueSet#554, first#555, valueSet#556, first#557, valueSet#558, first#559L, valueSet#560]\n\n(25) Exchange\nInput [9]: [event_id#0, first#553, valueSet#554, first#555, valueSet#556, first#557, valueSet#558, first#559L, valueSet#560]\nArguments: hashpartitioning(event_id#0, 200), ENSURE_REQUIREMENTS, [plan_id=665]\n\n(26) Sort\nInput [9]: [event_id#0, first#553, valueSet#554, first#555, valueSet#556, first#557, valueSet#558, first#559L, valueSet#560]\nArguments: [event_id#0 ASC NULLS FIRST], false, 0\n\n(27) SortAggregate\nInput [9]: [event_id#0, first#553, valueSet#554, first#555, valueSet#556, first#557, valueSet#558, first#559L, valueSet#560]\nKeys [1]: [event_id#0]\nFunctions [4]: [first(estado#2, false), first(modalidad#8, false), first(tipo_tarea#9, false), first(duracion_anotacion_ms#16L, false)]\nAggregate Attributes [4]: [first(estado#2)()#499, first(modalidad#8)()#511, first(tipo_tarea#9)()#513, first(duracion_anotacion_ms#16L)()#527L]\nResults [4]: [first(estado#2)()#499 AS estado#500, first(modalidad#8)()#511 AS modalidad#512, first(tipo_tarea#9)()#513 AS tipo_tarea#514, first(duracion_anotacion_ms#16L)()#527L AS duracion_anotacion_ms#528L]\n\n(28) Filter\nInput [4]: [estado#500, modalidad#512, tipo_tarea#514, duracion_anotacion_ms#528L]\nCondition : (isnotnull(estado#500) AND ((estado#500 = anotada) AND isnotnull(duracion_anotacion_ms#528L)))\n\n(29) Project\nOutput [3]: [modalidad#512, tipo_tarea#514, duracion_anotacion_ms#528L]\nInput [4]: [estado#500, modalidad#512, tipo_tarea#514, duracion_anotacion_ms#528L]\n\n(30) ObjectHashAggregate\nInput [3]: [modalidad#512, tipo_tarea#514, duracion_anotacion_ms#528L]\nKeys [2]: [modalidad#512, tipo_tarea#514]\nFunctions [3]: [partial_count(1), partial_avg(duracion_anotacion_ms#528L), partial_percentile_approx(duracion_anotacion_ms#528L, 0.95, 10000, 0, 0)]\nAggregate Attributes [4]: [count#537L, sum#538, count#539L, buf#540]\nResults [6]: [modalidad#512, tipo_tarea#514, count#541L, sum#542, count#543L, buf#544]\n\n(31) Exchange\nInput [6]: [modalidad#512, tipo_tarea#514, count#541L, sum#542, count#543L, buf#544]\nArguments: hashpartitioning(modalidad#512, tipo_tarea#514, 200), ENSURE_REQUIREMENTS, [plan_id=672]\n\n(32) ObjectHashAggregate\nInput [6]: [modalidad#512, tipo_tarea#514, count#541L, sum#542, count#543L, buf#544]\nKeys [2]: [modalidad#512, tipo_tarea#514]\nFunctions [3]: [count(1), avg(duracion_anotacion_ms#528L), percentile_approx(duracion_anotacion_ms#528L, 0.95, 10000, 0, 0)]\nAggregate Attributes [3]: [count(1)#205L, avg(duracion_anotacion_ms#528L)#207, percentile_approx(duracion_anotacion_ms#528L, 0.95, 10000, 0, 0)#209L]\nResults [5]: [modalidad#512, tipo_tarea#514, count(1)#205L AS anotaciones#206L, round(avg(duracion_anotacion_ms#528L)#207, 4) AS duracion_media_ms#208, cast(percentile_approx(duracion_anotacion_ms#528L, 0.95, 10000, 0, 0)#209L as double) AS duracion_p95_ms#210]\n\n(33) Exchange\nInput [5]: [modalidad#512, tipo_tarea#514, anotaciones#206L, duracion_media_ms#208, duracion_p95_ms#210]\nArguments: rangepartitioning(modalidad#512 ASC NULLS FIRST, tipo_tarea#514 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [plan_id=675]\n\n(34) Sort\nInput [5]: [modalidad#512, tipo_tarea#514, anotaciones#206L, duracion_media_ms#208, duracion_p95_ms#210]\nArguments: [modalidad#512 ASC NULLS FIRST, tipo_tarea#514 ASC NULLS FIRST], true, 0\n\n(35) AdaptiveSparkPlan\nOutput [5]: [modalidad#512, tipo_tarea#514, anotaciones#206L, duracion_media_ms#208, duracion_p95_ms#210]\nArguments: isFinalPlan=true\n\n\n"
+  }
+}
