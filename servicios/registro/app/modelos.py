@@ -1,4 +1,5 @@
 from typing import Any, Literal
+from uuid import uuid4
 
 from pydantic import BaseModel, Field, field_validator, model_validator
 
@@ -81,6 +82,7 @@ class Anotacion(BaseModel):
 
 class TransicionIn(BaseModel):
     tipo: Literal["asignar", "enviar", "liberar", "iniciar_revision", "aprobar", "rechazar"]
+    event_id: str = Field(default_factory=lambda: str(uuid4()), min_length=1)
     anotador_id: str | None = None
     token: str | None = None
     token_anterior: str | None = None

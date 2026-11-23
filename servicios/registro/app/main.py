@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from datetime import datetime, timedelta, timezone
 from uuid import uuid4
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, Header, HTTPException, Query
 from fastapi.responses import JSONResponse
 from pymongo import ReturnDocument
 from pymongo.errors import (
@@ -17,7 +17,7 @@ from pymongo.errors import (
 from .config import LOCK_MS
 from .db import cliente, crear_indices, db
 from .modelos import LoteIn, ProyectoIn, TransicionIn
-from .transiciones import construir
+from .transiciones import TransicionInvalida, preparar, utc
 
 logging.basicConfig(level=logging.INFO)
 
@@ -115,8 +115,31 @@ def registrar_lote(proyecto_id: str, lote: LoteIn):
 
 
 @app.get("/tareas")
-def tareas_candidatas(proyecto_id: str, limite: int = Query(20, ge=1, le=200)):
-    """Candidatas para asignar: primero disponibles, luego abiertas cuya toma superó el plazo del lock."""
+def consultar_tareas(
+    proyecto_id: str | None = None,
+    actualizada_desde: datetime | None = None,
+    limite: int = Query(20, ge=1, le=1000),
+):
+    """Candidatas de un proyecto (ADR-005) o tareas modificadas desde un instante para la conciliación (ADR-007)."""
+    if actualizada_desde is not None:
+        desde = utc(actualizada_desde)
+        docs = list(
+            db.tareas.find(
+                {"actualizada_en": {"$gte": desde}, "ultimo_evento": {"$ne": None}},
+                {"ultimo_evento": 1, "actualizada_en": 1},
+            )
+            .sort([("actualizada_en", 1), ("_id", 1)])
+            .limit(limite)
+        )
+        return {
+            "tareas": [
+                {"tarea_id": d["_id"], "actualizada_en": utc(d["actualizada_en"]), "ultimo_evento": d["ultimo_evento"]}
+                for d in docs
+            ]
+        }
+    if proyecto_id is None:
+        raise HTTPException(422, "se requiere proyecto_id o actualizada_desde")
+
     proyeccion = {"_id": 1, "estado": 1, "asignacion.token": 1}
     candidatas = list(
         db.tareas.find({"proyecto_id": proyecto_id, "estado": "disponible"}, proyeccion)
@@ -147,15 +170,26 @@ def tareas_candidatas(proyecto_id: str, limite: int = Query(20, ge=1, le=200)):
 
 
 @app.post("/tareas/{tarea_id}/transicion")
-def aplicar_transicion(tarea_id: str, transicion: TransicionIn):
-    filtro, actualizacion = construir(tarea_id, transicion, ahora_utc())
-    tarea = db.tareas.find_one_and_update(filtro, actualizacion, return_document=ReturnDocument.AFTER)
+def aplicar_transicion(
+    tarea_id: str,
+    transicion: TransicionIn,
+    x_correlation_id: str | None = Header(default=None),
+):
+    tarea = db.tareas.find_one({"_id": tarea_id})
     if tarea is None:
+        raise HTTPException(404, "tarea no encontrada")
+    try:
+        filtro, actualizacion, evento = preparar(tarea, transicion, ahora_utc(), x_correlation_id or "")
+    except TransicionInvalida as exc:
+        raise HTTPException(409, {"mensaje": str(exc), "estado_actual": tarea["estado"]})
+
+    actualizada = db.tareas.find_one_and_update(filtro, actualizacion, return_document=ReturnDocument.AFTER)
+    if actualizada is None:
         actual = db.tareas.find_one({"_id": tarea_id}, {"estado": 1})
-        if actual is None:
-            raise HTTPException(404, "tarea no encontrada")
-        raise HTTPException(409, {"mensaje": "transición no válida", "estado_actual": actual["estado"]})
-    return salida_tarea(tarea)
+        raise HTTPException(
+            409, {"mensaje": "la tarea cambió durante la transición", "estado_actual": actual and actual["estado"]}
+        )
+    return {"tarea": salida_tarea(actualizada), "evento": evento}
 
 
 @app.get("/proyectos/{proyecto_id}/exportar")

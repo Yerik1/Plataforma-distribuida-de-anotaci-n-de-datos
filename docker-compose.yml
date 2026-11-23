@@ -77,12 +77,26 @@ services:
     environment:
       REGISTRO_URL: http://registro:8000
       SESION_URL: http://sesion:8000
+      HISTORIAL_URL: http://historial:8000
       VALKEY_HOST: valkey
-      CAPAS: registro,sesion
+      CAPAS: registro,sesion,historial
       CAPAS_CRITICAS: registro,sesion
     networks: [publica, interna]
     restart: unless-stopped
-    depends_on: [registro, sesion]
+    depends_on: [registro, sesion, historial]
+
+  historial:
+    build: ./servicios/historial
+    environment:
+      VALKEY_HOST: valkey
+      DATALAKE: /datalake
+      LOTE_EVENTOS: ${LOTE_EVENTOS:-500}
+      LOTE_SEGUNDOS: ${LOTE_SEGUNDOS:-2}
+    volumes: [./datalake:/datalake]
+    networks: [interna]
+    restart: unless-stopped
+    depends_on:
+      valkey: {condition: service_healthy}
 
   generador-catalogo:
     build: ./dataset
@@ -102,6 +116,15 @@ services:
     networks: [interna]
     depends_on:
       mongo-init: {condition: service_completed_successfully}
+
+  generador-historial:
+    build: ./dataset
+    profiles: [datos]
+    entrypoint: [python, generador_historial.py, --salida, /datalake/eventos, --evidencia, /evidence]
+    volumes:
+      - ./datalake:/datalake
+      - ./evidence:/evidence
+    networks: [interna]
 
   spark-master:
     image: spark:3.5.9-java17-python3
