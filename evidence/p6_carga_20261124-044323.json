@@ -1,0 +1,5297 @@
+{
+  "fecha_utc": "2026-11-24T04:43:23.354299+00:00",
+  "objetivo": "Latencias p50/p95/p99 por endpoint, envíos por minuto, errores y docker stats con 10, 40 y 100 usuarios",
+  "configuracion": {
+    "niveles": [
+      10,
+      40,
+      100
+    ],
+    "calentamiento_s": 30,
+    "duracion_s": 90,
+    "corridas": 3,
+    "maquina": {
+      "sistema": "Windows-11-10.0.26200-SP0",
+      "procesador": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+      "cpus": 8,
+      "python": "3.13.2"
+    },
+    "gateway": "http://localhost:8000"
+  },
+  "comando": "python.exe pruebas/p6_carga.py",
+  "resultado": {
+    "niveles": {
+      "10": [
+        {
+          "endpoints": {
+            "/tareas/[id]/borrador": {
+              "solicitudes": 248,
+              "fallas": 0,
+              "p50_ms": 13.0,
+              "p95_ms": 57.0,
+              "p99_ms": 86.0,
+              "solicitudes_por_s": 2.82702272401291
+            },
+            "/tareas/[id]/enviar": {
+              "solicitudes": 243,
+              "fallas": 0,
+              "p50_ms": 85.0,
+              "p95_ms": 170.0,
+              "p99_ms": 420.0,
+              "solicitudes_por_s": 2.770026298125553
+            },
+            "/tareas/[id]/revision aprobar": {
+              "solicitudes": 50,
+              "fallas": 0,
+              "p50_ms": 66.0,
+              "p95_ms": 79.0,
+              "p99_ms": 97.0,
+              "solicitudes_por_s": 0.5699642588735705
+            },
+            "/tareas/[id]/revision iniciar": {
+              "solicitudes": 75,
+              "fallas": 0,
+              "p50_ms": 67.0,
+              "p95_ms": 120.0,
+              "p99_ms": 690.0,
+              "solicitudes_por_s": 0.8549463883103557
+            },
+            "/tareas/[id]/revision rechazar": {
+              "solicitudes": 25,
+              "fallas": 0,
+              "p50_ms": 67.0,
+              "p95_ms": 110.0,
+              "p99_ms": 110.0,
+              "solicitudes_por_s": 0.28498212943678525
+            },
+            "/tareas/siguiente": {
+              "solicitudes": 248,
+              "fallas": 0,
+              "p50_ms": 83.0,
+              "p95_ms": 160.0,
+              "p99_ms": 290.0,
+              "solicitudes_por_s": 2.82702272401291
+            }
+          },
+          "envios_exitosos_por_minuto": 162.0,
+          "tasa_error": 0.0,
+          "docker_stats": [
+            {
+              "t": 1795494502.8,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.28%",
+              "memoria": "322.9MiB / 3GiB"
+            },
+            {
+              "t": 1795494502.8,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.13%",
+              "memoria": "139.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494502.8,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.47%",
+              "memoria": "349.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494502.8,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "0.15%",
+              "memoria": "42.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494502.8,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.42%",
+              "memoria": "53.51MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494502.8,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "0.14%",
+              "memoria": "44.27MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494502.8,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "0.35%",
+              "memoria": "43.11MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494502.8,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "2.62%",
+              "memoria": "305.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494502.8,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "1.00%",
+              "memoria": "283.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494502.8,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "0.99%",
+              "memoria": "251.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494502.8,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "0.39%",
+              "memoria": "10.49MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494515.1,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "3.01%",
+              "memoria": "322.9MiB / 3GiB"
+            },
+            {
+              "t": 1795494515.1,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.34%",
+              "memoria": "140MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494515.1,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "1.35%",
+              "memoria": "349.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494515.1,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "10.53%",
+              "memoria": "42.94MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494515.1,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.90%",
+              "memoria": "53.55MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494515.1,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "4.09%",
+              "memoria": "44.28MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494515.1,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "3.63%",
+              "memoria": "43.17MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494515.1,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "4.74%",
+              "memoria": "305.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494515.1,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "5.63%",
+              "memoria": "283.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494515.1,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "6.56%",
+              "memoria": "251MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494515.1,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "3.69%",
+              "memoria": "10.57MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494527.5,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.25%",
+              "memoria": "322.9MiB / 3GiB"
+            },
+            {
+              "t": 1795494527.5,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.14%",
+              "memoria": "140MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494527.5,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.43%",
+              "memoria": "349.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494527.5,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "15.21%",
+              "memoria": "43.19MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494527.5,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.56%",
+              "memoria": "53.55MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494527.5,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "4.83%",
+              "memoria": "44.26MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494527.5,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "3.83%",
+              "memoria": "43.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494527.5,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "72.67%",
+              "memoria": "305.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494527.5,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "5.68%",
+              "memoria": "283.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494527.5,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "9.02%",
+              "memoria": "251.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494527.5,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.14%",
+              "memoria": "10.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494539.9,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.27%",
+              "memoria": "322.9MiB / 3GiB"
+            },
+            {
+              "t": 1795494539.9,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.11%",
+              "memoria": "140.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494539.9,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.47%",
+              "memoria": "349.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494539.9,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "16.65%",
+              "memoria": "44.05MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494539.9,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.51%",
+              "memoria": "53.56MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494539.9,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "4.31%",
+              "memoria": "44.26MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494539.9,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "4.64%",
+              "memoria": "43.21MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494539.9,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "102.57%",
+              "memoria": "305.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494539.9,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "70.98%",
+              "memoria": "283.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494539.9,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "56.61%",
+              "memoria": "376MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494539.9,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.30%",
+              "memoria": "10.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494552.3,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.35%",
+              "memoria": "323MiB / 3GiB"
+            },
+            {
+              "t": 1795494552.3,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.37%",
+              "memoria": "140.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494552.3,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.57%",
+              "memoria": "349.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494552.3,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "16.59%",
+              "memoria": "44.29MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494552.3,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.38%",
+              "memoria": "53.57MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494552.3,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "5.96%",
+              "memoria": "44.27MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494552.3,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "4.66%",
+              "memoria": "43.24MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494552.3,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "8.36%",
+              "memoria": "305.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494552.3,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "7.52%",
+              "memoria": "283.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494552.3,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "91.15%",
+              "memoria": "395.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494552.3,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.74%",
+              "memoria": "10.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494564.0,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.45%",
+              "memoria": "323MiB / 3GiB"
+            },
+            {
+              "t": 1795494564.0,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.13%",
+              "memoria": "140.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494564.0,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.93%",
+              "memoria": "349.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494564.0,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "12.51%",
+              "memoria": "44.05MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494564.0,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.46%",
+              "memoria": "53.58MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494564.0,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "4.80%",
+              "memoria": "44.27MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494564.0,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "4.46%",
+              "memoria": "43.28MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494564.0,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "5.27%",
+              "memoria": "305.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494564.0,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "5.13%",
+              "memoria": "282.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494564.0,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "67.59%",
+              "memoria": "399.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494564.0,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.12%",
+              "memoria": "10.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494576.3,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.25%",
+              "memoria": "323MiB / 3GiB"
+            },
+            {
+              "t": 1795494576.3,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.23%",
+              "memoria": "140.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494576.3,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.89%",
+              "memoria": "349.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494576.3,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "18.76%",
+              "memoria": "44.55MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494576.3,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.62%",
+              "memoria": "53.58MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494576.3,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "6.86%",
+              "memoria": "44.27MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494576.3,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "5.86%",
+              "memoria": "43.35MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494576.3,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "7.88%",
+              "memoria": "305.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494576.3,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "83.20%",
+              "memoria": "282.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494576.3,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "28.55%",
+              "memoria": "253.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494576.3,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.01%",
+              "memoria": "10.52MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494589.0,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.37%",
+              "memoria": "323.1MiB / 3GiB"
+            },
+            {
+              "t": 1795494589.0,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.12%",
+              "memoria": "140.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494589.0,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.74%",
+              "memoria": "349.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494589.0,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "14.55%",
+              "memoria": "44.29MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494589.0,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.67%",
+              "memoria": "53.59MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494589.0,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "5.14%",
+              "memoria": "44.27MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494589.0,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "4.56%",
+              "memoria": "43.35MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494589.0,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "6.78%",
+              "memoria": "304.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494589.0,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "74.37%",
+              "memoria": "282.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494589.0,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "20.07%",
+              "memoria": "253.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494589.0,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.71%",
+              "memoria": "10.52MiB / 5.295GiB"
+            }
+          ],
+          "csv": "C:\\Users\\Josepa\\BDA\\Plataforma-distribuida-de-anotaci-n-de-datos\\evidence\\carga\\20261123-222745_u10_c1_stats.csv"
+        },
+        {
+          "endpoints": {
+            "/tareas/[id]/borrador": {
+              "solicitudes": 247,
+              "fallas": 0,
+              "p50_ms": 13.0,
+              "p95_ms": 91.0,
+              "p99_ms": 230.0,
+              "solicitudes_por_s": 2.7959374487944997
+            },
+            "/tareas/[id]/enviar": {
+              "solicitudes": 238,
+              "fallas": 0,
+              "p50_ms": 94.0,
+              "p95_ms": 280.0,
+              "p99_ms": 460.0,
+              "solicitudes_por_s": 2.694061185478101
+            },
+            "/tareas/[id]/revision aprobar": {
+              "solicitudes": 40,
+              "fallas": 0,
+              "p50_ms": 66.0,
+              "p95_ms": 170.0,
+              "p99_ms": 240.0,
+              "solicitudes_por_s": 0.45278339251732785
+            },
+            "/tareas/[id]/revision iniciar": {
+              "solicitudes": 68,
+              "fallas": 0,
+              "p50_ms": 68.0,
+              "p95_ms": 230.0,
+              "p99_ms": 870.0,
+              "solicitudes_por_s": 0.7697317672794574
+            },
+            "/tareas/[id]/revision rechazar": {
+              "solicitudes": 28,
+              "fallas": 0,
+              "p50_ms": 71.0,
+              "p95_ms": 140.0,
+              "p99_ms": 280.0,
+              "solicitudes_por_s": 0.3169483747621295
+            },
+            "/tareas/siguiente": {
+              "solicitudes": 247,
+              "fallas": 0,
+              "p50_ms": 90.0,
+              "p95_ms": 610.0,
+              "p99_ms": 1100.0,
+              "solicitudes_por_s": 2.7959374487944997
+            }
+          },
+          "envios_exitosos_por_minuto": 158.7,
+          "tasa_error": 0.0,
+          "docker_stats": [
+            {
+              "t": 1795494594.5,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.29%",
+              "memoria": "323.1MiB / 3GiB"
+            },
+            {
+              "t": 1795494594.5,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.18%",
+              "memoria": "140.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494594.5,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.78%",
+              "memoria": "349.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494594.5,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "0.19%",
+              "memoria": "44.03MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494594.5,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "2.13%",
+              "memoria": "53.59MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494594.5,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "0.37%",
+              "memoria": "44.27MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494594.5,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "0.33%",
+              "memoria": "43.35MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494594.5,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "3.43%",
+              "memoria": "304.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494594.5,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "96.48%",
+              "memoria": "425.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494594.5,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "118.66%",
+              "memoria": "253.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494594.5,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "0.54%",
+              "memoria": "10.52MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494607.5,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.40%",
+              "memoria": "323.1MiB / 3GiB"
+            },
+            {
+              "t": 1795494607.5,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.13%",
+              "memoria": "140.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494607.5,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.71%",
+              "memoria": "349.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494607.5,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "16.35%",
+              "memoria": "44.73MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494607.5,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.64%",
+              "memoria": "53.59MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494607.5,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "5.81%",
+              "memoria": "44.31MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494607.5,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "4.10%",
+              "memoria": "43.68MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494607.5,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "8.94%",
+              "memoria": "305.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494607.5,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "7.52%",
+              "memoria": "284.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494607.5,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "9.77%",
+              "memoria": "254MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494607.5,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "7.39%",
+              "memoria": "10.52MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494620.0,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.61%",
+              "memoria": "323.1MiB / 3GiB"
+            },
+            {
+              "t": 1795494620.0,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.60%",
+              "memoria": "140.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494620.0,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.72%",
+              "memoria": "349.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494620.0,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "18.91%",
+              "memoria": "44.47MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494620.0,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.56%",
+              "memoria": "53.59MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494620.0,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "7.93%",
+              "memoria": "44.56MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494620.0,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "5.28%",
+              "memoria": "43.36MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494620.0,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "8.18%",
+              "memoria": "305.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494620.0,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "7.24%",
+              "memoria": "285MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494620.0,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "9.81%",
+              "memoria": "254.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494620.0,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "2.16%",
+              "memoria": "10.53MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494632.3,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.29%",
+              "memoria": "323.1MiB / 3GiB"
+            },
+            {
+              "t": 1795494632.3,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.23%",
+              "memoria": "140.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494632.3,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.55%",
+              "memoria": "349.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494632.3,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "16.61%",
+              "memoria": "44.96MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494632.3,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.73%",
+              "memoria": "53.59MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494632.3,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "7.65%",
+              "memoria": "44.28MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494632.3,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "4.83%",
+              "memoria": "43.37MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494632.3,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "9.17%",
+              "memoria": "305MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494632.3,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "15.87%",
+              "memoria": "285.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494632.3,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "8.53%",
+              "memoria": "254.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494632.3,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.45%",
+              "memoria": "10.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494644.2,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "1.68%",
+              "memoria": "323.1MiB / 3GiB"
+            },
+            {
+              "t": 1795494644.2,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.49%",
+              "memoria": "140.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494644.2,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.61%",
+              "memoria": "349.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494644.2,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "12.05%",
+              "memoria": "44.47MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494644.2,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.40%",
+              "memoria": "53.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494644.2,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "4.97%",
+              "memoria": "44.31MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494644.2,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "4.11%",
+              "memoria": "43.34MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494644.2,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "6.73%",
+              "memoria": "304.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494644.2,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "7.06%",
+              "memoria": "285.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494644.2,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "7.87%",
+              "memoria": "253.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494644.2,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.19%",
+              "memoria": "10.55MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494656.7,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "2.18%",
+              "memoria": "323.2MiB / 3GiB"
+            },
+            {
+              "t": 1795494656.7,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.19%",
+              "memoria": "140.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494656.7,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "1.32%",
+              "memoria": "349.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494656.7,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "13.97%",
+              "memoria": "44.47MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494656.7,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.35%",
+              "memoria": "53.61MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494656.7,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "7.22%",
+              "memoria": "44.32MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494656.7,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "4.84%",
+              "memoria": "43.38MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494656.7,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "4.85%",
+              "memoria": "304.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494656.7,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "7.10%",
+              "memoria": "286.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494656.7,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "8.57%",
+              "memoria": "253.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494656.7,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.60%",
+              "memoria": "10.56MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494669.1,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.35%",
+              "memoria": "323.2MiB / 3GiB"
+            },
+            {
+              "t": 1795494669.1,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.16%",
+              "memoria": "140.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494669.1,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "3.45%",
+              "memoria": "349.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494669.1,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "13.59%",
+              "memoria": "44.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494669.1,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.51%",
+              "memoria": "53.61MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494669.1,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "6.00%",
+              "memoria": "44.29MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494669.1,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "4.46%",
+              "memoria": "43.48MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494669.1,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "5.64%",
+              "memoria": "306.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494669.1,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "5.74%",
+              "memoria": "287.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494669.1,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "7.88%",
+              "memoria": "254.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494669.1,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.36%",
+              "memoria": "10.56MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494681.5,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.29%",
+              "memoria": "323.2MiB / 3GiB"
+            },
+            {
+              "t": 1795494681.5,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.12%",
+              "memoria": "140.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494681.5,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.72%",
+              "memoria": "349.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494681.5,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "13.88%",
+              "memoria": "44.46MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494681.5,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.36%",
+              "memoria": "53.62MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494681.5,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "6.50%",
+              "memoria": "44.29MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494681.5,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "3.54%",
+              "memoria": "43.44MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494681.5,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "10.31%",
+              "memoria": "306.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494681.5,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "61.06%",
+              "memoria": "427.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494681.5,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "65.52%",
+              "memoria": "395.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494681.5,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.30%",
+              "memoria": "10.56MiB / 5.295GiB"
+            }
+          ],
+          "csv": "C:\\Users\\Josepa\\BDA\\Plataforma-distribuida-de-anotaci-n-de-datos\\evidence\\carga\\20261123-222745_u10_c2_stats.csv"
+        },
+        {
+          "endpoints": {
+            "/tareas/[id]/borrador": {
+              "solicitudes": 247,
+              "fallas": 0,
+              "p50_ms": 13.0,
+              "p95_ms": 56.0,
+              "p99_ms": 180.0,
+              "solicitudes_por_s": 2.8187978688842605
+            },
+            "/tareas/[id]/enviar": {
+              "solicitudes": 240,
+              "fallas": 0,
+              "p50_ms": 88.0,
+              "p95_ms": 190.0,
+              "p99_ms": 350.0,
+              "solicitudes_por_s": 2.7389129090373383
+            },
+            "/tareas/[id]/revision aprobar": {
+              "solicitudes": 53,
+              "fallas": 0,
+              "p50_ms": 67.0,
+              "p95_ms": 120.0,
+              "p99_ms": 160.0,
+              "solicitudes_por_s": 0.6048432674124122
+            },
+            "/tareas/[id]/revision iniciar": {
+              "solicitudes": 74,
+              "fallas": 0,
+              "p50_ms": 67.0,
+              "p95_ms": 95.0,
+              "p99_ms": 200.0,
+              "solicitudes_por_s": 0.8444981469531793
+            },
+            "/tareas/[id]/revision rechazar": {
+              "solicitudes": 21,
+              "fallas": 0,
+              "p50_ms": 69.0,
+              "p95_ms": 95.0,
+              "p99_ms": 120.0,
+              "solicitudes_por_s": 0.23965487954076709
+            },
+            "/tareas/siguiente": {
+              "solicitudes": 247,
+              "fallas": 0,
+              "p50_ms": 82.0,
+              "p95_ms": 140.0,
+              "p99_ms": 820.0,
+              "solicitudes_por_s": 2.8187978688842605
+            }
+          },
+          "envios_exitosos_por_minuto": 160.0,
+          "tasa_error": 0.0,
+          "docker_stats": [
+            {
+              "t": 1795494688.4,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.39%",
+              "memoria": "323.2MiB / 3GiB"
+            },
+            {
+              "t": 1795494688.4,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.21%",
+              "memoria": "140.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494688.4,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.58%",
+              "memoria": "349.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494688.4,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "0.18%",
+              "memoria": "44.46MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494688.4,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.26%",
+              "memoria": "53.61MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494688.4,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "0.19%",
+              "memoria": "44.29MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494688.4,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "0.25%",
+              "memoria": "43.44MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494688.4,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "1.43%",
+              "memoria": "306.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494688.4,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "58.35%",
+              "memoria": "286.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494688.4,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "62.76%",
+              "memoria": "255.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494688.4,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "3.69%",
+              "memoria": "10.57MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494700.8,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.25%",
+              "memoria": "323.3MiB / 3GiB"
+            },
+            {
+              "t": 1795494700.8,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "1.70%",
+              "memoria": "140.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494700.8,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "1.22%",
+              "memoria": "349.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494700.8,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "14.50%",
+              "memoria": "44.47MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494700.8,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.34%",
+              "memoria": "53.62MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494700.8,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "5.46%",
+              "memoria": "44.29MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494700.8,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "3.64%",
+              "memoria": "43.48MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494700.8,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "61.51%",
+              "memoria": "452.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494700.8,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "5.82%",
+              "memoria": "285.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494700.8,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "6.67%",
+              "memoria": "255.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494700.8,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.16%",
+              "memoria": "10.55MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494714.0,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.99%",
+              "memoria": "323.3MiB / 3GiB"
+            },
+            {
+              "t": 1795494714.0,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.18%",
+              "memoria": "140.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494714.0,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "1.00%",
+              "memoria": "349.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494714.0,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "43.79%",
+              "memoria": "44.98MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494714.0,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.36%",
+              "memoria": "53.61MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494714.0,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "12.14%",
+              "memoria": "44.29MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494714.0,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "7.94%",
+              "memoria": "43.41MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494714.0,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "134.93%",
+              "memoria": "452.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494714.0,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "14.93%",
+              "memoria": "285.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494714.0,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "17.91%",
+              "memoria": "255.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494714.0,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.48%",
+              "memoria": "10.55MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494726.5,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.28%",
+              "memoria": "323.3MiB / 3GiB"
+            },
+            {
+              "t": 1795494726.5,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.13%",
+              "memoria": "140.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494726.5,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "10.98%",
+              "memoria": "349.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494726.5,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "20.18%",
+              "memoria": "44.73MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494726.5,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.98%",
+              "memoria": "53.61MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494726.5,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "3.24%",
+              "memoria": "44.29MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494726.5,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "5.86%",
+              "memoria": "43.45MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494726.5,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "97.85%",
+              "memoria": "367.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494726.5,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "42.44%",
+              "memoria": "284.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494726.5,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "7.02%",
+              "memoria": "258MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494726.5,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.08%",
+              "memoria": "10.56MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494738.9,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.26%",
+              "memoria": "323.3MiB / 3GiB"
+            },
+            {
+              "t": 1795494738.9,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.11%",
+              "memoria": "140.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494738.9,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.51%",
+              "memoria": "349.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494738.9,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "9.84%",
+              "memoria": "44.74MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494738.9,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.34%",
+              "memoria": "53.61MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494738.9,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "3.54%",
+              "memoria": "44.33MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494738.9,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "2.57%",
+              "memoria": "43.46MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494738.9,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "20.25%",
+              "memoria": "427.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494738.9,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "3.93%",
+              "memoria": "284.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494738.9,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "4.85%",
+              "memoria": "258MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494738.9,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "2.81%",
+              "memoria": "10.56MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494751.3,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.25%",
+              "memoria": "323.3MiB / 3GiB"
+            },
+            {
+              "t": 1795494751.3,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.16%",
+              "memoria": "140.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494751.3,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.89%",
+              "memoria": "349.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494751.3,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "19.49%",
+              "memoria": "44.48MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494751.3,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.56%",
+              "memoria": "53.61MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494751.3,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "6.90%",
+              "memoria": "44.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494751.3,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "4.79%",
+              "memoria": "43.45MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494751.3,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "84.24%",
+              "memoria": "307.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494751.3,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "7.62%",
+              "memoria": "284.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494751.3,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "8.04%",
+              "memoria": "257.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494751.3,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.40%",
+              "memoria": "10.56MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494763.3,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.37%",
+              "memoria": "323.3MiB / 3GiB"
+            },
+            {
+              "t": 1795494763.3,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.24%",
+              "memoria": "140.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494763.3,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.47%",
+              "memoria": "349.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494763.3,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "13.65%",
+              "memoria": "44.48MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494763.3,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.65%",
+              "memoria": "53.61MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494763.3,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "6.54%",
+              "memoria": "44.33MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494763.3,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "3.85%",
+              "memoria": "43.42MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494763.3,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "17.29%",
+              "memoria": "308.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494763.3,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "6.35%",
+              "memoria": "284.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494763.3,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "7.08%",
+              "memoria": "257.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494763.3,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.37%",
+              "memoria": "10.55MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494775.4,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "1.46%",
+              "memoria": "323.4MiB / 3GiB"
+            },
+            {
+              "t": 1795494775.4,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.17%",
+              "memoria": "140.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494775.4,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "2.04%",
+              "memoria": "349.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494775.4,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "10.91%",
+              "memoria": "44.47MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494775.4,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.44%",
+              "memoria": "53.62MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494775.4,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "4.98%",
+              "memoria": "44.34MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494775.4,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "3.31%",
+              "memoria": "43.42MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494775.4,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "5.51%",
+              "memoria": "309.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494775.4,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "6.05%",
+              "memoria": "284.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494775.4,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "6.38%",
+              "memoria": "257.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494775.4,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "1.17%",
+              "memoria": "10.55MiB / 5.295GiB"
+            }
+          ],
+          "csv": "C:\\Users\\Josepa\\BDA\\Plataforma-distribuida-de-anotaci-n-de-datos\\evidence\\carga\\20261123-222745_u10_c3_stats.csv"
+        }
+      ],
+      "40": [
+        {
+          "endpoints": {
+            "/tareas/[id]/borrador": {
+              "solicitudes": 899,
+              "fallas": 0,
+              "p50_ms": 34.0,
+              "p95_ms": 260.0,
+              "p99_ms": 420.0,
+              "solicitudes_por_s": 10.093729726584879
+            },
+            "/tareas/[id]/enviar": {
+              "solicitudes": 879,
+              "fallas": 0,
+              "p50_ms": 170.0,
+              "p95_ms": 790.0,
+              "p99_ms": 1100.0,
+              "solicitudes_por_s": 9.869175116427263
+            },
+            "/tareas/[id]/revision aprobar": {
+              "solicitudes": 196,
+              "fallas": 0,
+              "p50_ms": 82.0,
+              "p95_ms": 400.0,
+              "p99_ms": 520.0,
+              "solicitudes_por_s": 2.2006351795446455
+            },
+            "/tareas/[id]/revision iniciar": {
+              "solicitudes": 269,
+              "fallas": 0,
+              "p50_ms": 87.0,
+              "p95_ms": 380.0,
+              "p99_ms": 640.0,
+              "solicitudes_por_s": 3.020259506619947
+            },
+            "/tareas/[id]/revision rechazar": {
+              "solicitudes": 73,
+              "fallas": 0,
+              "p50_ms": 100.0,
+              "p95_ms": 370.0,
+              "p99_ms": 410.0,
+              "solicitudes_por_s": 0.8196243270753016
+            },
+            "/tareas/siguiente": {
+              "solicitudes": 901,
+              "fallas": 0,
+              "p50_ms": 160.0,
+              "p95_ms": 880.0,
+              "p99_ms": 1300.0,
+              "solicitudes_por_s": 10.11618518760064
+            }
+          },
+          "envios_exitosos_por_minuto": 586.0,
+          "tasa_error": 0.0,
+          "docker_stats": [
+            {
+              "t": 1795494813.7,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.31%",
+              "memoria": "323.4MiB / 3GiB"
+            },
+            {
+              "t": 1795494813.7,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.18%",
+              "memoria": "141MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494813.7,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.57%",
+              "memoria": "349.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494813.7,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "0.17%",
+              "memoria": "46.86MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494813.7,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.28%",
+              "memoria": "53.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494813.7,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "0.16%",
+              "memoria": "44.37MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494813.7,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "0.31%",
+              "memoria": "43.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494813.7,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "1.55%",
+              "memoria": "310MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494813.7,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "1.68%",
+              "memoria": "284.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494813.7,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "1.78%",
+              "memoria": "256.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494813.7,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "0.35%",
+              "memoria": "11.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494825.4,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "1.09%",
+              "memoria": "323.4MiB / 3GiB"
+            },
+            {
+              "t": 1795494825.4,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.16%",
+              "memoria": "141MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494825.4,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "1.58%",
+              "memoria": "349.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494825.4,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "64.11%",
+              "memoria": "47.18MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494825.4,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.37%",
+              "memoria": "53.91MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494825.4,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "20.14%",
+              "memoria": "44.38MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494825.4,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "11.75%",
+              "memoria": "43.47MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494825.4,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "103.39%",
+              "memoria": "310.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494825.4,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "15.29%",
+              "memoria": "284.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494825.4,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "21.54%",
+              "memoria": "256.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494825.4,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "3.73%",
+              "memoria": "10.71MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494837.9,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "1.42%",
+              "memoria": "323.4MiB / 3GiB"
+            },
+            {
+              "t": 1795494837.9,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.12%",
+              "memoria": "141MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494837.9,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.65%",
+              "memoria": "349.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494837.9,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "75.15%",
+              "memoria": "46.94MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494837.9,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.42%",
+              "memoria": "53.96MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494837.9,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "27.15%",
+              "memoria": "44.38MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494837.9,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "17.59%",
+              "memoria": "43.51MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494837.9,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "131.70%",
+              "memoria": "470MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494837.9,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "18.84%",
+              "memoria": "285.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494837.9,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "25.61%",
+              "memoria": "257.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494837.9,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "10.96%",
+              "memoria": "10.73MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494850.4,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.36%",
+              "memoria": "323.5MiB / 3GiB"
+            },
+            {
+              "t": 1795494850.4,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.14%",
+              "memoria": "141.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494850.4,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.64%",
+              "memoria": "349.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494850.4,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "94.75%",
+              "memoria": "46.94MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494850.4,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.64%",
+              "memoria": "53.97MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494850.4,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "26.28%",
+              "memoria": "44.38MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494850.4,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "19.84%",
+              "memoria": "43.48MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494850.4,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "118.37%",
+              "memoria": "470MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494850.4,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "33.41%",
+              "memoria": "285.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494850.4,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "26.75%",
+              "memoria": "259.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494850.4,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.78%",
+              "memoria": "10.73MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494863.0,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.35%",
+              "memoria": "323.5MiB / 3GiB"
+            },
+            {
+              "t": 1795494863.0,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.13%",
+              "memoria": "141.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494863.0,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.57%",
+              "memoria": "349.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494863.0,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "88.38%",
+              "memoria": "47.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494863.0,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "4.38%",
+              "memoria": "53.98MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494863.0,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "30.03%",
+              "memoria": "44.63MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494863.0,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "16.78%",
+              "memoria": "43.51MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494863.0,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "110.94%",
+              "memoria": "318.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494863.0,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "17.11%",
+              "memoria": "285.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494863.0,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "23.46%",
+              "memoria": "261.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494863.0,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "11.89%",
+              "memoria": "10.76MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494875.5,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "2.56%",
+              "memoria": "323.5MiB / 3GiB"
+            },
+            {
+              "t": 1795494875.5,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.27%",
+              "memoria": "141.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494875.5,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "6.96%",
+              "memoria": "349.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494875.5,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "76.59%",
+              "memoria": "46.97MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494875.5,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "2.60%",
+              "memoria": "53.98MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494875.5,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "23.83%",
+              "memoria": "44.98MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494875.5,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "16.44%",
+              "memoria": "44.39MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494875.5,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "97.23%",
+              "memoria": "318MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494875.5,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "16.61%",
+              "memoria": "285.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494875.5,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "24.65%",
+              "memoria": "271.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494875.5,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "3.97%",
+              "memoria": "10.88MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494887.9,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.28%",
+              "memoria": "323.5MiB / 3GiB"
+            },
+            {
+              "t": 1795494887.9,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.14%",
+              "memoria": "141.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494887.9,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.60%",
+              "memoria": "349.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494887.9,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "65.10%",
+              "memoria": "47.22MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494887.9,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.31%",
+              "memoria": "54MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494887.9,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "21.84%",
+              "memoria": "44.96MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494887.9,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "16.07%",
+              "memoria": "44.69MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494887.9,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "64.62%",
+              "memoria": "317.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494887.9,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "16.26%",
+              "memoria": "285.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494887.9,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "23.45%",
+              "memoria": "272.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494887.9,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "5.25%",
+              "memoria": "10.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494900.4,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.26%",
+              "memoria": "323.6MiB / 3GiB"
+            },
+            {
+              "t": 1795494900.4,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.13%",
+              "memoria": "141.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494900.4,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.57%",
+              "memoria": "349.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494900.4,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "61.89%",
+              "memoria": "46.94MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494900.4,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.26%",
+              "memoria": "54MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494900.4,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "23.47%",
+              "memoria": "45.06MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494900.4,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "15.18%",
+              "memoria": "44.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494900.4,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "59.13%",
+              "memoria": "317.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494900.4,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "16.59%",
+              "memoria": "286MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494900.4,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "22.35%",
+              "memoria": "272MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494900.4,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "3.91%",
+              "memoria": "10.84MiB / 5.295GiB"
+            }
+          ],
+          "csv": "C:\\Users\\Josepa\\BDA\\Plataforma-distribuida-de-anotaci-n-de-datos\\evidence\\carga\\20261123-222745_u40_c1_stats.csv"
+        },
+        {
+          "endpoints": {
+            "/tareas/[id]/borrador": {
+              "solicitudes": 805,
+              "fallas": 0,
+              "p50_ms": 46.0,
+              "p95_ms": 450.0,
+              "p99_ms": 980.0,
+              "solicitudes_por_s": 8.997459489224521
+            },
+            "/tareas/[id]/enviar": {
+              "solicitudes": 794,
+              "fallas": 0,
+              "p50_ms": 160.0,
+              "p95_ms": 1600.0,
+              "p99_ms": 3400.0,
+              "solicitudes_por_s": 8.874512837818969
+            },
+            "/tareas/[id]/revision aprobar": {
+              "solicitudes": 174,
+              "fallas": 0,
+              "p50_ms": 93.0,
+              "p95_ms": 750.0,
+              "p99_ms": 1400.0,
+              "solicitudes_por_s": 1.944792485869648
+            },
+            "/tareas/[id]/revision iniciar": {
+              "solicitudes": 242,
+              "fallas": 0,
+              "p50_ms": 89.0,
+              "p95_ms": 760.0,
+              "p99_ms": 1500.0,
+              "solicitudes_por_s": 2.704826330922154
+            },
+            "/tareas/[id]/revision rechazar": {
+              "solicitudes": 68,
+              "fallas": 0,
+              "p50_ms": 87.0,
+              "p95_ms": 900.0,
+              "p99_ms": 990.0,
+              "solicitudes_por_s": 0.760033845052506
+            },
+            "/tareas/siguiente": {
+              "solicitudes": 810,
+              "fallas": 0,
+              "p50_ms": 160.0,
+              "p95_ms": 2000.0,
+              "p99_ms": 3300.0,
+              "solicitudes_por_s": 9.053344330772498
+            }
+          },
+          "envios_exitosos_por_minuto": 529.3,
+          "tasa_error": 0.0,
+          "docker_stats": [
+            {
+              "t": 1795494906.4,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.28%",
+              "memoria": "323.6MiB / 3GiB"
+            },
+            {
+              "t": 1795494906.4,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.12%",
+              "memoria": "141.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494906.4,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.79%",
+              "memoria": "349.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494906.4,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "0.15%",
+              "memoria": "46.87MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494906.4,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.18%",
+              "memoria": "54MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494906.4,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "0.23%",
+              "memoria": "44.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494906.4,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "0.47%",
+              "memoria": "44.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494906.4,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "18.83%",
+              "memoria": "317.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494906.4,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "1.35%",
+              "memoria": "286.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494906.4,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "17.87%",
+              "memoria": "282.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494906.4,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "0.37%",
+              "memoria": "10.83MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494918.9,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.31%",
+              "memoria": "323.6MiB / 3GiB"
+            },
+            {
+              "t": 1795494918.9,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.15%",
+              "memoria": "141.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494918.9,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.51%",
+              "memoria": "349.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494918.9,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "43.80%",
+              "memoria": "46.94MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494918.9,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "2.45%",
+              "memoria": "54.01MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494918.9,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "17.03%",
+              "memoria": "45.12MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494918.9,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "12.54%",
+              "memoria": "44.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494918.9,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "61.46%",
+              "memoria": "319.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494918.9,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "14.42%",
+              "memoria": "287.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494918.9,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "47.67%",
+              "memoria": "281.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494918.9,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "5.61%",
+              "memoria": "10.84MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494931.4,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "1.06%",
+              "memoria": "323.7MiB / 3GiB"
+            },
+            {
+              "t": 1795494931.4,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.18%",
+              "memoria": "141.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494931.4,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "1.43%",
+              "memoria": "349.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494931.4,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "90.16%",
+              "memoria": "46.95MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494931.4,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.94%",
+              "memoria": "54MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494931.4,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "27.74%",
+              "memoria": "45.09MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494931.4,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "22.77%",
+              "memoria": "44.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494931.4,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "52.55%",
+              "memoria": "321.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494931.4,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "20.36%",
+              "memoria": "286.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494931.4,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "32.49%",
+              "memoria": "281.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494931.4,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.66%",
+              "memoria": "10.85MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494943.6,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.38%",
+              "memoria": "323.7MiB / 3GiB"
+            },
+            {
+              "t": 1795494943.6,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.20%",
+              "memoria": "141.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494943.6,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.54%",
+              "memoria": "349.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494943.6,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "64.30%",
+              "memoria": "47.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494943.6,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.44%",
+              "memoria": "54MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494943.6,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "24.31%",
+              "memoria": "44.86MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494943.6,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "15.41%",
+              "memoria": "44.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494943.6,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "39.19%",
+              "memoria": "319.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494943.6,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "15.10%",
+              "memoria": "286.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494943.6,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "22.56%",
+              "memoria": "280.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494943.6,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.21%",
+              "memoria": "11.34MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494955.9,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "1.82%",
+              "memoria": "323.7MiB / 3GiB"
+            },
+            {
+              "t": 1795494955.9,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.54%",
+              "memoria": "141.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494955.9,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "1.56%",
+              "memoria": "349.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494955.9,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "73.86%",
+              "memoria": "46.95MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494955.9,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.59%",
+              "memoria": "54MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494955.9,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "24.92%",
+              "memoria": "45.13MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494955.9,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "16.30%",
+              "memoria": "44.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494955.9,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "61.58%",
+              "memoria": "320MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494955.9,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "19.46%",
+              "memoria": "287.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494955.9,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "26.13%",
+              "memoria": "280.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494955.9,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.46%",
+              "memoria": "10.85MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494968.5,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.34%",
+              "memoria": "323.7MiB / 3GiB"
+            },
+            {
+              "t": 1795494968.5,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.18%",
+              "memoria": "141.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494968.5,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.98%",
+              "memoria": "349.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494968.5,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "97.12%",
+              "memoria": "47.34MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494968.5,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "4.29%",
+              "memoria": "54MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494968.5,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "23.39%",
+              "memoria": "44.86MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494968.5,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "19.25%",
+              "memoria": "44.44MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494968.5,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "45.23%",
+              "memoria": "379.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494968.5,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "115.49%",
+              "memoria": "287.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494968.5,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "241.43%",
+              "memoria": "422.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494968.5,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.17%",
+              "memoria": "10.84MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494980.9,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.27%",
+              "memoria": "323.7MiB / 3GiB"
+            },
+            {
+              "t": 1795494980.9,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.68%",
+              "memoria": "141.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494980.9,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.52%",
+              "memoria": "349.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494980.9,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "53.53%",
+              "memoria": "47.06MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494980.9,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "2.76%",
+              "memoria": "54.01MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494980.9,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "20.18%",
+              "memoria": "45.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494980.9,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "14.42%",
+              "memoria": "44.15MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494980.9,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "16.80%",
+              "memoria": "319.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494980.9,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "100.14%",
+              "memoria": "441.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494980.9,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "22.00%",
+              "memoria": "282.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494980.9,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "8.64%",
+              "memoria": "10.87MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494993.7,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.26%",
+              "memoria": "323.7MiB / 3GiB"
+            },
+            {
+              "t": 1795494993.7,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.22%",
+              "memoria": "141.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494993.7,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.66%",
+              "memoria": "349.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494993.7,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "92.77%",
+              "memoria": "47.33MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494993.7,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.66%",
+              "memoria": "54.01MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494993.7,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "28.77%",
+              "memoria": "44.88MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494993.7,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "19.36%",
+              "memoria": "44.38MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494993.7,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "27.16%",
+              "memoria": "319.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494993.7,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "102.73%",
+              "memoria": "289.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494993.7,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "32.47%",
+              "memoria": "282.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494993.7,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.93%",
+              "memoria": "10.86MiB / 5.295GiB"
+            }
+          ],
+          "csv": "C:\\Users\\Josepa\\BDA\\Plataforma-distribuida-de-anotaci-n-de-datos\\evidence\\carga\\20261123-222745_u40_c2_stats.csv"
+        },
+        {
+          "endpoints": {
+            "/tareas/[id]/borrador": {
+              "solicitudes": 678,
+              "fallas": 0,
+              "p50_ms": 110.0,
+              "p95_ms": 660.0,
+              "p99_ms": 1400.0,
+              "solicitudes_por_s": 7.547483869887963
+            },
+            "/tareas/[id]/enviar": {
+              "solicitudes": 663,
+              "fallas": 0,
+              "p50_ms": 320.0,
+              "p95_ms": 2700.0,
+              "p99_ms": 6200.0,
+              "solicitudes_por_s": 7.380504138253274
+            },
+            "/tareas/[id]/revision aprobar": {
+              "solicitudes": 147,
+              "fallas": 0,
+              "p50_ms": 170.0,
+              "p95_ms": 1100.0,
+              "p99_ms": 2100.0,
+              "solicitudes_por_s": 1.6364013700199567
+            },
+            "/tareas/[id]/revision iniciar": {
+              "solicitudes": 210,
+              "fallas": 0,
+              "p50_ms": 180.0,
+              "p95_ms": 1300.0,
+              "p99_ms": 2700.0,
+              "solicitudes_por_s": 2.3377162428856524
+            },
+            "/tareas/[id]/revision rechazar": {
+              "solicitudes": 61,
+              "fallas": 0,
+              "p50_ms": 180.0,
+              "p95_ms": 970.0,
+              "p99_ms": 2100.0,
+              "solicitudes_por_s": 0.6790509086477371
+            },
+            "/tareas/siguiente": {
+              "solicitudes": 685,
+              "fallas": 0,
+              "p50_ms": 510.0,
+              "p95_ms": 2700.0,
+              "p99_ms": 4900.0,
+              "solicitudes_por_s": 7.625407744650818
+            }
+          },
+          "envios_exitosos_por_minuto": 442.0,
+          "tasa_error": 0.0,
+          "docker_stats": [
+            {
+              "t": 1795494999.3,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.48%",
+              "memoria": "323.8MiB / 3GiB"
+            },
+            {
+              "t": 1795494999.3,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.14%",
+              "memoria": "141.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494999.3,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.45%",
+              "memoria": "349.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494999.3,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "0.15%",
+              "memoria": "47.05MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494999.3,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.24%",
+              "memoria": "54.01MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494999.3,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "0.16%",
+              "memoria": "44.92MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494999.3,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "0.41%",
+              "memoria": "45.05MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494999.3,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "1.17%",
+              "memoria": "319.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494999.3,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "79.26%",
+              "memoria": "289.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494999.3,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "1.10%",
+              "memoria": "284.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795494999.3,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "0.44%",
+              "memoria": "10.86MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495011.8,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.51%",
+              "memoria": "323.8MiB / 3GiB"
+            },
+            {
+              "t": 1795495011.8,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.16%",
+              "memoria": "141.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495011.8,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "2.37%",
+              "memoria": "349.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495011.8,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "74.18%",
+              "memoria": "47.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495011.8,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "2.20%",
+              "memoria": "54.02MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495011.8,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "22.16%",
+              "memoria": "45.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495011.8,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "16.53%",
+              "memoria": "44.47MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495011.8,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "21.09%",
+              "memoria": "319.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495011.8,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "117.32%",
+              "memoria": "435.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495011.8,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "23.55%",
+              "memoria": "285.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495011.8,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "10.97%",
+              "memoria": "10.82MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495025.0,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "2.92%",
+              "memoria": "323.8MiB / 3GiB"
+            },
+            {
+              "t": 1795495025.0,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "1.03%",
+              "memoria": "141.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495025.0,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "1.52%",
+              "memoria": "349.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495025.0,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "101.28%",
+              "memoria": "47.43MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495025.0,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.31%",
+              "memoria": "54.02MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495025.0,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "25.34%",
+              "memoria": "44.91MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495025.0,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "11.31%",
+              "memoria": "44.41MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495025.0,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "116.69%",
+              "memoria": "319MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495025.0,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "50.84%",
+              "memoria": "356.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495025.0,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "42.90%",
+              "memoria": "284.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495025.0,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.70%",
+              "memoria": "10.83MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495039.0,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.38%",
+              "memoria": "323.9MiB / 3GiB"
+            },
+            {
+              "t": 1795495039.0,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.95%",
+              "memoria": "141.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495039.0,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "1.90%",
+              "memoria": "349.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495039.0,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "103.48%",
+              "memoria": "48.58MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495039.0,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.42%",
+              "memoria": "54.02MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495039.0,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "17.51%",
+              "memoria": "45.88MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495039.0,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "16.16%",
+              "memoria": "44.89MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495039.0,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "97.38%",
+              "memoria": "321MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495039.0,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "61.55%",
+              "memoria": "289.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495039.0,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "21.58%",
+              "memoria": "286.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495039.0,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "2.25%",
+              "memoria": "10.93MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495051.1,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "4.87%",
+              "memoria": "323.9MiB / 3GiB"
+            },
+            {
+              "t": 1795495051.1,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.13%",
+              "memoria": "141.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495051.1,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "1.23%",
+              "memoria": "349.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495051.1,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "52.65%",
+              "memoria": "48.75MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495051.1,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.83%",
+              "memoria": "54.02MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495051.1,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "15.72%",
+              "memoria": "45.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495051.1,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "15.00%",
+              "memoria": "46.46MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495051.1,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "12.91%",
+              "memoria": "321.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495051.1,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "70.64%",
+              "memoria": "290.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495051.1,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "15.40%",
+              "memoria": "288.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495051.1,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "2.75%",
+              "memoria": "11.07MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495063.8,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "3.00%",
+              "memoria": "323.9MiB / 3GiB"
+            },
+            {
+              "t": 1795495063.8,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.45%",
+              "memoria": "141.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495063.8,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "1.00%",
+              "memoria": "349.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495063.8,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "101.38%",
+              "memoria": "48.74MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495063.8,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.59%",
+              "memoria": "54.02MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495063.8,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "26.79%",
+              "memoria": "45.78MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495063.8,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "19.82%",
+              "memoria": "45.62MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495063.8,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "19.80%",
+              "memoria": "320.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495063.8,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "79.85%",
+              "memoria": "290.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495063.8,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "28.56%",
+              "memoria": "290.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495063.8,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "3.93%",
+              "memoria": "11.04MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495076.4,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.28%",
+              "memoria": "324MiB / 3GiB"
+            },
+            {
+              "t": 1795495076.4,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.13%",
+              "memoria": "141.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495076.4,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "1.34%",
+              "memoria": "350.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495076.4,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "96.14%",
+              "memoria": "49.21MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495076.4,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.81%",
+              "memoria": "54.06MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495076.4,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "31.85%",
+              "memoria": "45.42MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495076.4,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "20.34%",
+              "memoria": "45.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495076.4,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "20.77%",
+              "memoria": "318.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495076.4,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "103.29%",
+              "memoria": "291.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495076.4,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "25.98%",
+              "memoria": "291.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495076.4,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "5.78%",
+              "memoria": "10.89MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495089.1,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.36%",
+              "memoria": "324MiB / 3GiB"
+            },
+            {
+              "t": 1795495089.1,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.25%",
+              "memoria": "143.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495089.1,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.88%",
+              "memoria": "349.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495089.1,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "100.21%",
+              "memoria": "48.74MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495089.1,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.47%",
+              "memoria": "54.05MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495089.1,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "24.39%",
+              "memoria": "45.61MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495089.1,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "14.52%",
+              "memoria": "45.32MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495089.1,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "84.49%",
+              "memoria": "317.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495089.1,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "132.90%",
+              "memoria": "398.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495089.1,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "24.03%",
+              "memoria": "291.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495089.1,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.35%",
+              "memoria": "10.91MiB / 5.295GiB"
+            }
+          ],
+          "csv": "C:\\Users\\Josepa\\BDA\\Plataforma-distribuida-de-anotaci-n-de-datos\\evidence\\carga\\20261123-222745_u40_c3_stats.csv"
+        }
+      ],
+      "100": [
+        {
+          "endpoints": {
+            "/tareas/[id]/borrador": {
+              "solicitudes": 864,
+              "fallas": 0,
+              "p50_ms": 670.0,
+              "p95_ms": 1600.0,
+              "p99_ms": 2500.0,
+              "solicitudes_por_s": 9.713338305849911
+            },
+            "/tareas/[id]/enviar": {
+              "solicitudes": 837,
+              "fallas": 0,
+              "p50_ms": 2400.0,
+              "p95_ms": 5000.0,
+              "p99_ms": 6400.0,
+              "solicitudes_por_s": 9.409796483792102
+            },
+            "/tareas/[id]/revision aprobar": {
+              "solicitudes": 191,
+              "fallas": 0,
+              "p50_ms": 1000.0,
+              "p95_ms": 2500.0,
+              "p99_ms": 3700.0,
+              "solicitudes_por_s": 2.1472773338163575
+            },
+            "/tareas/[id]/revision iniciar": {
+              "solicitudes": 265,
+              "fallas": 0,
+              "p50_ms": 1100.0,
+              "p95_ms": 2000.0,
+              "p99_ms": 3100.0,
+              "solicitudes_por_s": 2.9792067720488733
+            },
+            "/tareas/[id]/revision rechazar": {
+              "solicitudes": 70,
+              "fallas": 0,
+              "p50_ms": 950.0,
+              "p95_ms": 2200.0,
+              "p99_ms": 2800.0,
+              "solicitudes_por_s": 0.7869602794091363
+            },
+            "/tareas/siguiente": {
+              "solicitudes": 885,
+              "fallas": 0,
+              "p50_ms": 2900.0,
+              "p95_ms": 4800.0,
+              "p99_ms": 6300.0,
+              "solicitudes_por_s": 9.949426389672652
+            }
+          },
+          "envios_exitosos_por_minuto": 558.0,
+          "tasa_error": 0.0,
+          "docker_stats": [
+            {
+              "t": 1795495125.8,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.31%",
+              "memoria": "324.1MiB / 3GiB"
+            },
+            {
+              "t": 1795495125.8,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.15%",
+              "memoria": "143.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495125.8,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "1.86%",
+              "memoria": "349.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495125.8,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "0.18%",
+              "memoria": "58.34MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495125.8,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.24%",
+              "memoria": "54.11MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495125.8,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "0.22%",
+              "memoria": "46.34MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495125.8,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "0.42%",
+              "memoria": "45.76MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495125.8,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "1.27%",
+              "memoria": "320.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495125.8,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "1.48%",
+              "memoria": "296.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495125.8,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "93.46%",
+              "memoria": "291MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495125.8,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "0.38%",
+              "memoria": "11.32MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495138.5,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.55%",
+              "memoria": "324.1MiB / 3GiB"
+            },
+            {
+              "t": 1795495138.5,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.71%",
+              "memoria": "143.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495138.5,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.77%",
+              "memoria": "349.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495138.5,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "105.70%",
+              "memoria": "59.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495138.5,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.92%",
+              "memoria": "54.12MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495138.5,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "33.94%",
+              "memoria": "49.11MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495138.5,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "32.10%",
+              "memoria": "49.64MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495138.5,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "22.20%",
+              "memoria": "320.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495138.5,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "22.33%",
+              "memoria": "296.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495138.5,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "49.69%",
+              "memoria": "298.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495138.5,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.17%",
+              "memoria": "11.46MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495151.0,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.30%",
+              "memoria": "324.2MiB / 3GiB"
+            },
+            {
+              "t": 1795495151.0,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.17%",
+              "memoria": "143.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495151.0,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.83%",
+              "memoria": "349.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495151.0,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "100.71%",
+              "memoria": "58.84MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495151.0,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "2.64%",
+              "memoria": "54.13MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495151.0,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "23.79%",
+              "memoria": "47.79MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495151.0,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "16.06%",
+              "memoria": "47.45MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495151.0,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "17.95%",
+              "memoria": "321.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495151.0,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "22.37%",
+              "memoria": "297.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495151.0,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "109.69%",
+              "memoria": "439.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495151.0,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "3.84%",
+              "memoria": "11.32MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495163.6,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.84%",
+              "memoria": "324.2MiB / 3GiB"
+            },
+            {
+              "t": 1795495163.6,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.25%",
+              "memoria": "143.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495163.6,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.75%",
+              "memoria": "349.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495163.6,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "95.59%",
+              "memoria": "59.31MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495163.6,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.75%",
+              "memoria": "54.12MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495163.6,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "36.64%",
+              "memoria": "48.34MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495163.6,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "18.78%",
+              "memoria": "48.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495163.6,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "129.43%",
+              "memoria": "322.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495163.6,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "106.30%",
+              "memoria": "299MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495163.6,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "43.01%",
+              "memoria": "360.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495163.6,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.05%",
+              "memoria": "11.15MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495176.1,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.25%",
+              "memoria": "324.2MiB / 3GiB"
+            },
+            {
+              "t": 1795495176.1,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "41.07%",
+              "memoria": "143.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495176.1,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.97%",
+              "memoria": "349.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495176.1,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "98.02%",
+              "memoria": "58.96MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495176.1,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.23%",
+              "memoria": "54.13MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495176.1,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "26.50%",
+              "memoria": "47.93MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495176.1,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "17.69%",
+              "memoria": "48.23MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495176.1,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "34.74%",
+              "memoria": "322.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495176.1,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "20.50%",
+              "memoria": "298.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495176.1,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "29.25%",
+              "memoria": "299.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495176.1,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.49%",
+              "memoria": "11.17MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495188.8,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "1.40%",
+              "memoria": "324.2MiB / 3GiB"
+            },
+            {
+              "t": 1795495188.8,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.13%",
+              "memoria": "143.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495188.8,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.98%",
+              "memoria": "349.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495188.8,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "102.87%",
+              "memoria": "58.61MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495188.8,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.63%",
+              "memoria": "54.13MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495188.8,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "22.43%",
+              "memoria": "47.68MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495188.8,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "16.60%",
+              "memoria": "48.21MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495188.8,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "17.02%",
+              "memoria": "322.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495188.8,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "16.21%",
+              "memoria": "298.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495188.8,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "35.17%",
+              "memoria": "359.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495188.8,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "12.01%",
+              "memoria": "11.06MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495201.0,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.33%",
+              "memoria": "324.3MiB / 3GiB"
+            },
+            {
+              "t": 1795495201.0,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.14%",
+              "memoria": "143.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495201.0,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.61%",
+              "memoria": "354MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495201.0,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "105.87%",
+              "memoria": "58.54MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495201.0,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "2.93%",
+              "memoria": "54.14MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495201.0,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "36.52%",
+              "memoria": "48.33MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495201.0,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "24.56%",
+              "memoria": "48.58MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495201.0,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "27.65%",
+              "memoria": "321MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495201.0,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "101.90%",
+              "memoria": "299.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495201.0,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "27.45%",
+              "memoria": "300.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495201.0,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.68%",
+              "memoria": "11.09MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495213.5,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.39%",
+              "memoria": "324.3MiB / 3GiB"
+            },
+            {
+              "t": 1795495213.5,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.29%",
+              "memoria": "143.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495213.5,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.61%",
+              "memoria": "354MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495213.5,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "105.39%",
+              "memoria": "59.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495213.5,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.88%",
+              "memoria": "54.13MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495213.5,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "38.46%",
+              "memoria": "48.06MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495213.5,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "22.40%",
+              "memoria": "48.32MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495213.5,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "40.28%",
+              "memoria": "319.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495213.5,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "131.59%",
+              "memoria": "448.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495213.5,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "27.32%",
+              "memoria": "301.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495213.5,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.81%",
+              "memoria": "11.11MiB / 5.295GiB"
+            }
+          ],
+          "csv": "C:\\Users\\Josepa\\BDA\\Plataforma-distribuida-de-anotaci-n-de-datos\\evidence\\carga\\20261123-222745_u100_c1_stats.csv"
+        },
+        {
+          "endpoints": {
+            "/tareas/[id]/borrador": {
+              "solicitudes": 972,
+              "fallas": 0,
+              "p50_ms": 580.0,
+              "p95_ms": 1300.0,
+              "p99_ms": 1900.0,
+              "solicitudes_por_s": 10.862802597634866
+            },
+            "/tareas/[id]/enviar": {
+              "solicitudes": 946,
+              "fallas": 0,
+              "p50_ms": 2100.0,
+              "p95_ms": 3900.0,
+              "p99_ms": 4600.0,
+              "solicitudes_por_s": 10.57223380387097
+            },
+            "/tareas/[id]/revision aprobar": {
+              "solicitudes": 218,
+              "fallas": 0,
+              "p50_ms": 940.0,
+              "p95_ms": 1800.0,
+              "p99_ms": 3000.0,
+              "solicitudes_por_s": 2.4363075784818937
+            },
+            "/tareas/[id]/revision iniciar": {
+              "solicitudes": 285,
+              "fallas": 0,
+              "p50_ms": 940.0,
+              "p95_ms": 1800.0,
+              "p99_ms": 2900.0,
+              "solicitudes_por_s": 3.1850810085657786
+            },
+            "/tareas/[id]/revision rechazar": {
+              "solicitudes": 64,
+              "fallas": 0,
+              "p50_ms": 1000.0,
+              "p95_ms": 2000.0,
+              "p99_ms": 3000.0,
+              "solicitudes_por_s": 0.715246261572666
+            },
+            "/tareas/siguiente": {
+              "solicitudes": 1003,
+              "fallas": 0,
+              "p50_ms": 2400.0,
+              "p95_ms": 3900.0,
+              "p99_ms": 4600.0,
+              "solicitudes_por_s": 11.209250005584126
+            }
+          },
+          "envios_exitosos_por_minuto": 630.7,
+          "tasa_error": 0.0,
+          "docker_stats": [
+            {
+              "t": 1795495218.9,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.24%",
+              "memoria": "324.3MiB / 3GiB"
+            },
+            {
+              "t": 1795495218.9,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.12%",
+              "memoria": "143.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495218.9,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.47%",
+              "memoria": "354MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495218.9,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "0.19%",
+              "memoria": "58.66MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495218.9,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.26%",
+              "memoria": "54.13MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495218.9,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "0.16%",
+              "memoria": "48MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495218.9,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "0.29%",
+              "memoria": "48.32MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495218.9,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "62.89%",
+              "memoria": "319.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495218.9,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "12.35%",
+              "memoria": "365.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495218.9,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "0.96%",
+              "memoria": "301.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495218.9,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "3.71%",
+              "memoria": "11.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495231.0,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.85%",
+              "memoria": "324.4MiB / 3GiB"
+            },
+            {
+              "t": 1795495231.0,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.16%",
+              "memoria": "143.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495231.0,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.52%",
+              "memoria": "354MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495231.0,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "104.87%",
+              "memoria": "59.18MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495231.0,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.34%",
+              "memoria": "54.13MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495231.0,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "34.61%",
+              "memoria": "48MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495231.0,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "33.38%",
+              "memoria": "48.29MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495231.0,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "121.67%",
+              "memoria": "327.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495231.0,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "22.43%",
+              "memoria": "301.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495231.0,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "29.82%",
+              "memoria": "300.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495231.0,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "3.80%",
+              "memoria": "11.12MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495243.5,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.37%",
+              "memoria": "324.4MiB / 3GiB"
+            },
+            {
+              "t": 1795495243.5,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.28%",
+              "memoria": "143.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495243.5,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.49%",
+              "memoria": "350MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495243.5,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "99.92%",
+              "memoria": "58.84MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495243.5,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.24%",
+              "memoria": "54.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495243.5,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "27.41%",
+              "memoria": "47.79MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495243.5,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "15.85%",
+              "memoria": "48.21MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495243.5,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "123.23%",
+              "memoria": "330.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495243.5,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "16.47%",
+              "memoria": "298.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495243.5,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "22.96%",
+              "memoria": "298.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495243.5,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "5.10%",
+              "memoria": "11.39MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495256.0,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.41%",
+              "memoria": "324.4MiB / 3GiB"
+            },
+            {
+              "t": 1795495256.0,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.16%",
+              "memoria": "143.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495256.0,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "2.39%",
+              "memoria": "350MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495256.0,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "105.91%",
+              "memoria": "59.15MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495256.0,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "2.98%",
+              "memoria": "54.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495256.0,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "41.06%",
+              "memoria": "47.99MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495256.0,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "27.80%",
+              "memoria": "48.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495256.0,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "121.57%",
+              "memoria": "471.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495256.0,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "24.32%",
+              "memoria": "297.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495256.0,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "38.15%",
+              "memoria": "298MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495256.0,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "12.27%",
+              "memoria": "11.13MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495268.7,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.25%",
+              "memoria": "324.5MiB / 3GiB"
+            },
+            {
+              "t": 1795495268.7,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "1.36%",
+              "memoria": "144MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495268.7,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.73%",
+              "memoria": "350MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495268.7,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "104.14%",
+              "memoria": "59.18MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495268.7,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "2.98%",
+              "memoria": "54.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495268.7,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "40.27%",
+              "memoria": "48.34MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495268.7,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "26.99%",
+              "memoria": "48.33MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495268.7,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "102.27%",
+              "memoria": "472.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495268.7,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "19.87%",
+              "memoria": "297.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495268.7,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "30.27%",
+              "memoria": "297.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495268.7,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "5.67%",
+              "memoria": "11.14MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495281.1,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.38%",
+              "memoria": "324.5MiB / 3GiB"
+            },
+            {
+              "t": 1795495281.1,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.11%",
+              "memoria": "144MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495281.1,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.68%",
+              "memoria": "350MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495281.1,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "105.40%",
+              "memoria": "59.31MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495281.1,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.71%",
+              "memoria": "54.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495281.1,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "40.47%",
+              "memoria": "48.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495281.1,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "27.14%",
+              "memoria": "48.38MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495281.1,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "98.91%",
+              "memoria": "473.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495281.1,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "20.69%",
+              "memoria": "299MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495281.1,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "32.66%",
+              "memoria": "297.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495281.1,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "9.23%",
+              "memoria": "11.18MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495293.7,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.25%",
+              "memoria": "324.5MiB / 3GiB"
+            },
+            {
+              "t": 1795495293.7,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.19%",
+              "memoria": "144MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495293.7,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.70%",
+              "memoria": "350MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495293.7,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "106.00%",
+              "memoria": "59.72MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495293.7,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.30%",
+              "memoria": "54.15MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495293.7,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "48.71%",
+              "memoria": "48.75MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495293.7,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "17.06%",
+              "memoria": "49MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495293.7,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "63.47%",
+              "memoria": "470MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495293.7,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "13.77%",
+              "memoria": "300.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495293.7,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "21.18%",
+              "memoria": "305.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495293.7,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.98%",
+              "memoria": "11.24MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495306.3,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.31%",
+              "memoria": "324.5MiB / 3GiB"
+            },
+            {
+              "t": 1795495306.3,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.17%",
+              "memoria": "144.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495306.3,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.72%",
+              "memoria": "350MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495306.3,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "103.35%",
+              "memoria": "60MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495306.3,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.51%",
+              "memoria": "54.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495306.3,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "45.37%",
+              "memoria": "48.22MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495306.3,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "22.88%",
+              "memoria": "49.25MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495306.3,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "52.62%",
+              "memoria": "464.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495306.3,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "14.61%",
+              "memoria": "299.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495306.3,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "24.20%",
+              "memoria": "304.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495306.3,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "5.07%",
+              "memoria": "11.24MiB / 5.295GiB"
+            }
+          ],
+          "csv": "C:\\Users\\Josepa\\BDA\\Plataforma-distribuida-de-anotaci-n-de-datos\\evidence\\carga\\20261123-222745_u100_c2_stats.csv"
+        },
+        {
+          "endpoints": {
+            "/tareas/[id]/borrador": {
+              "solicitudes": 639,
+              "fallas": 0,
+              "p50_ms": 650.0,
+              "p95_ms": 2900.0,
+              "p99_ms": 3700.0,
+              "solicitudes_por_s": 7.124539774939995
+            },
+            "/tareas/[id]/enviar": {
+              "solicitudes": 594,
+              "fallas": 0,
+              "p50_ms": 3500.0,
+              "p95_ms": 13000.0,
+              "p99_ms": 19000.0,
+              "solicitudes_por_s": 6.622811621775207
+            },
+            "/tareas/[id]/revision aprobar": {
+              "solicitudes": 130,
+              "fallas": 0,
+              "p50_ms": 1200.0,
+              "p95_ms": 5300.0,
+              "p99_ms": 5600.0,
+              "solicitudes_por_s": 1.4494368869204999
+            },
+            "/tareas/[id]/revision iniciar": {
+              "solicitudes": 193,
+              "fallas": 0,
+              "p50_ms": 1300.0,
+              "p95_ms": 5400.0,
+              "p99_ms": 6800.0,
+              "solicitudes_por_s": 2.1518563013512035
+            },
+            "/tareas/[id]/revision rechazar": {
+              "solicitudes": 61,
+              "fallas": 0,
+              "p50_ms": 1400.0,
+              "p95_ms": 5500.0,
+              "p99_ms": 5700.0,
+              "solicitudes_por_s": 0.6801203854011576
+            },
+            "/tareas/siguiente": {
+              "solicitudes": 651,
+              "fallas": 0,
+              "p50_ms": 3500.0,
+              "p95_ms": 12000.0,
+              "p99_ms": 15000.0,
+              "solicitudes_por_s": 7.258333949117272
+            }
+          },
+          "envios_exitosos_por_minuto": 396.0,
+          "tasa_error": 0.0,
+          "docker_stats": [
+            {
+              "t": 1795495312.4,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.32%",
+              "memoria": "324.5MiB / 3GiB"
+            },
+            {
+              "t": 1795495312.4,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.15%",
+              "memoria": "144.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495312.4,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.69%",
+              "memoria": "350MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495312.4,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "0.13%",
+              "memoria": "59.58MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495312.4,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.96%",
+              "memoria": "54.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495312.4,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "0.16%",
+              "memoria": "48.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495312.4,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "0.30%",
+              "memoria": "48.73MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495312.4,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "1.94%",
+              "memoria": "326.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495312.4,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "1.04%",
+              "memoria": "299.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495312.4,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "1.21%",
+              "memoria": "303.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495312.4,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "0.41%",
+              "memoria": "11.23MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495325.0,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.52%",
+              "memoria": "324.6MiB / 3GiB"
+            },
+            {
+              "t": 1795495325.0,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.39%",
+              "memoria": "144.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495325.0,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "15.36%",
+              "memoria": "350MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495325.0,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "111.98%",
+              "memoria": "59.93MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495325.0,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "0.79%",
+              "memoria": "54.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495325.0,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "28.30%",
+              "memoria": "48.49MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495325.0,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "40.08%",
+              "memoria": "49.88MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495325.0,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "15.49%",
+              "memoria": "325.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495325.0,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "107.42%",
+              "memoria": "299.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495325.0,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "170.34%",
+              "memoria": "453.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495325.0,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "2.65%",
+              "memoria": "11.25MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495338.1,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "1.49%",
+              "memoria": "324.7MiB / 3GiB"
+            },
+            {
+              "t": 1795495338.1,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.22%",
+              "memoria": "144.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495338.1,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "4.50%",
+              "memoria": "350.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495338.1,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "105.82%",
+              "memoria": "59.37MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495338.1,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.48%",
+              "memoria": "54.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495338.1,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "22.08%",
+              "memoria": "48.17MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495338.1,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "13.25%",
+              "memoria": "48.32MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495338.1,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "16.36%",
+              "memoria": "323.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495338.1,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "22.75%",
+              "memoria": "299.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495338.1,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "31.39%",
+              "memoria": "303.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495338.1,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "14.33%",
+              "memoria": "11.31MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495351.3,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.82%",
+              "memoria": "324.7MiB / 3GiB"
+            },
+            {
+              "t": 1795495351.3,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.31%",
+              "memoria": "144.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495351.3,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.71%",
+              "memoria": "350.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495351.3,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "94.74%",
+              "memoria": "59.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495351.3,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "6.68%",
+              "memoria": "54.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495351.3,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "18.05%",
+              "memoria": "48.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495351.3,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "21.15%",
+              "memoria": "48.54MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495351.3,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "114.23%",
+              "memoria": "325.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495351.3,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "212.60%",
+              "memoria": "390.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495351.3,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "122.51%",
+              "memoria": "390.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495351.3,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "2.40%",
+              "memoria": "11.18MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495364.0,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.39%",
+              "memoria": "324.7MiB / 3GiB"
+            },
+            {
+              "t": 1795495364.0,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.32%",
+              "memoria": "144.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495364.0,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.51%",
+              "memoria": "350.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495364.0,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "102.47%",
+              "memoria": "60.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495364.0,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.26%",
+              "memoria": "54.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495364.0,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "37.12%",
+              "memoria": "48.45MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495364.0,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "22.22%",
+              "memoria": "48.67MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495364.0,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "16.28%",
+              "memoria": "331.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495364.0,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "16.21%",
+              "memoria": "306.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495364.0,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "26.06%",
+              "memoria": "304.5MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495364.0,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "9.17%",
+              "memoria": "11.18MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495376.1,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.24%",
+              "memoria": "324.7MiB / 3GiB"
+            },
+            {
+              "t": 1795495376.1,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.13%",
+              "memoria": "144.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495376.1,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.93%",
+              "memoria": "350.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495376.1,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "100.83%",
+              "memoria": "59.8MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495376.1,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "1.51%",
+              "memoria": "54.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495376.1,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "26.93%",
+              "memoria": "48.11MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495376.1,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "19.31%",
+              "memoria": "48.38MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495376.1,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "19.36%",
+              "memoria": "330.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495376.1,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "19.43%",
+              "memoria": "306.7MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495376.1,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "28.40%",
+              "memoria": "304.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495376.1,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.55%",
+              "memoria": "11.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495388.7,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "1.09%",
+              "memoria": "324.7MiB / 3GiB"
+            },
+            {
+              "t": 1795495388.7,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "1.58%",
+              "memoria": "144.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495388.7,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.57%",
+              "memoria": "350.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495388.7,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "101.65%",
+              "memoria": "59.6MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495388.7,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.17%",
+              "memoria": "54.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495388.7,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "26.14%",
+              "memoria": "47.96MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495388.7,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "15.76%",
+              "memoria": "48.23MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495388.7,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "19.40%",
+              "memoria": "330.2MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495388.7,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "18.92%",
+              "memoria": "307.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495388.7,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "25.86%",
+              "memoria": "304.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495388.7,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "4.26%",
+              "memoria": "11.12MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495401.2,
+              "nombre": "proyecto2-spark-worker-1-1",
+              "cpu": "0.43%",
+              "memoria": "324.7MiB / 3GiB"
+            },
+            {
+              "t": 1795495401.2,
+              "nombre": "proyecto2-spark-master-1",
+              "cpu": "0.15%",
+              "memoria": "144.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495401.2,
+              "nombre": "proyecto2-analitica-1",
+              "cpu": "0.95%",
+              "memoria": "350.1MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495401.2,
+              "nombre": "proyecto2-gateway-1",
+              "cpu": "99.88%",
+              "memoria": "59.57MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495401.2,
+              "nombre": "proyecto2-historial-1",
+              "cpu": "3.01%",
+              "memoria": "54.16MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495401.2,
+              "nombre": "proyecto2-sesion-1",
+              "cpu": "23.68%",
+              "memoria": "48.21MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495401.2,
+              "nombre": "proyecto2-registro-1",
+              "cpu": "17.77%",
+              "memoria": "48.23MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495401.2,
+              "nombre": "proyecto2-mongo1-1",
+              "cpu": "105.60%",
+              "memoria": "330.4MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495401.2,
+              "nombre": "proyecto2-mongo2-1",
+              "cpu": "23.43%",
+              "memoria": "307.3MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495401.2,
+              "nombre": "proyecto2-mongo3-1",
+              "cpu": "47.70%",
+              "memoria": "303.9MiB / 5.295GiB"
+            },
+            {
+              "t": 1795495401.2,
+              "nombre": "proyecto2-valkey-1",
+              "cpu": "3.92%",
+              "memoria": "11.08MiB / 5.295GiB"
+            }
+          ],
+          "csv": "C:\\Users\\Josepa\\BDA\\Plataforma-distribuida-de-anotaci-n-de-datos\\evidence\\carga\\20261123-222745_u100_c3_stats.csv"
+        }
+      ]
+    }
+  }
+}
