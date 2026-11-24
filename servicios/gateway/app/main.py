@@ -10,7 +10,14 @@ from pydantic import BaseModel, Field
 
 from . import clientes, salud
 from .clientes import ServicioNoDisponible, llamar, reenviar
-from .config import CANDIDATAS, MOTIVOS_RECHAZO, REGISTRO_URL, SESION_URL
+from .config import (
+    ANALITICA_URL,
+    CANDIDATAS,
+    MOTIVOS_RECHAZO,
+    REGISTRO_URL,
+    SESION_URL,
+    TIMEOUT_ANALITICA_S,
+)
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("gateway")
@@ -307,6 +314,24 @@ async def recuperar_sesion(datos: RecuperarIn):
         "token": sesion["token"],
         "borrador": sesion["borrador"],
     }
+
+
+@app.get("/analitica/{consulta}")
+async def consulta_analitica(
+    consulta: Literal["q1", "q2", "q3", "q4", "q5"],
+    conjunto: Literal["principal", "ampliado", "validacion"] = "principal",
+    fecha_referencia: str | None = None,
+):
+    """Ejecuta una de las cinco consultas exclusivamente sobre el datalake Parquet (§8)."""
+    parametros = {"conjunto": conjunto} | ({"fecha_referencia": fecha_referencia} if fecha_referencia else {})
+    respuesta = await llamar(
+        "GET",
+        f"{ANALITICA_URL}/consultas/{consulta}",
+        params=parametros,
+        reintentar=True,
+        timeout=TIMEOUT_ANALITICA_S,
+    )
+    return reenviar(respuesta)
 
 
 @app.get("/salud")
