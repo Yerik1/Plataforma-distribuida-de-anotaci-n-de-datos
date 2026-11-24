@@ -13,6 +13,7 @@
 | `POST /tareas/{id}/revision` | `revisor_id`, `accion` (`iniciar`, `aprobar`, `rechazar`), `motivo` | 200, 400 (rechazo sin código válido), 409, 503 |
 | `POST /sesiones/recuperar` | `anotador_id` | 200 (tarea, token y último borrador), 404 (sin sesión), 409 (lock vencido) |
 | `GET /proyectos/{id}/exportar?cursor=&limite=` | | 200 (`tareas`, `siguiente_cursor`), 404, 503 |
+| `GET /analitica/{q1..q5}?conjunto=&fecha_referencia=` | `conjunto`: `principal`, `ampliado` o `validacion` | 200 (`resultados`, `tiempo_s`), 404 (conjunto sin datos), 422, 503 |
 | `GET /salud` | | 200 (operativo o degradado), 503 (caído) |
 
 Códigos de motivo de rechazo (ADR-012): `geometria_invalida`, `etiqueta_fuera_taxonomia`, `objeto_omitido`, `instruccion_no_seguida`.

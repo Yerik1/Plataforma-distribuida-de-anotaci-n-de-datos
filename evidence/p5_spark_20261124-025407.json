@@ -1,0 +1,126 @@
+{
+  "fecha_utc": "2026-11-24T02:54:07.360398+00:00",
+  "objetivo": "Tiempos de Q1 a Q5 con uno y dos workers, primera ejecución frente a ejecuciones posteriores",
+  "configuracion": {
+    "workers": [
+      1,
+      2
+    ],
+    "conjuntos": [
+      "principal"
+    ],
+    "repeticiones": 3,
+    "fecha_referencia_q1": "2026-11-24",
+    "maquina": {
+      "sistema": "Windows-11-10.0.26200-SP0",
+      "procesador": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+      "cpus": 8,
+      "python": "3.13.2"
+    },
+    "gateway": "http://localhost:8000"
+  },
+  "comando": "python.exe pruebas/p5_spark.py --conjuntos principal",
+  "resultado": {
+    "corridas": [
+      {
+        "workers": 1,
+        "workers_vivos": 1,
+        "conjunto": "principal",
+        "archivo": "spark_consultas_20261124-023058.json",
+        "eventos_unicos": 798756,
+        "tiempos": {
+          "q1": {
+            "primera_s": 38.069,
+            "posteriores_s": [
+              13.312,
+              14.764
+            ],
+            "promedio_posteriores_s": 14.038
+          },
+          "q2": {
+            "primera_s": 32.237,
+            "posteriores_s": [
+              31.465,
+              57.068
+            ],
+            "promedio_posteriores_s": 44.267
+          },
+          "q3": {
+            "primera_s": 28.174,
+            "posteriores_s": [
+              17.845,
+              18.947
+            ],
+            "promedio_posteriores_s": 18.396
+          },
+          "q4": {
+            "primera_s": 21.298,
+            "posteriores_s": [
+              17.26,
+              20.575
+            ],
+            "promedio_posteriores_s": 18.918
+          },
+          "q5": {
+            "primera_s": 22.785,
+            "posteriores_s": [
+              29.513,
+              21.242
+            ],
+            "promedio_posteriores_s": 25.378
+          }
+        }
+      },
+      {
+        "workers": 2,
+        "workers_vivos": 2,
+        "conjunto": "principal",
+        "archivo": "spark_consultas_20261124-025350.json",
+        "eventos_unicos": 798756,
+        "tiempos": {
+          "q1": {
+            "primera_s": 85.725,
+            "posteriores_s": [
+              24.568,
+              28.852
+            ],
+            "promedio_posteriores_s": 26.71
+          },
+          "q2": {
+            "primera_s": 84.37,
+            "posteriores_s": [
+              73.009,
+              79.279
+            ],
+            "promedio_posteriores_s": 76.144
+          },
+          "q3": {
+            "primera_s": 93.974,
+            "posteriores_s": [
+              69.57,
+              96.895
+            ],
+            "promedio_posteriores_s": 83.232
+          },
+          "q4": {
+            "primera_s": 94.143,
+            "posteriores_s": [
+              78.856,
+              74.158
+            ],
+            "promedio_posteriores_s": 76.507
+          },
+          "q5": {
+            "primera_s": 128.743,
+            "posteriores_s": [
+              131.892,
+              82.107
+            ],
+            "promedio_posteriores_s": 106.999
+          }
+        }
+      }
+    ],
+    "conjuntos_omitidos": []
+  }
+}

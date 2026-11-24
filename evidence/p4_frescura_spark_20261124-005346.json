@@ -1,0 +1,62 @@
+{
+  "fecha_utc": "2026-11-24T00:53:46.711194+00:00",
+  "objetivo": "Segundos entre un HTTP 200 de aprobación y el evento visible en Q1 de Spark",
+  "configuracion": {
+    "muestras": 5,
+    "limite_s": 120,
+    "maquina": {
+      "sistema": "Windows-11-10.0.26200-SP0",
+      "procesador": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+      "cpus": 8,
+      "python": "3.13.2"
+    },
+    "gateway": "http://localhost:8000"
+  },
+  "comando": "python.exe pruebas/p4_frescura_spark.py",
+  "resultado": {
+    "muestras": [
+      {
+        "segundos_200_a_q1": 17.5,
+        "consultas_q1": 1,
+        "tiempos_q1_s": [
+          17.269
+        ]
+      },
+      {
+        "segundos_200_a_q1": 23.19,
+        "consultas_q1": 1,
+        "tiempos_q1_s": [
+          23.058
+        ]
+      },
+      {
+        "segundos_200_a_q1": 20.3,
+        "consultas_q1": 1,
+        "tiempos_q1_s": [
+          20.192
+        ]
+      },
+      {
+        "segundos_200_a_q1": 8.76,
+        "consultas_q1": 1,
+        "tiempos_q1_s": [
+          8.735
+        ]
+      },
+      {
+        "segundos_200_a_q1": 8.54,
+        "consultas_q1": 1,
+        "tiempos_q1_s": [
+          8.51
+        ]
+      }
+    ],
+    "frescura": {
+      "muestras": 5,
+      "p50_ms": 17500.0,
+      "p95_ms": 23190.0,
+      "p99_ms": 23190.0
+    },
+    "cumple": true
+  }
+}
