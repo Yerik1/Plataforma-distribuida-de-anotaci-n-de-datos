@@ -6,3 +6,4 @@ venv/
 .idea/
 .vscode/
 datalake/
+servicios/analitica/spark/datos_prueba/parquet/
