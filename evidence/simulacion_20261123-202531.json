@@ -1,0 +1,23 @@
+{
+  "fecha_utc": "2026-11-23T20:25:31.125426+00:00",
+  "configuracion": {
+    "gateway": "http://localhost:8000",
+    "catalogo": "dataset/salida/simulacion.json",
+    "anotadores": 10,
+    "revisores": 2,
+    "proyectos": 5,
+    "duracion": 60,
+    "borradores": 2,
+    "probabilidad_aprobar": 0.7,
+    "reintentos_envio": 3
+  },
+  "segundos": 62.6,
+  "operaciones": {
+    "borrador 200": 280,
+    "enviar 200": 140,
+    "revision_aprobar 200": 87,
+    "revision_iniciar 200": 127,
+    "revision_rechazar 200": 40,
+    "siguiente 200": 140
+  }
+}

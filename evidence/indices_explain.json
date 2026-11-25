@@ -1,0 +1,132 @@
+{
+  "fecha": "2026-11-23T20:30:48.496Z",
+  "proyecto_muestra": "e0aef10b-6092-429a-9d96-bf663ced2681",
+  "tareas_del_proyecto": 500,
+  "tareas_totales": 60000,
+  "resultados": [
+    {
+      "consulta": "candidatas: disponibles por prioridad",
+      "indice": "proyecto_estado_prioridad",
+      "etapas": [
+        "LIMIT",
+        "FETCH",
+        "IXSCAN"
+      ],
+      "orden_en_memoria": false,
+      "documentos_examinados": 20,
+      "claves_examinadas": 20,
+      "devueltos": 20,
+      "ms": 0
+    },
+    {
+      "consulta": "tareas abiertas de un anotador",
+      "indice": "anotador_estado",
+      "etapas": [
+        "FETCH",
+        "IXSCAN"
+      ],
+      "orden_en_memoria": false,
+      "documentos_examinados": 0,
+      "claves_examinadas": 0,
+      "devueltos": 0,
+      "ms": 0
+    },
+    {
+      "consulta": "tareas de un lote",
+      "indice": "batch",
+      "etapas": [
+        "FETCH",
+        "IXSCAN"
+      ],
+      "orden_en_memoria": false,
+      "documentos_examinados": 100,
+      "claves_examinadas": 100,
+      "devueltos": 100,
+      "ms": 0
+    },
+    {
+      "consulta": "proyectos activos de un cliente",
+      "indice": "cliente_estado",
+      "etapas": [
+        "FETCH",
+        "IXSCAN"
+      ],
+      "orden_en_memoria": false,
+      "documentos_examinados": 2,
+      "claves_examinadas": 2,
+      "devueltos": 2,
+      "ms": 0
+    },
+    {
+      "consulta": "pagina 5 por cursor (indice proyecto_estado_id)",
+      "indice": "proyecto_estado_id",
+      "etapas": [
+        "LIMIT",
+        "FETCH",
+        "IXSCAN"
+      ],
+      "orden_en_memoria": false,
+      "documentos_examinados": 76,
+      "claves_examinadas": 76,
+      "devueltos": 76,
+      "ms": 1
+    },
+    {
+      "consulta": "pagina 5 por skip (indice proyecto_estado_id)",
+      "indice": "proyecto_estado_id",
+      "etapas": [
+        "LIMIT",
+        "FETCH",
+        "SKIP",
+        "IXSCAN"
+      ],
+      "orden_en_memoria": false,
+      "documentos_examinados": 76,
+      "claves_examinadas": 476,
+      "devueltos": 76,
+      "ms": 1
+    },
+    {
+      "consulta": "pagina 5 por skip sin indice de cursor",
+      "indice": "proyecto_estado_prioridad",
+      "etapas": [
+        "SKIP",
+        "SORT",
+        "FETCH",
+        "IXSCAN"
+      ],
+      "orden_en_memoria": true,
+      "documentos_examinados": 476,
+      "claves_examinadas": 476,
+      "devueltos": 76,
+      "ms": 0
+    },
+    {
+      "consulta": "conciliacion: tareas actualizadas en la ultima hora (indice actualizada)",
+      "indice": "actualizada",
+      "etapas": [
+        "SORT",
+        "FETCH",
+        "IXSCAN"
+      ],
+      "orden_en_memoria": true,
+      "documentos_examinados": 105,
+      "claves_examinadas": 105,
+      "devueltos": 105,
+      "ms": 1
+    },
+    {
+      "consulta": "conciliacion sin indice",
+      "indice": "COLLSCAN",
+      "etapas": [
+        "SORT",
+        "COLLSCAN"
+      ],
+      "orden_en_memoria": true,
+      "documentos_examinados": 60000,
+      "claves_examinadas": 0,
+      "devueltos": 105,
+      "ms": 26
+    }
+  ]
+}

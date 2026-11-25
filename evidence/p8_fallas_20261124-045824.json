@@ -1,0 +1,161 @@
+{
+  "fecha_utc": "2026-11-24T04:58:24.347041+00:00",
+  "objetivo": "Fallas de MongoDB y Valkey, sesión interrumpida y conciliación: recuperación, RTO y RPO",
+  "configuracion": {
+    "escenarios": [
+      "secundario",
+      "primario",
+      "sin_mayoria",
+      "valkey",
+      "sesion"
+    ],
+    "maquina": {
+      "sistema": "Windows-11-10.0.26200-SP0",
+      "procesador": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+      "cpus": 8,
+      "python": "3.13.2"
+    },
+    "gateway": "http://localhost:8000"
+  },
+  "comando": "python.exe pruebas/p8_fallas.py",
+  "resultado": {
+    "secundario": {
+      "nodo_detenido": "mongo1",
+      "salud_con_falla": "degradado",
+      "codigos_envio": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "rto_reincorporacion_s": 11.7,
+      "verificacion": {
+        "segundo_envio": [
+          409,
+          409,
+          409,
+          409,
+          409
+        ],
+        "eventos_en_parquet": 5,
+        "eventos_esperados": 5,
+        "cumple": true
+      },
+      "acciones": [
+        "Container proyecto2-mongo1-1  Stopping\n Container proyecto2-mongo1-1  Stopped",
+        "Container proyecto2-mongo1-1  Starting\n Container proyecto2-mongo1-1  Started"
+      ],
+      "cumple": true
+    },
+    "primario": {
+      "primario_detenido": "mongo3",
+      "nuevo_primario": "mongo1",
+      "codigos_antes": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "intentos_durante_eleccion": [
+        {
+          "t_s": 0.57,
+          "codigo": 200
+        },
+        {
+          "t_s": 0.6,
+          "codigo": 200
+        },
+        {
+          "t_s": 0.67,
+          "codigo": 200
+        },
+        {
+          "t_s": 0.77,
+          "codigo": 200
+        },
+        {
+          "t_s": 0.81,
+          "codigo": 200
+        }
+      ],
+      "rto_escritura_s": 0.57,
+      "verificacion": {
+        "segundo_envio": [
+          409,
+          409,
+          409,
+          409,
+          409,
+          409,
+          409,
+          409,
+          409,
+          409
+        ],
+        "eventos_en_parquet": 10,
+        "eventos_esperados": 10,
+        "cumple": true
+      },
+      "acciones": [
+        "Container proyecto2-mongo3-1  Stopping\n Container proyecto2-mongo3-1  Stopped",
+        "Container proyecto2-mongo3-1  Starting\n Container proyecto2-mongo3-1  Started"
+      ],
+      "cumple": true
+    },
+    "sin_mayoria": {
+      "nodos_detenidos": [
+        "mongo1",
+        "mongo2"
+      ],
+      "salud_con_falla": "caido",
+      "codigos_sin_mayoria": [
+        503,
+        503,
+        503
+      ],
+      "rto_restauracion_s": 7.1,
+      "codigos_reenvio_tras_restaurar": [
+        200,
+        200,
+        200
+      ],
+      "verificacion": {
+        "segundo_envio": [
+          409,
+          409,
+          409
+        ],
+        "eventos_en_parquet": 3,
+        "eventos_esperados": 3,
+        "cumple": true
+      },
+      "acciones": [
+        "Container proyecto2-mongo2-1  Stopping\n Container proyecto2-mongo1-1  Stopping\n Container proyecto2-mongo1-1  Stopped\n Container proyecto2-mongo2-1  Stopped",
+        "Container proyecto2-mongo2-1  Starting\n Container proyecto2-mongo1-1  Starting\n Container proyecto2-mongo2-1  Started\n Container proyecto2-mongo1-1  Started"
+      ],
+      "cumple": true
+    },
+    "valkey": {
+      "envios_confirmados": 10,
+      "rto_valkey_s": 3.0,
+      "eventos_perdidos_antes_de_conciliar": 0,
+      "conciliacion": "{\n  \"fecha_utc\": \"2026-11-24T04:56:13.256180+00:00\",\n  \"tareas_revisadas\": 10,\n  \"eventos_faltantes\": 0,\n  \"eventos_reenviados\": 0,\n  \"errores\": [],\n  \"event_ids_reenviados\": []\n}",
+      "eventos_perdidos_despues_de_conciliar": 0,
+      "borrador_tras_reinicio": true,
+      "acciones": [
+        "Container proyecto2-valkey-1  Killing\n Container proyecto2-valkey-1  Killed",
+        "Container proyecto2-valkey-1  Starting\n Container proyecto2-valkey-1  Started"
+      ],
+      "cumple": true
+    },
+    "sesion": {
+      "recuperacion": 200,
+      "siguiente_devuelve_la_misma_tarea": true,
+      "envio_tras_recuperar": 200,
+      "cumple": true
+    },
+    "cumple": true
+  }
+}

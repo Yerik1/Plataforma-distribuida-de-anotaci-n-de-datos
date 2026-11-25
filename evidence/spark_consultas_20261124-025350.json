@@ -1,0 +1,6199 @@
+{
+  "fecha_utc": "2026-11-24T02:52:02.504393+00:00",
+  "objetivo": "Ejecutar Q1 a Q5 sobre Parquet y validarlas contra resultados conocidos",
+  "configuracion": {
+    "datos": "/opt/datalake/eventos",
+    "fecha_referencia_q1": "2026-11-24",
+    "spark_version": "3.5.9",
+    "master": "spark://spark-master:7077",
+    "paralelismo_por_defecto": 4,
+    "repeticiones": 3,
+    "python": "3.10.12"
+  },
+  "eventos_unicos": 798756,
+  "tiempos_s": {
+    "q1": [
+      85.725,
+      24.568,
+      28.852
+    ],
+    "q2": [
+      84.37,
+      73.009,
+      79.279
+    ],
+    "q3": [
+      93.974,
+      69.57,
+      96.895
+    ],
+    "q4": [
+      94.143,
+      78.856,
+      74.158
+    ],
+    "q5": [
+      128.743,
+      131.892,
+      82.107
+    ]
+  },
+  "resultados": {
+    "q1": [
+      {
+        "dia": "2026-08-27",
+        "modalidad": "imagen",
+        "aprobadas": 84
+      },
+      {
+        "dia": "2026-08-27",
+        "modalidad": "lidar",
+        "aprobadas": 64
+      },
+      {
+        "dia": "2026-08-27",
+        "modalidad": "texto",
+        "aprobadas": 63
+      },
+      {
+        "dia": "2026-08-27",
+        "modalidad": "video",
+        "aprobadas": 52
+      },
+      {
+        "dia": "2026-08-28",
+        "modalidad": "imagen",
+        "aprobadas": 81
+      },
+      {
+        "dia": "2026-08-28",
+        "modalidad": "lidar",
+        "aprobadas": 50
+      },
+      {
+        "dia": "2026-08-28",
+        "modalidad": "texto",
+        "aprobadas": 75
+      },
+      {
+        "dia": "2026-08-28",
+        "modalidad": "video",
+        "aprobadas": 59
+      },
+      {
+        "dia": "2026-08-29",
+        "modalidad": "imagen",
+        "aprobadas": 79
+      },
+      {
+        "dia": "2026-08-29",
+        "modalidad": "lidar",
+        "aprobadas": 60
+      },
+      {
+        "dia": "2026-08-29",
+        "modalidad": "texto",
+        "aprobadas": 83
+      },
+      {
+        "dia": "2026-08-29",
+        "modalidad": "video",
+        "aprobadas": 61
+      },
+      {
+        "dia": "2026-08-30",
+        "modalidad": "imagen",
+        "aprobadas": 73
+      },
+      {
+        "dia": "2026-08-30",
+        "modalidad": "lidar",
+        "aprobadas": 55
+      },
+      {
+        "dia": "2026-08-30",
+        "modalidad": "texto",
+        "aprobadas": 84
+      },
+      {
+        "dia": "2026-08-30",
+        "modalidad": "video",
+        "aprobadas": 58
+      },
+      {
+        "dia": "2026-08-31",
+        "modalidad": "imagen",
+        "aprobadas": 89
+      },
+      {
+        "dia": "2026-08-31",
+        "modalidad": "lidar",
+        "aprobadas": 51
+      },
+      {
+        "dia": "2026-08-31",
+        "modalidad": "texto",
+        "aprobadas": 76
+      },
+      {
+        "dia": "2026-08-31",
+        "modalidad": "video",
+        "aprobadas": 53
+      },
+      {
+        "dia": "2026-09-01",
+        "modalidad": "imagen",
+        "aprobadas": 78
+      },
+      {
+        "dia": "2026-09-01",
+        "modalidad": "lidar",
+        "aprobadas": 59
+      },
+      {
+        "dia": "2026-09-01",
+        "modalidad": "texto",
+        "aprobadas": 74
+      },
+      {
+        "dia": "2026-09-01",
+        "modalidad": "video",
+        "aprobadas": 48
+      },
+      {
+        "dia": "2026-09-02",
+        "modalidad": "imagen",
+        "aprobadas": 79
+      },
+      {
+        "dia": "2026-09-02",
+        "modalidad": "lidar",
+        "aprobadas": 49
+      },
+      {
+        "dia": "2026-09-02",
+        "modalidad": "texto",
+        "aprobadas": 83
+      },
+      {
+        "dia": "2026-09-02",
+        "modalidad": "video",
+        "aprobadas": 49
+      },
+      {
+        "dia": "2026-09-03",
+        "modalidad": "imagen",
+        "aprobadas": 83
+      },
+      {
+        "dia": "2026-09-03",
+        "modalidad": "lidar",
+        "aprobadas": 51
+      },
+      {
+        "dia": "2026-09-03",
+        "modalidad": "texto",
+        "aprobadas": 70
+      },
+      {
+        "dia": "2026-09-03",
+        "modalidad": "video",
+        "aprobadas": 71
+      },
+      {
+        "dia": "2026-09-04",
+        "modalidad": "imagen",
+        "aprobadas": 91
+      },
+      {
+        "dia": "2026-09-04",
+        "modalidad": "lidar",
+        "aprobadas": 48
+      },
+      {
+        "dia": "2026-09-04",
+        "modalidad": "texto",
+        "aprobadas": 67
+      },
+      {
+        "dia": "2026-09-04",
+        "modalidad": "video",
+        "aprobadas": 60
+      },
+      {
+        "dia": "2026-09-05",
+        "modalidad": "imagen",
+        "aprobadas": 90
+      },
+      {
+        "dia": "2026-09-05",
+        "modalidad": "lidar",
+        "aprobadas": 40
+      },
+      {
+        "dia": "2026-09-05",
+        "modalidad": "texto",
+        "aprobadas": 72
+      },
+      {
+        "dia": "2026-09-05",
+        "modalidad": "video",
+        "aprobadas": 49
+      },
+      {
+        "dia": "2026-09-06",
+        "modalidad": "imagen",
+        "aprobadas": 82
+      },
+      {
+        "dia": "2026-09-06",
+        "modalidad": "lidar",
+        "aprobadas": 48
+      },
+      {
+        "dia": "2026-09-06",
+        "modalidad": "texto",
+        "aprobadas": 71
+      },
+      {
+        "dia": "2026-09-06",
+        "modalidad": "video",
+        "aprobadas": 57
+      },
+      {
+        "dia": "2026-09-07",
+        "modalidad": "imagen",
+        "aprobadas": 79
+      },
+      {
+        "dia": "2026-09-07",
+        "modalidad": "lidar",
+        "aprobadas": 58
+      },
+      {
+        "dia": "2026-09-07",
+        "modalidad": "texto",
+        "aprobadas": 95
+      },
+      {
+        "dia": "2026-09-07",
+        "modalidad": "video",
+        "aprobadas": 44
+      },
+      {
+        "dia": "2026-09-08",
+        "modalidad": "imagen",
+        "aprobadas": 73
+      },
+      {
+        "dia": "2026-09-08",
+        "modalidad": "lidar",
+        "aprobadas": 51
+      },
+      {
+        "dia": "2026-09-08",
+        "modalidad": "texto",
+        "aprobadas": 74
+      },
+      {
+        "dia": "2026-09-08",
+        "modalidad": "video",
+        "aprobadas": 41
+      },
+      {
+        "dia": "2026-09-09",
+        "modalidad": "imagen",
+        "aprobadas": 86
+      },
+      {
+        "dia": "2026-09-09",
+        "modalidad": "lidar",
+        "aprobadas": 63
+      },
+      {
+        "dia": "2026-09-09",
+        "modalidad": "texto",
+        "aprobadas": 72
+      },
+      {
+        "dia": "2026-09-09",
+        "modalidad": "video",
+        "aprobadas": 55
+      },
+      {
+        "dia": "2026-09-10",
+        "modalidad": "imagen",
+        "aprobadas": 77
+      },
+      {
+        "dia": "2026-09-10",
+        "modalidad": "lidar",
+        "aprobadas": 55
+      },
+      {
+        "dia": "2026-09-10",
+        "modalidad": "texto",
+        "aprobadas": 72
+      },
+      {
+        "dia": "2026-09-10",
+        "modalidad": "video",
+        "aprobadas": 45
+      },
+      {
+        "dia": "2026-09-11",
+        "modalidad": "imagen",
+        "aprobadas": 74
+      },
+      {
+        "dia": "2026-09-11",
+        "modalidad": "lidar",
+        "aprobadas": 56
+      },
+      {
+        "dia": "2026-09-11",
+        "modalidad": "texto",
+        "aprobadas": 77
+      },
+      {
+        "dia": "2026-09-11",
+        "modalidad": "video",
+        "aprobadas": 51
+      },
+      {
+        "dia": "2026-09-12",
+        "modalidad": "imagen",
+        "aprobadas": 100
+      },
+      {
+        "dia": "2026-09-12",
+        "modalidad": "lidar",
+        "aprobadas": 44
+      },
+      {
+        "dia": "2026-09-12",
+        "modalidad": "texto",
+        "aprobadas": 77
+      },
+      {
+        "dia": "2026-09-12",
+        "modalidad": "video",
+        "aprobadas": 59
+      },
+      {
+        "dia": "2026-09-13",
+        "modalidad": "imagen",
+        "aprobadas": 76
+      },
+      {
+        "dia": "2026-09-13",
+        "modalidad": "lidar",
+        "aprobadas": 61
+      },
+      {
+        "dia": "2026-09-13",
+        "modalidad": "texto",
+        "aprobadas": 83
+      },
+      {
+        "dia": "2026-09-13",
+        "modalidad": "video",
+        "aprobadas": 40
+      },
+      {
+        "dia": "2026-09-14",
+        "modalidad": "imagen",
+        "aprobadas": 91
+      },
+      {
+        "dia": "2026-09-14",
+        "modalidad": "lidar",
+        "aprobadas": 52
+      },
+      {
+        "dia": "2026-09-14",
+        "modalidad": "texto",
+        "aprobadas": 77
+      },
+      {
+        "dia": "2026-09-14",
+        "modalidad": "video",
+        "aprobadas": 44
+      },
+      {
+        "dia": "2026-09-15",
+        "modalidad": "imagen",
+        "aprobadas": 84
+      },
+      {
+        "dia": "2026-09-15",
+        "modalidad": "lidar",
+        "aprobadas": 57
+      },
+      {
+        "dia": "2026-09-15",
+        "modalidad": "texto",
+        "aprobadas": 76
+      },
+      {
+        "dia": "2026-09-15",
+        "modalidad": "video",
+        "aprobadas": 46
+      },
+      {
+        "dia": "2026-09-16",
+        "modalidad": "imagen",
+        "aprobadas": 82
+      },
+      {
+        "dia": "2026-09-16",
+        "modalidad": "lidar",
+        "aprobadas": 43
+      },
+      {
+        "dia": "2026-09-16",
+        "modalidad": "texto",
+        "aprobadas": 76
+      },
+      {
+        "dia": "2026-09-16",
+        "modalidad": "video",
+        "aprobadas": 52
+      },
+      {
+        "dia": "2026-09-17",
+        "modalidad": "imagen",
+        "aprobadas": 89
+      },
+      {
+        "dia": "2026-09-17",
+        "modalidad": "lidar",
+        "aprobadas": 57
+      },
+      {
+        "dia": "2026-09-17",
+        "modalidad": "texto",
+        "aprobadas": 88
+      },
+      {
+        "dia": "2026-09-17",
+        "modalidad": "video",
+        "aprobadas": 60
+      },
+      {
+        "dia": "2026-09-18",
+        "modalidad": "imagen",
+        "aprobadas": 90
+      },
+      {
+        "dia": "2026-09-18",
+        "modalidad": "lidar",
+        "aprobadas": 57
+      },
+      {
+        "dia": "2026-09-18",
+        "modalidad": "texto",
+        "aprobadas": 83
+      },
+      {
+        "dia": "2026-09-18",
+        "modalidad": "video",
+        "aprobadas": 52
+      },
+      {
+        "dia": "2026-09-19",
+        "modalidad": "imagen",
+        "aprobadas": 81
+      },
+      {
+        "dia": "2026-09-19",
+        "modalidad": "lidar",
+        "aprobadas": 56
+      },
+      {
+        "dia": "2026-09-19",
+        "modalidad": "texto",
+        "aprobadas": 88
+      },
+      {
+        "dia": "2026-09-19",
+        "modalidad": "video",
+        "aprobadas": 52
+      },
+      {
+        "dia": "2026-09-20",
+        "modalidad": "imagen",
+        "aprobadas": 67
+      },
+      {
+        "dia": "2026-09-20",
+        "modalidad": "lidar",
+        "aprobadas": 50
+      },
+      {
+        "dia": "2026-09-20",
+        "modalidad": "texto",
+        "aprobadas": 86
+      },
+      {
+        "dia": "2026-09-20",
+        "modalidad": "video",
+        "aprobadas": 63
+      },
+      {
+        "dia": "2026-09-21",
+        "modalidad": "imagen",
+        "aprobadas": 79
+      },
+      {
+        "dia": "2026-09-21",
+        "modalidad": "lidar",
+        "aprobadas": 44
+      },
+      {
+        "dia": "2026-09-21",
+        "modalidad": "texto",
+        "aprobadas": 64
+      },
+      {
+        "dia": "2026-09-21",
+        "modalidad": "video",
+        "aprobadas": 62
+      },
+      {
+        "dia": "2026-09-22",
+        "modalidad": "imagen",
+        "aprobadas": 110
+      },
+      {
+        "dia": "2026-09-22",
+        "modalidad": "lidar",
+        "aprobadas": 65
+      },
+      {
+        "dia": "2026-09-22",
+        "modalidad": "texto",
+        "aprobadas": 72
+      },
+      {
+        "dia": "2026-09-22",
+        "modalidad": "video",
+        "aprobadas": 62
+      },
+      {
+        "dia": "2026-09-23",
+        "modalidad": "imagen",
+        "aprobadas": 74
+      },
+      {
+        "dia": "2026-09-23",
+        "modalidad": "lidar",
+        "aprobadas": 74
+      },
+      {
+        "dia": "2026-09-23",
+        "modalidad": "texto",
+        "aprobadas": 104
+      },
+      {
+        "dia": "2026-09-23",
+        "modalidad": "video",
+        "aprobadas": 48
+      },
+      {
+        "dia": "2026-09-24",
+        "modalidad": "imagen",
+        "aprobadas": 86
+      },
+      {
+        "dia": "2026-09-24",
+        "modalidad": "lidar",
+        "aprobadas": 48
+      },
+      {
+        "dia": "2026-09-24",
+        "modalidad": "texto",
+        "aprobadas": 83
+      },
+      {
+        "dia": "2026-09-24",
+        "modalidad": "video",
+        "aprobadas": 59
+      },
+      {
+        "dia": "2026-09-25",
+        "modalidad": "imagen",
+        "aprobadas": 90
+      },
+      {
+        "dia": "2026-09-25",
+        "modalidad": "lidar",
+        "aprobadas": 46
+      },
+      {
+        "dia": "2026-09-25",
+        "modalidad": "texto",
+        "aprobadas": 96
+      },
+      {
+        "dia": "2026-09-25",
+        "modalidad": "video",
+        "aprobadas": 50
+      },
+      {
+        "dia": "2026-09-26",
+        "modalidad": "imagen",
+        "aprobadas": 87
+      },
+      {
+        "dia": "2026-09-26",
+        "modalidad": "lidar",
+        "aprobadas": 62
+      },
+      {
+        "dia": "2026-09-26",
+        "modalidad": "texto",
+        "aprobadas": 81
+      },
+      {
+        "dia": "2026-09-26",
+        "modalidad": "video",
+        "aprobadas": 55
+      },
+      {
+        "dia": "2026-09-27",
+        "modalidad": "imagen",
+        "aprobadas": 89
+      },
+      {
+        "dia": "2026-09-27",
+        "modalidad": "lidar",
+        "aprobadas": 54
+      },
+      {
+        "dia": "2026-09-27",
+        "modalidad": "texto",
+        "aprobadas": 71
+      },
+      {
+        "dia": "2026-09-27",
+        "modalidad": "video",
+        "aprobadas": 50
+      },
+      {
+        "dia": "2026-09-28",
+        "modalidad": "imagen",
+        "aprobadas": 67
+      },
+      {
+        "dia": "2026-09-28",
+        "modalidad": "lidar",
+        "aprobadas": 70
+      },
+      {
+        "dia": "2026-09-28",
+        "modalidad": "texto",
+        "aprobadas": 76
+      },
+      {
+        "dia": "2026-09-28",
+        "modalidad": "video",
+        "aprobadas": 51
+      },
+      {
+        "dia": "2026-09-29",
+        "modalidad": "imagen",
+        "aprobadas": 82
+      },
+      {
+        "dia": "2026-09-29",
+        "modalidad": "lidar",
+        "aprobadas": 53
+      },
+      {
+        "dia": "2026-09-29",
+        "modalidad": "texto",
+        "aprobadas": 79
+      },
+      {
+        "dia": "2026-09-29",
+        "modalidad": "video",
+        "aprobadas": 48
+      },
+      {
+        "dia": "2026-09-30",
+        "modalidad": "imagen",
+        "aprobadas": 75
+      },
+      {
+        "dia": "2026-09-30",
+        "modalidad": "lidar",
+        "aprobadas": 69
+      },
+      {
+        "dia": "2026-09-30",
+        "modalidad": "texto",
+        "aprobadas": 88
+      },
+      {
+        "dia": "2026-09-30",
+        "modalidad": "video",
+        "aprobadas": 49
+      },
+      {
+        "dia": "2026-10-01",
+        "modalidad": "imagen",
+        "aprobadas": 76
+      },
+      {
+        "dia": "2026-10-01",
+        "modalidad": "lidar",
+        "aprobadas": 50
+      },
+      {
+        "dia": "2026-10-01",
+        "modalidad": "texto",
+        "aprobadas": 85
+      },
+      {
+        "dia": "2026-10-01",
+        "modalidad": "video",
+        "aprobadas": 54
+      },
+      {
+        "dia": "2026-10-02",
+        "modalidad": "imagen",
+        "aprobadas": 88
+      },
+      {
+        "dia": "2026-10-02",
+        "modalidad": "lidar",
+        "aprobadas": 52
+      },
+      {
+        "dia": "2026-10-02",
+        "modalidad": "texto",
+        "aprobadas": 86
+      },
+      {
+        "dia": "2026-10-02",
+        "modalidad": "video",
+        "aprobadas": 51
+      },
+      {
+        "dia": "2026-10-03",
+        "modalidad": "imagen",
+        "aprobadas": 89
+      },
+      {
+        "dia": "2026-10-03",
+        "modalidad": "lidar",
+        "aprobadas": 63
+      },
+      {
+        "dia": "2026-10-03",
+        "modalidad": "texto",
+        "aprobadas": 79
+      },
+      {
+        "dia": "2026-10-03",
+        "modalidad": "video",
+        "aprobadas": 47
+      },
+      {
+        "dia": "2026-10-04",
+        "modalidad": "imagen",
+        "aprobadas": 77
+      },
+      {
+        "dia": "2026-10-04",
+        "modalidad": "lidar",
+        "aprobadas": 55
+      },
+      {
+        "dia": "2026-10-04",
+        "modalidad": "texto",
+        "aprobadas": 76
+      },
+      {
+        "dia": "2026-10-04",
+        "modalidad": "video",
+        "aprobadas": 53
+      },
+      {
+        "dia": "2026-10-05",
+        "modalidad": "imagen",
+        "aprobadas": 87
+      },
+      {
+        "dia": "2026-10-05",
+        "modalidad": "lidar",
+        "aprobadas": 64
+      },
+      {
+        "dia": "2026-10-05",
+        "modalidad": "texto",
+        "aprobadas": 73
+      },
+      {
+        "dia": "2026-10-05",
+        "modalidad": "video",
+        "aprobadas": 67
+      },
+      {
+        "dia": "2026-10-06",
+        "modalidad": "imagen",
+        "aprobadas": 91
+      },
+      {
+        "dia": "2026-10-06",
+        "modalidad": "lidar",
+        "aprobadas": 45
+      },
+      {
+        "dia": "2026-10-06",
+        "modalidad": "texto",
+        "aprobadas": 86
+      },
+      {
+        "dia": "2026-10-06",
+        "modalidad": "video",
+        "aprobadas": 52
+      },
+      {
+        "dia": "2026-10-07",
+        "modalidad": "imagen",
+        "aprobadas": 92
+      },
+      {
+        "dia": "2026-10-07",
+        "modalidad": "lidar",
+        "aprobadas": 34
+      },
+      {
+        "dia": "2026-10-07",
+        "modalidad": "texto",
+        "aprobadas": 91
+      },
+      {
+        "dia": "2026-10-07",
+        "modalidad": "video",
+        "aprobadas": 60
+      },
+      {
+        "dia": "2026-10-08",
+        "modalidad": "imagen",
+        "aprobadas": 79
+      },
+      {
+        "dia": "2026-10-08",
+        "modalidad": "lidar",
+        "aprobadas": 65
+      },
+      {
+        "dia": "2026-10-08",
+        "modalidad": "texto",
+        "aprobadas": 97
+      },
+      {
+        "dia": "2026-10-08",
+        "modalidad": "video",
+        "aprobadas": 52
+      },
+      {
+        "dia": "2026-10-09",
+        "modalidad": "imagen",
+        "aprobadas": 85
+      },
+      {
+        "dia": "2026-10-09",
+        "modalidad": "lidar",
+        "aprobadas": 43
+      },
+      {
+        "dia": "2026-10-09",
+        "modalidad": "texto",
+        "aprobadas": 94
+      },
+      {
+        "dia": "2026-10-09",
+        "modalidad": "video",
+        "aprobadas": 64
+      },
+      {
+        "dia": "2026-10-10",
+        "modalidad": "imagen",
+        "aprobadas": 84
+      },
+      {
+        "dia": "2026-10-10",
+        "modalidad": "lidar",
+        "aprobadas": 48
+      },
+      {
+        "dia": "2026-10-10",
+        "modalidad": "texto",
+        "aprobadas": 73
+      },
+      {
+        "dia": "2026-10-10",
+        "modalidad": "video",
+        "aprobadas": 49
+      },
+      {
+        "dia": "2026-10-11",
+        "modalidad": "imagen",
+        "aprobadas": 82
+      },
+      {
+        "dia": "2026-10-11",
+        "modalidad": "lidar",
+        "aprobadas": 50
+      },
+      {
+        "dia": "2026-10-11",
+        "modalidad": "texto",
+        "aprobadas": 75
+      },
+      {
+        "dia": "2026-10-11",
+        "modalidad": "video",
+        "aprobadas": 67
+      },
+      {
+        "dia": "2026-10-12",
+        "modalidad": "imagen",
+        "aprobadas": 79
+      },
+      {
+        "dia": "2026-10-12",
+        "modalidad": "lidar",
+        "aprobadas": 52
+      },
+      {
+        "dia": "2026-10-12",
+        "modalidad": "texto",
+        "aprobadas": 93
+      },
+      {
+        "dia": "2026-10-12",
+        "modalidad": "video",
+        "aprobadas": 49
+      },
+      {
+        "dia": "2026-10-13",
+        "modalidad": "imagen",
+        "aprobadas": 79
+      },
+      {
+        "dia": "2026-10-13",
+        "modalidad": "lidar",
+        "aprobadas": 39
+      },
+      {
+        "dia": "2026-10-13",
+        "modalidad": "texto",
+        "aprobadas": 77
+      },
+      {
+        "dia": "2026-10-13",
+        "modalidad": "video",
+        "aprobadas": 50
+      },
+      {
+        "dia": "2026-10-14",
+        "modalidad": "imagen",
+        "aprobadas": 73
+      },
+      {
+        "dia": "2026-10-14",
+        "modalidad": "lidar",
+        "aprobadas": 66
+      },
+      {
+        "dia": "2026-10-14",
+        "modalidad": "texto",
+        "aprobadas": 83
+      },
+      {
+        "dia": "2026-10-14",
+        "modalidad": "video",
+        "aprobadas": 58
+      },
+      {
+        "dia": "2026-10-15",
+        "modalidad": "imagen",
+        "aprobadas": 82
+      },
+      {
+        "dia": "2026-10-15",
+        "modalidad": "lidar",
+        "aprobadas": 46
+      },
+      {
+        "dia": "2026-10-15",
+        "modalidad": "texto",
+        "aprobadas": 86
+      },
+      {
+        "dia": "2026-10-15",
+        "modalidad": "video",
+        "aprobadas": 56
+      },
+      {
+        "dia": "2026-10-16",
+        "modalidad": "imagen",
+        "aprobadas": 83
+      },
+      {
+        "dia": "2026-10-16",
+        "modalidad": "lidar",
+        "aprobadas": 49
+      },
+      {
+        "dia": "2026-10-16",
+        "modalidad": "texto",
+        "aprobadas": 80
+      },
+      {
+        "dia": "2026-10-16",
+        "modalidad": "video",
+        "aprobadas": 58
+      },
+      {
+        "dia": "2026-10-17",
+        "modalidad": "imagen",
+        "aprobadas": 91
+      },
+      {
+        "dia": "2026-10-17",
+        "modalidad": "lidar",
+        "aprobadas": 62
+      },
+      {
+        "dia": "2026-10-17",
+        "modalidad": "texto",
+        "aprobadas": 89
+      },
+      {
+        "dia": "2026-10-17",
+        "modalidad": "video",
+        "aprobadas": 58
+      },
+      {
+        "dia": "2026-10-18",
+        "modalidad": "imagen",
+        "aprobadas": 84
+      },
+      {
+        "dia": "2026-10-18",
+        "modalidad": "lidar",
+        "aprobadas": 57
+      },
+      {
+        "dia": "2026-10-18",
+        "modalidad": "texto",
+        "aprobadas": 86
+      },
+      {
+        "dia": "2026-10-18",
+        "modalidad": "video",
+        "aprobadas": 46
+      },
+      {
+        "dia": "2026-10-19",
+        "modalidad": "imagen",
+        "aprobadas": 105
+      },
+      {
+        "dia": "2026-10-19",
+        "modalidad": "lidar",
+        "aprobadas": 57
+      },
+      {
+        "dia": "2026-10-19",
+        "modalidad": "texto",
+        "aprobadas": 85
+      },
+      {
+        "dia": "2026-10-19",
+        "modalidad": "video",
+        "aprobadas": 61
+      },
+      {
+        "dia": "2026-10-20",
+        "modalidad": "imagen",
+        "aprobadas": 85
+      },
+      {
+        "dia": "2026-10-20",
+        "modalidad": "lidar",
+        "aprobadas": 54
+      },
+      {
+        "dia": "2026-10-20",
+        "modalidad": "texto",
+        "aprobadas": 78
+      },
+      {
+        "dia": "2026-10-20",
+        "modalidad": "video",
+        "aprobadas": 64
+      },
+      {
+        "dia": "2026-10-21",
+        "modalidad": "imagen",
+        "aprobadas": 86
+      },
+      {
+        "dia": "2026-10-21",
+        "modalidad": "lidar",
+        "aprobadas": 54
+      },
+      {
+        "dia": "2026-10-21",
+        "modalidad": "texto",
+        "aprobadas": 95
+      },
+      {
+        "dia": "2026-10-21",
+        "modalidad": "video",
+        "aprobadas": 49
+      },
+      {
+        "dia": "2026-10-22",
+        "modalidad": "imagen",
+        "aprobadas": 67
+      },
+      {
+        "dia": "2026-10-22",
+        "modalidad": "lidar",
+        "aprobadas": 56
+      },
+      {
+        "dia": "2026-10-22",
+        "modalidad": "texto",
+        "aprobadas": 75
+      },
+      {
+        "dia": "2026-10-22",
+        "modalidad": "video",
+        "aprobadas": 53
+      },
+      {
+        "dia": "2026-10-23",
+        "modalidad": "imagen",
+        "aprobadas": 85
+      },
+      {
+        "dia": "2026-10-23",
+        "modalidad": "lidar",
+        "aprobadas": 48
+      },
+      {
+        "dia": "2026-10-23",
+        "modalidad": "texto",
+        "aprobadas": 74
+      },
+      {
+        "dia": "2026-10-23",
+        "modalidad": "video",
+        "aprobadas": 72
+      },
+      {
+        "dia": "2026-10-24",
+        "modalidad": "imagen",
+        "aprobadas": 73
+      },
+      {
+        "dia": "2026-10-24",
+        "modalidad": "lidar",
+        "aprobadas": 46
+      },
+      {
+        "dia": "2026-10-24",
+        "modalidad": "texto",
+        "aprobadas": 84
+      },
+      {
+        "dia": "2026-10-24",
+        "modalidad": "video",
+        "aprobadas": 45
+      },
+      {
+        "dia": "2026-10-25",
+        "modalidad": "imagen",
+        "aprobadas": 94
+      },
+      {
+        "dia": "2026-10-25",
+        "modalidad": "lidar",
+        "aprobadas": 60
+      },
+      {
+        "dia": "2026-10-25",
+        "modalidad": "texto",
+        "aprobadas": 78
+      },
+      {
+        "dia": "2026-10-25",
+        "modalidad": "video",
+        "aprobadas": 54
+      },
+      {
+        "dia": "2026-10-26",
+        "modalidad": "imagen",
+        "aprobadas": 103
+      },
+      {
+        "dia": "2026-10-26",
+        "modalidad": "lidar",
+        "aprobadas": 42
+      },
+      {
+        "dia": "2026-10-26",
+        "modalidad": "texto",
+        "aprobadas": 88
+      },
+      {
+        "dia": "2026-10-26",
+        "modalidad": "video",
+        "aprobadas": 57
+      },
+      {
+        "dia": "2026-10-27",
+        "modalidad": "imagen",
+        "aprobadas": 82
+      },
+      {
+        "dia": "2026-10-27",
+        "modalidad": "lidar",
+        "aprobadas": 58
+      },
+      {
+        "dia": "2026-10-27",
+        "modalidad": "texto",
+        "aprobadas": 72
+      },
+      {
+        "dia": "2026-10-27",
+        "modalidad": "video",
+        "aprobadas": 66
+      },
+      {
+        "dia": "2026-10-28",
+        "modalidad": "imagen",
+        "aprobadas": 71
+      },
+      {
+        "dia": "2026-10-28",
+        "modalidad": "lidar",
+        "aprobadas": 45
+      },
+      {
+        "dia": "2026-10-28",
+        "modalidad": "texto",
+        "aprobadas": 83
+      },
+      {
+        "dia": "2026-10-28",
+        "modalidad": "video",
+        "aprobadas": 44
+      },
+      {
+        "dia": "2026-10-29",
+        "modalidad": "imagen",
+        "aprobadas": 87
+      },
+      {
+        "dia": "2026-10-29",
+        "modalidad": "lidar",
+        "aprobadas": 47
+      },
+      {
+        "dia": "2026-10-29",
+        "modalidad": "texto",
+        "aprobadas": 79
+      },
+      {
+        "dia": "2026-10-29",
+        "modalidad": "video",
+        "aprobadas": 60
+      },
+      {
+        "dia": "2026-10-30",
+        "modalidad": "imagen",
+        "aprobadas": 95
+      },
+      {
+        "dia": "2026-10-30",
+        "modalidad": "lidar",
+        "aprobadas": 58
+      },
+      {
+        "dia": "2026-10-30",
+        "modalidad": "texto",
+        "aprobadas": 84
+      },
+      {
+        "dia": "2026-10-30",
+        "modalidad": "video",
+        "aprobadas": 62
+      },
+      {
+        "dia": "2026-10-31",
+        "modalidad": "imagen",
+        "aprobadas": 72
+      },
+      {
+        "dia": "2026-10-31",
+        "modalidad": "lidar",
+        "aprobadas": 53
+      },
+      {
+        "dia": "2026-10-31",
+        "modalidad": "texto",
+        "aprobadas": 84
+      },
+      {
+        "dia": "2026-10-31",
+        "modalidad": "video",
+        "aprobadas": 52
+      },
+      {
+        "dia": "2026-11-01",
+        "modalidad": "imagen",
+        "aprobadas": 64
+      },
+      {
+        "dia": "2026-11-01",
+        "modalidad": "lidar",
+        "aprobadas": 57
+      },
+      {
+        "dia": "2026-11-01",
+        "modalidad": "texto",
+        "aprobadas": 84
+      },
+      {
+        "dia": "2026-11-01",
+        "modalidad": "video",
+        "aprobadas": 64
+      },
+      {
+        "dia": "2026-11-02",
+        "modalidad": "imagen",
+        "aprobadas": 72
+      },
+      {
+        "dia": "2026-11-02",
+        "modalidad": "lidar",
+        "aprobadas": 72
+      },
+      {
+        "dia": "2026-11-02",
+        "modalidad": "texto",
+        "aprobadas": 72
+      },
+      {
+        "dia": "2026-11-02",
+        "modalidad": "video",
+        "aprobadas": 50
+      },
+      {
+        "dia": "2026-11-03",
+        "modalidad": "imagen",
+        "aprobadas": 89
+      },
+      {
+        "dia": "2026-11-03",
+        "modalidad": "lidar",
+        "aprobadas": 57
+      },
+      {
+        "dia": "2026-11-03",
+        "modalidad": "texto",
+        "aprobadas": 76
+      },
+      {
+        "dia": "2026-11-03",
+        "modalidad": "video",
+        "aprobadas": 46
+      },
+      {
+        "dia": "2026-11-04",
+        "modalidad": "imagen",
+        "aprobadas": 68
+      },
+      {
+        "dia": "2026-11-04",
+        "modalidad": "lidar",
+        "aprobadas": 47
+      },
+      {
+        "dia": "2026-11-04",
+        "modalidad": "texto",
+        "aprobadas": 79
+      },
+      {
+        "dia": "2026-11-04",
+        "modalidad": "video",
+        "aprobadas": 45
+      },
+      {
+        "dia": "2026-11-05",
+        "modalidad": "imagen",
+        "aprobadas": 84
+      },
+      {
+        "dia": "2026-11-05",
+        "modalidad": "lidar",
+        "aprobadas": 54
+      },
+      {
+        "dia": "2026-11-05",
+        "modalidad": "texto",
+        "aprobadas": 63
+      },
+      {
+        "dia": "2026-11-05",
+        "modalidad": "video",
+        "aprobadas": 56
+      },
+      {
+        "dia": "2026-11-06",
+        "modalidad": "imagen",
+        "aprobadas": 75
+      },
+      {
+        "dia": "2026-11-06",
+        "modalidad": "lidar",
+        "aprobadas": 55
+      },
+      {
+        "dia": "2026-11-06",
+        "modalidad": "texto",
+        "aprobadas": 80
+      },
+      {
+        "dia": "2026-11-06",
+        "modalidad": "video",
+        "aprobadas": 51
+      },
+      {
+        "dia": "2026-11-07",
+        "modalidad": "imagen",
+        "aprobadas": 94
+      },
+      {
+        "dia": "2026-11-07",
+        "modalidad": "lidar",
+        "aprobadas": 40
+      },
+      {
+        "dia": "2026-11-07",
+        "modalidad": "texto",
+        "aprobadas": 59
+      },
+      {
+        "dia": "2026-11-07",
+        "modalidad": "video",
+        "aprobadas": 56
+      },
+      {
+        "dia": "2026-11-08",
+        "modalidad": "imagen",
+        "aprobadas": 83
+      },
+      {
+        "dia": "2026-11-08",
+        "modalidad": "lidar",
+        "aprobadas": 58
+      },
+      {
+        "dia": "2026-11-08",
+        "modalidad": "texto",
+        "aprobadas": 95
+      },
+      {
+        "dia": "2026-11-08",
+        "modalidad": "video",
+        "aprobadas": 63
+      },
+      {
+        "dia": "2026-11-09",
+        "modalidad": "imagen",
+        "aprobadas": 95
+      },
+      {
+        "dia": "2026-11-09",
+        "modalidad": "lidar",
+        "aprobadas": 59
+      },
+      {
+        "dia": "2026-11-09",
+        "modalidad": "texto",
+        "aprobadas": 82
+      },
+      {
+        "dia": "2026-11-09",
+        "modalidad": "video",
+        "aprobadas": 50
+      },
+      {
+        "dia": "2026-11-10",
+        "modalidad": "imagen",
+        "aprobadas": 78
+      },
+      {
+        "dia": "2026-11-10",
+        "modalidad": "lidar",
+        "aprobadas": 46
+      },
+      {
+        "dia": "2026-11-10",
+        "modalidad": "texto",
+        "aprobadas": 83
+      },
+      {
+        "dia": "2026-11-10",
+        "modalidad": "video",
+        "aprobadas": 58
+      },
+      {
+        "dia": "2026-11-11",
+        "modalidad": "imagen",
+        "aprobadas": 73
+      },
+      {
+        "dia": "2026-11-11",
+        "modalidad": "lidar",
+        "aprobadas": 55
+      },
+      {
+        "dia": "2026-11-11",
+        "modalidad": "texto",
+        "aprobadas": 70
+      },
+      {
+        "dia": "2026-11-11",
+        "modalidad": "video",
+        "aprobadas": 58
+      },
+      {
+        "dia": "2026-11-12",
+        "modalidad": "imagen",
+        "aprobadas": 68
+      },
+      {
+        "dia": "2026-11-12",
+        "modalidad": "lidar",
+        "aprobadas": 59
+      },
+      {
+        "dia": "2026-11-12",
+        "modalidad": "texto",
+        "aprobadas": 96
+      },
+      {
+        "dia": "2026-11-12",
+        "modalidad": "video",
+        "aprobadas": 50
+      },
+      {
+        "dia": "2026-11-13",
+        "modalidad": "imagen",
+        "aprobadas": 54
+      },
+      {
+        "dia": "2026-11-13",
+        "modalidad": "lidar",
+        "aprobadas": 42
+      },
+      {
+        "dia": "2026-11-13",
+        "modalidad": "texto",
+        "aprobadas": 60
+      },
+      {
+        "dia": "2026-11-13",
+        "modalidad": "video",
+        "aprobadas": 33
+      },
+      {
+        "dia": "2026-11-14",
+        "modalidad": "imagen",
+        "aprobadas": 20
+      },
+      {
+        "dia": "2026-11-14",
+        "modalidad": "lidar",
+        "aprobadas": 11
+      },
+      {
+        "dia": "2026-11-14",
+        "modalidad": "texto",
+        "aprobadas": 21
+      },
+      {
+        "dia": "2026-11-14",
+        "modalidad": "video",
+        "aprobadas": 19
+      },
+      {
+        "dia": "2026-11-15",
+        "modalidad": "imagen",
+        "aprobadas": 12
+      },
+      {
+        "dia": "2026-11-15",
+        "modalidad": "lidar",
+        "aprobadas": 16
+      },
+      {
+        "dia": "2026-11-15",
+        "modalidad": "texto",
+        "aprobadas": 12
+      },
+      {
+        "dia": "2026-11-15",
+        "modalidad": "video",
+        "aprobadas": 8
+      },
+      {
+        "dia": "2026-11-16",
+        "modalidad": "imagen",
+        "aprobadas": 4
+      },
+      {
+        "dia": "2026-11-16",
+        "modalidad": "lidar",
+        "aprobadas": 3
+      },
+      {
+        "dia": "2026-11-16",
+        "modalidad": "texto",
+        "aprobadas": 9
+      },
+      {
+        "dia": "2026-11-16",
+        "modalidad": "video",
+        "aprobadas": 2
+      },
+      {
+        "dia": "2026-11-17",
+        "modalidad": "imagen",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-17",
+        "modalidad": "lidar",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-17",
+        "modalidad": "texto",
+        "aprobadas": 4
+      },
+      {
+        "dia": "2026-11-17",
+        "modalidad": "video",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-18",
+        "modalidad": "lidar",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-19",
+        "modalidad": "lidar",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-20",
+        "modalidad": "texto",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-24",
+        "modalidad": "lidar",
+        "aprobadas": 5
+      }
+    ],
+    "q2": [
+      {
+        "equipo_id": null,
+        "mes": "2026-11",
+        "aprobadas": 5,
+        "revisadas": 5,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-01",
+        "mes": "2025-11",
+        "aprobadas": 101,
+        "revisadas": 101,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-01",
+        "mes": "2025-12",
+        "aprobadas": 264,
+        "revisadas": 264,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-01",
+        "mes": "2026-01",
+        "aprobadas": 262,
+        "revisadas": 262,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-01",
+        "mes": "2026-02",
+        "aprobadas": 273,
+        "revisadas": 273,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-01",
+        "mes": "2026-03",
+        "aprobadas": 267,
+        "revisadas": 267,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-01",
+        "mes": "2026-04",
+        "aprobadas": 276,
+        "revisadas": 276,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-01",
+        "mes": "2026-05",
+        "aprobadas": 278,
+        "revisadas": 278,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-01",
+        "mes": "2026-06",
+        "aprobadas": 275,
+        "revisadas": 275,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-01",
+        "mes": "2026-07",
+        "aprobadas": 272,
+        "revisadas": 272,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-01",
+        "mes": "2026-08",
+        "aprobadas": 301,
+        "revisadas": 301,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-01",
+        "mes": "2026-09",
+        "aprobadas": 293,
+        "revisadas": 293,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-01",
+        "mes": "2026-10",
+        "aprobadas": 260,
+        "revisadas": 260,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-01",
+        "mes": "2026-11",
+        "aprobadas": 133,
+        "revisadas": 133,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-02",
+        "mes": "2025-11",
+        "aprobadas": 101,
+        "revisadas": 101,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-02",
+        "mes": "2025-12",
+        "aprobadas": 287,
+        "revisadas": 287,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-02",
+        "mes": "2026-01",
+        "aprobadas": 293,
+        "revisadas": 293,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-02",
+        "mes": "2026-02",
+        "aprobadas": 223,
+        "revisadas": 223,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-02",
+        "mes": "2026-03",
+        "aprobadas": 292,
+        "revisadas": 292,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-02",
+        "mes": "2026-04",
+        "aprobadas": 239,
+        "revisadas": 239,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-02",
+        "mes": "2026-05",
+        "aprobadas": 275,
+        "revisadas": 275,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-02",
+        "mes": "2026-06",
+        "aprobadas": 268,
+        "revisadas": 268,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-02",
+        "mes": "2026-07",
+        "aprobadas": 291,
+        "revisadas": 291,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-02",
+        "mes": "2026-08",
+        "aprobadas": 288,
+        "revisadas": 288,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-02",
+        "mes": "2026-09",
+        "aprobadas": 292,
+        "revisadas": 292,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-02",
+        "mes": "2026-10",
+        "aprobadas": 254,
+        "revisadas": 254,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-02",
+        "mes": "2026-11",
+        "aprobadas": 121,
+        "revisadas": 121,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-03",
+        "mes": "2025-11",
+        "aprobadas": 85,
+        "revisadas": 85,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-03",
+        "mes": "2025-12",
+        "aprobadas": 283,
+        "revisadas": 283,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-03",
+        "mes": "2026-01",
+        "aprobadas": 294,
+        "revisadas": 294,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-03",
+        "mes": "2026-02",
+        "aprobadas": 251,
+        "revisadas": 251,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-03",
+        "mes": "2026-03",
+        "aprobadas": 285,
+        "revisadas": 285,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-03",
+        "mes": "2026-04",
+        "aprobadas": 289,
+        "revisadas": 289,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-03",
+        "mes": "2026-05",
+        "aprobadas": 287,
+        "revisadas": 287,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-03",
+        "mes": "2026-06",
+        "aprobadas": 263,
+        "revisadas": 263,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-03",
+        "mes": "2026-07",
+        "aprobadas": 284,
+        "revisadas": 284,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-03",
+        "mes": "2026-08",
+        "aprobadas": 275,
+        "revisadas": 275,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-03",
+        "mes": "2026-09",
+        "aprobadas": 261,
+        "revisadas": 261,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-03",
+        "mes": "2026-10",
+        "aprobadas": 260,
+        "revisadas": 260,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-03",
+        "mes": "2026-11",
+        "aprobadas": 121,
+        "revisadas": 121,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-04",
+        "mes": "2025-11",
+        "aprobadas": 102,
+        "revisadas": 102,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-04",
+        "mes": "2025-12",
+        "aprobadas": 279,
+        "revisadas": 279,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-04",
+        "mes": "2026-01",
+        "aprobadas": 294,
+        "revisadas": 294,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-04",
+        "mes": "2026-02",
+        "aprobadas": 261,
+        "revisadas": 261,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-04",
+        "mes": "2026-03",
+        "aprobadas": 293,
+        "revisadas": 293,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-04",
+        "mes": "2026-04",
+        "aprobadas": 299,
+        "revisadas": 299,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-04",
+        "mes": "2026-05",
+        "aprobadas": 304,
+        "revisadas": 304,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-04",
+        "mes": "2026-06",
+        "aprobadas": 272,
+        "revisadas": 272,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-04",
+        "mes": "2026-07",
+        "aprobadas": 292,
+        "revisadas": 292,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-04",
+        "mes": "2026-08",
+        "aprobadas": 255,
+        "revisadas": 255,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-04",
+        "mes": "2026-09",
+        "aprobadas": 263,
+        "revisadas": 263,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-04",
+        "mes": "2026-10",
+        "aprobadas": 306,
+        "revisadas": 306,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-04",
+        "mes": "2026-11",
+        "aprobadas": 120,
+        "revisadas": 120,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-05",
+        "mes": "2025-11",
+        "aprobadas": 77,
+        "revisadas": 77,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-05",
+        "mes": "2025-12",
+        "aprobadas": 285,
+        "revisadas": 285,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-05",
+        "mes": "2026-01",
+        "aprobadas": 266,
+        "revisadas": 266,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-05",
+        "mes": "2026-02",
+        "aprobadas": 274,
+        "revisadas": 274,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-05",
+        "mes": "2026-03",
+        "aprobadas": 265,
+        "revisadas": 265,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-05",
+        "mes": "2026-04",
+        "aprobadas": 282,
+        "revisadas": 282,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-05",
+        "mes": "2026-05",
+        "aprobadas": 266,
+        "revisadas": 266,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-05",
+        "mes": "2026-06",
+        "aprobadas": 252,
+        "revisadas": 252,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-05",
+        "mes": "2026-07",
+        "aprobadas": 260,
+        "revisadas": 260,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-05",
+        "mes": "2026-08",
+        "aprobadas": 282,
+        "revisadas": 282,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-05",
+        "mes": "2026-09",
+        "aprobadas": 267,
+        "revisadas": 267,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-05",
+        "mes": "2026-10",
+        "aprobadas": 294,
+        "revisadas": 294,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-05",
+        "mes": "2026-11",
+        "aprobadas": 100,
+        "revisadas": 100,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-06",
+        "mes": "2025-11",
+        "aprobadas": 101,
+        "revisadas": 101,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-06",
+        "mes": "2025-12",
+        "aprobadas": 278,
+        "revisadas": 278,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-06",
+        "mes": "2026-01",
+        "aprobadas": 291,
+        "revisadas": 291,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-06",
+        "mes": "2026-02",
+        "aprobadas": 246,
+        "revisadas": 246,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-06",
+        "mes": "2026-03",
+        "aprobadas": 286,
+        "revisadas": 286,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-06",
+        "mes": "2026-04",
+        "aprobadas": 247,
+        "revisadas": 247,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-06",
+        "mes": "2026-05",
+        "aprobadas": 275,
+        "revisadas": 275,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-06",
+        "mes": "2026-06",
+        "aprobadas": 295,
+        "revisadas": 295,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-06",
+        "mes": "2026-07",
+        "aprobadas": 267,
+        "revisadas": 267,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-06",
+        "mes": "2026-08",
+        "aprobadas": 268,
+        "revisadas": 268,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-06",
+        "mes": "2026-09",
+        "aprobadas": 275,
+        "revisadas": 275,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-06",
+        "mes": "2026-10",
+        "aprobadas": 281,
+        "revisadas": 281,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-06",
+        "mes": "2026-11",
+        "aprobadas": 94,
+        "revisadas": 94,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-07",
+        "mes": "2025-11",
+        "aprobadas": 83,
+        "revisadas": 83,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-07",
+        "mes": "2025-12",
+        "aprobadas": 259,
+        "revisadas": 259,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-07",
+        "mes": "2026-01",
+        "aprobadas": 258,
+        "revisadas": 258,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-07",
+        "mes": "2026-02",
+        "aprobadas": 254,
+        "revisadas": 254,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-07",
+        "mes": "2026-03",
+        "aprobadas": 310,
+        "revisadas": 310,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-07",
+        "mes": "2026-04",
+        "aprobadas": 280,
+        "revisadas": 280,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-07",
+        "mes": "2026-05",
+        "aprobadas": 259,
+        "revisadas": 259,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-07",
+        "mes": "2026-06",
+        "aprobadas": 268,
+        "revisadas": 268,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-07",
+        "mes": "2026-07",
+        "aprobadas": 257,
+        "revisadas": 257,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-07",
+        "mes": "2026-08",
+        "aprobadas": 305,
+        "revisadas": 305,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-07",
+        "mes": "2026-09",
+        "aprobadas": 237,
+        "revisadas": 237,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-07",
+        "mes": "2026-10",
+        "aprobadas": 282,
+        "revisadas": 282,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-07",
+        "mes": "2026-11",
+        "aprobadas": 113,
+        "revisadas": 113,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-08",
+        "mes": "2025-11",
+        "aprobadas": 78,
+        "revisadas": 78,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-08",
+        "mes": "2025-12",
+        "aprobadas": 276,
+        "revisadas": 276,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-08",
+        "mes": "2026-01",
+        "aprobadas": 291,
+        "revisadas": 291,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-08",
+        "mes": "2026-02",
+        "aprobadas": 249,
+        "revisadas": 249,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-08",
+        "mes": "2026-03",
+        "aprobadas": 296,
+        "revisadas": 296,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-08",
+        "mes": "2026-04",
+        "aprobadas": 260,
+        "revisadas": 260,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-08",
+        "mes": "2026-05",
+        "aprobadas": 291,
+        "revisadas": 291,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-08",
+        "mes": "2026-06",
+        "aprobadas": 247,
+        "revisadas": 247,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-08",
+        "mes": "2026-07",
+        "aprobadas": 276,
+        "revisadas": 276,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-08",
+        "mes": "2026-08",
+        "aprobadas": 305,
+        "revisadas": 305,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-08",
+        "mes": "2026-09",
+        "aprobadas": 270,
+        "revisadas": 270,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-08",
+        "mes": "2026-10",
+        "aprobadas": 297,
+        "revisadas": 297,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-08",
+        "mes": "2026-11",
+        "aprobadas": 110,
+        "revisadas": 110,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-09",
+        "mes": "2025-11",
+        "aprobadas": 100,
+        "revisadas": 100,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-09",
+        "mes": "2025-12",
+        "aprobadas": 324,
+        "revisadas": 324,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-09",
+        "mes": "2026-01",
+        "aprobadas": 280,
+        "revisadas": 280,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-09",
+        "mes": "2026-02",
+        "aprobadas": 274,
+        "revisadas": 274,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-09",
+        "mes": "2026-03",
+        "aprobadas": 299,
+        "revisadas": 299,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-09",
+        "mes": "2026-04",
+        "aprobadas": 262,
+        "revisadas": 262,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-09",
+        "mes": "2026-05",
+        "aprobadas": 285,
+        "revisadas": 285,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-09",
+        "mes": "2026-06",
+        "aprobadas": 261,
+        "revisadas": 261,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-09",
+        "mes": "2026-07",
+        "aprobadas": 287,
+        "revisadas": 287,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-09",
+        "mes": "2026-08",
+        "aprobadas": 318,
+        "revisadas": 318,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-09",
+        "mes": "2026-09",
+        "aprobadas": 273,
+        "revisadas": 273,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-09",
+        "mes": "2026-10",
+        "aprobadas": 274,
+        "revisadas": 274,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-09",
+        "mes": "2026-11",
+        "aprobadas": 130,
+        "revisadas": 130,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-10",
+        "mes": "2025-11",
+        "aprobadas": 98,
+        "revisadas": 98,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-10",
+        "mes": "2025-12",
+        "aprobadas": 254,
+        "revisadas": 254,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-10",
+        "mes": "2026-01",
+        "aprobadas": 258,
+        "revisadas": 258,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-10",
+        "mes": "2026-02",
+        "aprobadas": 254,
+        "revisadas": 254,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-10",
+        "mes": "2026-03",
+        "aprobadas": 301,
+        "revisadas": 301,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-10",
+        "mes": "2026-04",
+        "aprobadas": 275,
+        "revisadas": 275,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-10",
+        "mes": "2026-05",
+        "aprobadas": 278,
+        "revisadas": 278,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-10",
+        "mes": "2026-06",
+        "aprobadas": 274,
+        "revisadas": 274,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-10",
+        "mes": "2026-07",
+        "aprobadas": 280,
+        "revisadas": 280,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-10",
+        "mes": "2026-08",
+        "aprobadas": 297,
+        "revisadas": 297,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-10",
+        "mes": "2026-09",
+        "aprobadas": 289,
+        "revisadas": 289,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-10",
+        "mes": "2026-10",
+        "aprobadas": 274,
+        "revisadas": 274,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-10",
+        "mes": "2026-11",
+        "aprobadas": 133,
+        "revisadas": 133,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-11",
+        "mes": "2025-11",
+        "aprobadas": 100,
+        "revisadas": 100,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-11",
+        "mes": "2025-12",
+        "aprobadas": 287,
+        "revisadas": 287,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-11",
+        "mes": "2026-01",
+        "aprobadas": 280,
+        "revisadas": 280,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-11",
+        "mes": "2026-02",
+        "aprobadas": 252,
+        "revisadas": 252,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-11",
+        "mes": "2026-03",
+        "aprobadas": 280,
+        "revisadas": 280,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-11",
+        "mes": "2026-04",
+        "aprobadas": 257,
+        "revisadas": 257,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-11",
+        "mes": "2026-05",
+        "aprobadas": 281,
+        "revisadas": 281,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-11",
+        "mes": "2026-06",
+        "aprobadas": 294,
+        "revisadas": 294,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-11",
+        "mes": "2026-07",
+        "aprobadas": 261,
+        "revisadas": 261,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-11",
+        "mes": "2026-08",
+        "aprobadas": 259,
+        "revisadas": 259,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-11",
+        "mes": "2026-09",
+        "aprobadas": 271,
+        "revisadas": 271,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-11",
+        "mes": "2026-10",
+        "aprobadas": 264,
+        "revisadas": 264,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-11",
+        "mes": "2026-11",
+        "aprobadas": 110,
+        "revisadas": 110,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-12",
+        "mes": "2025-11",
+        "aprobadas": 73,
+        "revisadas": 73,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-12",
+        "mes": "2025-12",
+        "aprobadas": 251,
+        "revisadas": 251,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-12",
+        "mes": "2026-01",
+        "aprobadas": 267,
+        "revisadas": 267,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-12",
+        "mes": "2026-02",
+        "aprobadas": 260,
+        "revisadas": 260,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-12",
+        "mes": "2026-03",
+        "aprobadas": 272,
+        "revisadas": 272,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-12",
+        "mes": "2026-04",
+        "aprobadas": 257,
+        "revisadas": 257,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-12",
+        "mes": "2026-05",
+        "aprobadas": 281,
+        "revisadas": 281,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-12",
+        "mes": "2026-06",
+        "aprobadas": 246,
+        "revisadas": 246,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-12",
+        "mes": "2026-07",
+        "aprobadas": 274,
+        "revisadas": 274,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-12",
+        "mes": "2026-08",
+        "aprobadas": 282,
+        "revisadas": 282,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-12",
+        "mes": "2026-09",
+        "aprobadas": 264,
+        "revisadas": 264,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-12",
+        "mes": "2026-10",
+        "aprobadas": 282,
+        "revisadas": 282,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-12",
+        "mes": "2026-11",
+        "aprobadas": 118,
+        "revisadas": 118,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-13",
+        "mes": "2025-11",
+        "aprobadas": 91,
+        "revisadas": 91,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-13",
+        "mes": "2025-12",
+        "aprobadas": 315,
+        "revisadas": 315,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-13",
+        "mes": "2026-01",
+        "aprobadas": 267,
+        "revisadas": 267,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-13",
+        "mes": "2026-02",
+        "aprobadas": 251,
+        "revisadas": 251,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-13",
+        "mes": "2026-03",
+        "aprobadas": 281,
+        "revisadas": 281,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-13",
+        "mes": "2026-04",
+        "aprobadas": 279,
+        "revisadas": 279,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-13",
+        "mes": "2026-05",
+        "aprobadas": 302,
+        "revisadas": 302,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-13",
+        "mes": "2026-06",
+        "aprobadas": 278,
+        "revisadas": 278,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-13",
+        "mes": "2026-07",
+        "aprobadas": 288,
+        "revisadas": 288,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-13",
+        "mes": "2026-08",
+        "aprobadas": 285,
+        "revisadas": 285,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-13",
+        "mes": "2026-09",
+        "aprobadas": 247,
+        "revisadas": 247,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-13",
+        "mes": "2026-10",
+        "aprobadas": 282,
+        "revisadas": 282,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-13",
+        "mes": "2026-11",
+        "aprobadas": 108,
+        "revisadas": 108,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-14",
+        "mes": "2025-11",
+        "aprobadas": 99,
+        "revisadas": 99,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-14",
+        "mes": "2025-12",
+        "aprobadas": 266,
+        "revisadas": 266,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-14",
+        "mes": "2026-01",
+        "aprobadas": 279,
+        "revisadas": 279,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-14",
+        "mes": "2026-02",
+        "aprobadas": 248,
+        "revisadas": 248,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-14",
+        "mes": "2026-03",
+        "aprobadas": 272,
+        "revisadas": 272,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-14",
+        "mes": "2026-04",
+        "aprobadas": 250,
+        "revisadas": 250,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-14",
+        "mes": "2026-05",
+        "aprobadas": 300,
+        "revisadas": 300,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-14",
+        "mes": "2026-06",
+        "aprobadas": 264,
+        "revisadas": 264,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-14",
+        "mes": "2026-07",
+        "aprobadas": 298,
+        "revisadas": 298,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-14",
+        "mes": "2026-08",
+        "aprobadas": 266,
+        "revisadas": 266,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-14",
+        "mes": "2026-09",
+        "aprobadas": 257,
+        "revisadas": 257,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-14",
+        "mes": "2026-10",
+        "aprobadas": 286,
+        "revisadas": 286,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-14",
+        "mes": "2026-11",
+        "aprobadas": 107,
+        "revisadas": 107,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-15",
+        "mes": "2025-11",
+        "aprobadas": 83,
+        "revisadas": 83,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-15",
+        "mes": "2025-12",
+        "aprobadas": 261,
+        "revisadas": 261,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-15",
+        "mes": "2026-01",
+        "aprobadas": 272,
+        "revisadas": 272,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-15",
+        "mes": "2026-02",
+        "aprobadas": 247,
+        "revisadas": 247,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-15",
+        "mes": "2026-03",
+        "aprobadas": 299,
+        "revisadas": 299,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-15",
+        "mes": "2026-04",
+        "aprobadas": 248,
+        "revisadas": 248,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-15",
+        "mes": "2026-05",
+        "aprobadas": 303,
+        "revisadas": 303,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-15",
+        "mes": "2026-06",
+        "aprobadas": 270,
+        "revisadas": 270,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-15",
+        "mes": "2026-07",
+        "aprobadas": 272,
+        "revisadas": 272,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-15",
+        "mes": "2026-08",
+        "aprobadas": 285,
+        "revisadas": 285,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-15",
+        "mes": "2026-09",
+        "aprobadas": 292,
+        "revisadas": 292,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-15",
+        "mes": "2026-10",
+        "aprobadas": 310,
+        "revisadas": 310,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-15",
+        "mes": "2026-11",
+        "aprobadas": 120,
+        "revisadas": 120,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-16",
+        "mes": "2025-11",
+        "aprobadas": 90,
+        "revisadas": 90,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-16",
+        "mes": "2025-12",
+        "aprobadas": 291,
+        "revisadas": 291,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-16",
+        "mes": "2026-01",
+        "aprobadas": 288,
+        "revisadas": 288,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-16",
+        "mes": "2026-02",
+        "aprobadas": 243,
+        "revisadas": 243,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-16",
+        "mes": "2026-03",
+        "aprobadas": 281,
+        "revisadas": 281,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-16",
+        "mes": "2026-04",
+        "aprobadas": 268,
+        "revisadas": 268,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-16",
+        "mes": "2026-05",
+        "aprobadas": 270,
+        "revisadas": 270,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-16",
+        "mes": "2026-06",
+        "aprobadas": 238,
+        "revisadas": 238,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-16",
+        "mes": "2026-07",
+        "aprobadas": 276,
+        "revisadas": 276,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-16",
+        "mes": "2026-08",
+        "aprobadas": 259,
+        "revisadas": 259,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-16",
+        "mes": "2026-09",
+        "aprobadas": 262,
+        "revisadas": 262,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-16",
+        "mes": "2026-10",
+        "aprobadas": 281,
+        "revisadas": 281,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-16",
+        "mes": "2026-11",
+        "aprobadas": 111,
+        "revisadas": 111,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-17",
+        "mes": "2025-11",
+        "aprobadas": 69,
+        "revisadas": 69,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-17",
+        "mes": "2025-12",
+        "aprobadas": 286,
+        "revisadas": 286,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-17",
+        "mes": "2026-01",
+        "aprobadas": 279,
+        "revisadas": 279,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-17",
+        "mes": "2026-02",
+        "aprobadas": 247,
+        "revisadas": 247,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-17",
+        "mes": "2026-03",
+        "aprobadas": 271,
+        "revisadas": 271,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-17",
+        "mes": "2026-04",
+        "aprobadas": 292,
+        "revisadas": 292,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-17",
+        "mes": "2026-05",
+        "aprobadas": 261,
+        "revisadas": 261,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-17",
+        "mes": "2026-06",
+        "aprobadas": 276,
+        "revisadas": 276,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-17",
+        "mes": "2026-07",
+        "aprobadas": 274,
+        "revisadas": 274,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-17",
+        "mes": "2026-08",
+        "aprobadas": 277,
+        "revisadas": 277,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-17",
+        "mes": "2026-09",
+        "aprobadas": 270,
+        "revisadas": 270,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-17",
+        "mes": "2026-10",
+        "aprobadas": 327,
+        "revisadas": 327,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-17",
+        "mes": "2026-11",
+        "aprobadas": 116,
+        "revisadas": 116,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-18",
+        "mes": "2025-11",
+        "aprobadas": 78,
+        "revisadas": 78,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-18",
+        "mes": "2025-12",
+        "aprobadas": 303,
+        "revisadas": 303,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-18",
+        "mes": "2026-01",
+        "aprobadas": 297,
+        "revisadas": 297,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-18",
+        "mes": "2026-02",
+        "aprobadas": 236,
+        "revisadas": 236,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-18",
+        "mes": "2026-03",
+        "aprobadas": 314,
+        "revisadas": 314,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-18",
+        "mes": "2026-04",
+        "aprobadas": 284,
+        "revisadas": 284,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-18",
+        "mes": "2026-05",
+        "aprobadas": 272,
+        "revisadas": 272,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-18",
+        "mes": "2026-06",
+        "aprobadas": 289,
+        "revisadas": 289,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-18",
+        "mes": "2026-07",
+        "aprobadas": 293,
+        "revisadas": 293,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-18",
+        "mes": "2026-08",
+        "aprobadas": 286,
+        "revisadas": 286,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-18",
+        "mes": "2026-09",
+        "aprobadas": 311,
+        "revisadas": 311,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-18",
+        "mes": "2026-10",
+        "aprobadas": 296,
+        "revisadas": 296,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-18",
+        "mes": "2026-11",
+        "aprobadas": 109,
+        "revisadas": 109,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-19",
+        "mes": "2025-11",
+        "aprobadas": 80,
+        "revisadas": 80,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-19",
+        "mes": "2025-12",
+        "aprobadas": 278,
+        "revisadas": 278,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-19",
+        "mes": "2026-01",
+        "aprobadas": 275,
+        "revisadas": 275,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-19",
+        "mes": "2026-02",
+        "aprobadas": 248,
+        "revisadas": 248,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-19",
+        "mes": "2026-03",
+        "aprobadas": 261,
+        "revisadas": 261,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-19",
+        "mes": "2026-04",
+        "aprobadas": 275,
+        "revisadas": 275,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-19",
+        "mes": "2026-05",
+        "aprobadas": 278,
+        "revisadas": 278,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-19",
+        "mes": "2026-06",
+        "aprobadas": 251,
+        "revisadas": 251,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-19",
+        "mes": "2026-07",
+        "aprobadas": 278,
+        "revisadas": 278,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-19",
+        "mes": "2026-08",
+        "aprobadas": 274,
+        "revisadas": 274,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-19",
+        "mes": "2026-09",
+        "aprobadas": 283,
+        "revisadas": 283,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-19",
+        "mes": "2026-10",
+        "aprobadas": 273,
+        "revisadas": 273,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-19",
+        "mes": "2026-11",
+        "aprobadas": 127,
+        "revisadas": 127,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-20",
+        "mes": "2025-11",
+        "aprobadas": 86,
+        "revisadas": 86,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-20",
+        "mes": "2025-12",
+        "aprobadas": 278,
+        "revisadas": 278,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-20",
+        "mes": "2026-01",
+        "aprobadas": 280,
+        "revisadas": 280,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-20",
+        "mes": "2026-02",
+        "aprobadas": 264,
+        "revisadas": 264,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-20",
+        "mes": "2026-03",
+        "aprobadas": 271,
+        "revisadas": 271,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-20",
+        "mes": "2026-04",
+        "aprobadas": 285,
+        "revisadas": 285,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-20",
+        "mes": "2026-05",
+        "aprobadas": 257,
+        "revisadas": 257,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-20",
+        "mes": "2026-06",
+        "aprobadas": 287,
+        "revisadas": 287,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-20",
+        "mes": "2026-07",
+        "aprobadas": 287,
+        "revisadas": 287,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-20",
+        "mes": "2026-08",
+        "aprobadas": 285,
+        "revisadas": 285,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-20",
+        "mes": "2026-09",
+        "aprobadas": 269,
+        "revisadas": 269,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-20",
+        "mes": "2026-10",
+        "aprobadas": 306,
+        "revisadas": 306,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-20",
+        "mes": "2026-11",
+        "aprobadas": 116,
+        "revisadas": 116,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-21",
+        "mes": "2025-11",
+        "aprobadas": 79,
+        "revisadas": 79,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-21",
+        "mes": "2025-12",
+        "aprobadas": 262,
+        "revisadas": 262,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-21",
+        "mes": "2026-01",
+        "aprobadas": 269,
+        "revisadas": 269,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-21",
+        "mes": "2026-02",
+        "aprobadas": 259,
+        "revisadas": 259,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-21",
+        "mes": "2026-03",
+        "aprobadas": 278,
+        "revisadas": 278,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-21",
+        "mes": "2026-04",
+        "aprobadas": 252,
+        "revisadas": 252,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-21",
+        "mes": "2026-05",
+        "aprobadas": 299,
+        "revisadas": 299,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-21",
+        "mes": "2026-06",
+        "aprobadas": 273,
+        "revisadas": 273,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-21",
+        "mes": "2026-07",
+        "aprobadas": 274,
+        "revisadas": 274,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-21",
+        "mes": "2026-08",
+        "aprobadas": 246,
+        "revisadas": 246,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-21",
+        "mes": "2026-09",
+        "aprobadas": 254,
+        "revisadas": 254,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-21",
+        "mes": "2026-10",
+        "aprobadas": 294,
+        "revisadas": 294,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-21",
+        "mes": "2026-11",
+        "aprobadas": 98,
+        "revisadas": 98,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-22",
+        "mes": "2025-11",
+        "aprobadas": 81,
+        "revisadas": 81,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-22",
+        "mes": "2025-12",
+        "aprobadas": 301,
+        "revisadas": 301,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-22",
+        "mes": "2026-01",
+        "aprobadas": 268,
+        "revisadas": 268,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-22",
+        "mes": "2026-02",
+        "aprobadas": 246,
+        "revisadas": 246,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-22",
+        "mes": "2026-03",
+        "aprobadas": 268,
+        "revisadas": 268,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-22",
+        "mes": "2026-04",
+        "aprobadas": 256,
+        "revisadas": 256,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-22",
+        "mes": "2026-05",
+        "aprobadas": 242,
+        "revisadas": 242,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-22",
+        "mes": "2026-06",
+        "aprobadas": 302,
+        "revisadas": 302,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-22",
+        "mes": "2026-07",
+        "aprobadas": 278,
+        "revisadas": 278,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-22",
+        "mes": "2026-08",
+        "aprobadas": 277,
+        "revisadas": 277,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-22",
+        "mes": "2026-09",
+        "aprobadas": 265,
+        "revisadas": 265,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-22",
+        "mes": "2026-10",
+        "aprobadas": 269,
+        "revisadas": 269,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-22",
+        "mes": "2026-11",
+        "aprobadas": 132,
+        "revisadas": 132,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-23",
+        "mes": "2025-11",
+        "aprobadas": 76,
+        "revisadas": 76,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-23",
+        "mes": "2025-12",
+        "aprobadas": 269,
+        "revisadas": 269,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-23",
+        "mes": "2026-01",
+        "aprobadas": 292,
+        "revisadas": 292,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-23",
+        "mes": "2026-02",
+        "aprobadas": 266,
+        "revisadas": 266,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-23",
+        "mes": "2026-03",
+        "aprobadas": 311,
+        "revisadas": 311,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-23",
+        "mes": "2026-04",
+        "aprobadas": 305,
+        "revisadas": 305,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-23",
+        "mes": "2026-05",
+        "aprobadas": 288,
+        "revisadas": 288,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-23",
+        "mes": "2026-06",
+        "aprobadas": 269,
+        "revisadas": 269,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-23",
+        "mes": "2026-07",
+        "aprobadas": 288,
+        "revisadas": 288,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-23",
+        "mes": "2026-08",
+        "aprobadas": 295,
+        "revisadas": 295,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-23",
+        "mes": "2026-09",
+        "aprobadas": 281,
+        "revisadas": 281,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-23",
+        "mes": "2026-10",
+        "aprobadas": 277,
+        "revisadas": 277,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-23",
+        "mes": "2026-11",
+        "aprobadas": 105,
+        "revisadas": 105,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-24",
+        "mes": "2025-11",
+        "aprobadas": 95,
+        "revisadas": 95,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-24",
+        "mes": "2025-12",
+        "aprobadas": 320,
+        "revisadas": 320,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-24",
+        "mes": "2026-01",
+        "aprobadas": 284,
+        "revisadas": 284,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-24",
+        "mes": "2026-02",
+        "aprobadas": 215,
+        "revisadas": 215,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-24",
+        "mes": "2026-03",
+        "aprobadas": 277,
+        "revisadas": 277,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-24",
+        "mes": "2026-04",
+        "aprobadas": 250,
+        "revisadas": 250,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-24",
+        "mes": "2026-05",
+        "aprobadas": 277,
+        "revisadas": 277,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-24",
+        "mes": "2026-06",
+        "aprobadas": 263,
+        "revisadas": 263,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-24",
+        "mes": "2026-07",
+        "aprobadas": 293,
+        "revisadas": 293,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-24",
+        "mes": "2026-08",
+        "aprobadas": 277,
+        "revisadas": 277,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-24",
+        "mes": "2026-09",
+        "aprobadas": 272,
+        "revisadas": 272,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-24",
+        "mes": "2026-10",
+        "aprobadas": 292,
+        "revisadas": 292,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-24",
+        "mes": "2026-11",
+        "aprobadas": 100,
+        "revisadas": 100,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-25",
+        "mes": "2025-11",
+        "aprobadas": 79,
+        "revisadas": 79,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-25",
+        "mes": "2025-12",
+        "aprobadas": 282,
+        "revisadas": 282,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-25",
+        "mes": "2026-01",
+        "aprobadas": 283,
+        "revisadas": 283,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-25",
+        "mes": "2026-02",
+        "aprobadas": 268,
+        "revisadas": 268,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-25",
+        "mes": "2026-03",
+        "aprobadas": 263,
+        "revisadas": 263,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-25",
+        "mes": "2026-04",
+        "aprobadas": 265,
+        "revisadas": 265,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-25",
+        "mes": "2026-05",
+        "aprobadas": 271,
+        "revisadas": 271,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-25",
+        "mes": "2026-06",
+        "aprobadas": 260,
+        "revisadas": 260,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-25",
+        "mes": "2026-07",
+        "aprobadas": 272,
+        "revisadas": 272,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-25",
+        "mes": "2026-08",
+        "aprobadas": 270,
+        "revisadas": 270,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-25",
+        "mes": "2026-09",
+        "aprobadas": 261,
+        "revisadas": 261,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-25",
+        "mes": "2026-10",
+        "aprobadas": 277,
+        "revisadas": 277,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-25",
+        "mes": "2026-11",
+        "aprobadas": 140,
+        "revisadas": 140,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-26",
+        "mes": "2025-11",
+        "aprobadas": 98,
+        "revisadas": 98,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-26",
+        "mes": "2025-12",
+        "aprobadas": 287,
+        "revisadas": 287,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-26",
+        "mes": "2026-01",
+        "aprobadas": 303,
+        "revisadas": 303,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-26",
+        "mes": "2026-02",
+        "aprobadas": 273,
+        "revisadas": 273,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-26",
+        "mes": "2026-03",
+        "aprobadas": 257,
+        "revisadas": 257,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-26",
+        "mes": "2026-04",
+        "aprobadas": 309,
+        "revisadas": 309,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-26",
+        "mes": "2026-05",
+        "aprobadas": 240,
+        "revisadas": 240,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-26",
+        "mes": "2026-06",
+        "aprobadas": 275,
+        "revisadas": 275,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-26",
+        "mes": "2026-07",
+        "aprobadas": 265,
+        "revisadas": 265,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-26",
+        "mes": "2026-08",
+        "aprobadas": 273,
+        "revisadas": 273,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-26",
+        "mes": "2026-09",
+        "aprobadas": 260,
+        "revisadas": 260,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-26",
+        "mes": "2026-10",
+        "aprobadas": 264,
+        "revisadas": 264,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-26",
+        "mes": "2026-11",
+        "aprobadas": 130,
+        "revisadas": 130,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-27",
+        "mes": "2025-11",
+        "aprobadas": 101,
+        "revisadas": 101,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-27",
+        "mes": "2025-12",
+        "aprobadas": 249,
+        "revisadas": 249,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-27",
+        "mes": "2026-01",
+        "aprobadas": 258,
+        "revisadas": 258,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-27",
+        "mes": "2026-02",
+        "aprobadas": 248,
+        "revisadas": 248,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-27",
+        "mes": "2026-03",
+        "aprobadas": 269,
+        "revisadas": 269,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-27",
+        "mes": "2026-04",
+        "aprobadas": 269,
+        "revisadas": 269,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-27",
+        "mes": "2026-05",
+        "aprobadas": 301,
+        "revisadas": 301,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-27",
+        "mes": "2026-06",
+        "aprobadas": 258,
+        "revisadas": 258,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-27",
+        "mes": "2026-07",
+        "aprobadas": 254,
+        "revisadas": 254,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-27",
+        "mes": "2026-08",
+        "aprobadas": 272,
+        "revisadas": 272,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-27",
+        "mes": "2026-09",
+        "aprobadas": 268,
+        "revisadas": 268,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-27",
+        "mes": "2026-10",
+        "aprobadas": 277,
+        "revisadas": 277,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-27",
+        "mes": "2026-11",
+        "aprobadas": 122,
+        "revisadas": 122,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-28",
+        "mes": "2025-11",
+        "aprobadas": 94,
+        "revisadas": 94,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-28",
+        "mes": "2025-12",
+        "aprobadas": 288,
+        "revisadas": 288,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-28",
+        "mes": "2026-01",
+        "aprobadas": 275,
+        "revisadas": 275,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-28",
+        "mes": "2026-02",
+        "aprobadas": 287,
+        "revisadas": 287,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-28",
+        "mes": "2026-03",
+        "aprobadas": 255,
+        "revisadas": 255,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-28",
+        "mes": "2026-04",
+        "aprobadas": 250,
+        "revisadas": 250,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-28",
+        "mes": "2026-05",
+        "aprobadas": 278,
+        "revisadas": 278,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-28",
+        "mes": "2026-06",
+        "aprobadas": 291,
+        "revisadas": 291,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-28",
+        "mes": "2026-07",
+        "aprobadas": 300,
+        "revisadas": 300,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-28",
+        "mes": "2026-08",
+        "aprobadas": 297,
+        "revisadas": 297,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-28",
+        "mes": "2026-09",
+        "aprobadas": 281,
+        "revisadas": 281,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-28",
+        "mes": "2026-10",
+        "aprobadas": 297,
+        "revisadas": 297,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-28",
+        "mes": "2026-11",
+        "aprobadas": 116,
+        "revisadas": 116,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-29",
+        "mes": "2025-11",
+        "aprobadas": 86,
+        "revisadas": 86,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-29",
+        "mes": "2025-12",
+        "aprobadas": 278,
+        "revisadas": 278,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-29",
+        "mes": "2026-01",
+        "aprobadas": 293,
+        "revisadas": 293,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-29",
+        "mes": "2026-02",
+        "aprobadas": 238,
+        "revisadas": 238,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-29",
+        "mes": "2026-03",
+        "aprobadas": 269,
+        "revisadas": 269,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-29",
+        "mes": "2026-04",
+        "aprobadas": 250,
+        "revisadas": 250,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-29",
+        "mes": "2026-05",
+        "aprobadas": 290,
+        "revisadas": 290,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-29",
+        "mes": "2026-06",
+        "aprobadas": 251,
+        "revisadas": 251,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-29",
+        "mes": "2026-07",
+        "aprobadas": 261,
+        "revisadas": 261,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-29",
+        "mes": "2026-08",
+        "aprobadas": 262,
+        "revisadas": 262,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-29",
+        "mes": "2026-09",
+        "aprobadas": 263,
+        "revisadas": 263,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-29",
+        "mes": "2026-10",
+        "aprobadas": 300,
+        "revisadas": 300,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-29",
+        "mes": "2026-11",
+        "aprobadas": 126,
+        "revisadas": 126,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-30",
+        "mes": "2025-11",
+        "aprobadas": 81,
+        "revisadas": 81,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-30",
+        "mes": "2025-12",
+        "aprobadas": 278,
+        "revisadas": 278,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-30",
+        "mes": "2026-01",
+        "aprobadas": 297,
+        "revisadas": 297,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-30",
+        "mes": "2026-02",
+        "aprobadas": 253,
+        "revisadas": 253,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-30",
+        "mes": "2026-03",
+        "aprobadas": 286,
+        "revisadas": 286,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-30",
+        "mes": "2026-04",
+        "aprobadas": 259,
+        "revisadas": 259,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-30",
+        "mes": "2026-05",
+        "aprobadas": 312,
+        "revisadas": 312,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-30",
+        "mes": "2026-06",
+        "aprobadas": 315,
+        "revisadas": 315,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-30",
+        "mes": "2026-07",
+        "aprobadas": 281,
+        "revisadas": 281,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-30",
+        "mes": "2026-08",
+        "aprobadas": 279,
+        "revisadas": 279,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-30",
+        "mes": "2026-09",
+        "aprobadas": 227,
+        "revisadas": 227,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-30",
+        "mes": "2026-10",
+        "aprobadas": 286,
+        "revisadas": 286,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "equipo-30",
+        "mes": "2026-11",
+        "aprobadas": 138,
+        "revisadas": 138,
+        "proporcion_aprobadas": 1.0
+      }
+    ],
+    "q3": [
+      {
+        "modalidad": "imagen",
+        "tipo_tarea": "bbox",
+        "anotaciones": 29889,
+        "duracion_media_ms": 1361212.7488,
+        "duracion_p95_ms": 2743898.0
+      },
+      {
+        "modalidad": "imagen",
+        "tipo_tarea": "poligono",
+        "anotaciones": 30714,
+        "duracion_media_ms": 1363990.4496,
+        "duracion_p95_ms": 2746278.0
+      },
+      {
+        "modalidad": "lidar",
+        "tipo_tarea": "cuboide_3d",
+        "anotaciones": 40268,
+        "duracion_media_ms": 4736900.5633,
+        "duracion_p95_ms": 9448649.0
+      },
+      {
+        "modalidad": "texto",
+        "tipo_tarea": "span",
+        "anotaciones": 59952,
+        "duracion_media_ms": 814929.0096,
+        "duracion_p95_ms": 1636096.0
+      },
+      {
+        "modalidad": "video",
+        "tipo_tarea": "bbox_video",
+        "anotaciones": 40393,
+        "duracion_media_ms": 3055104.474,
+        "duracion_p95_ms": 6155265.0
+      }
+    ],
+    "q4": [
+      {
+        "cliente_id": "14aa4e71-9d3c-4dec-80a6-1f933d6c51e3",
+        "proyecto_id": "207f149f-4a01-4b41-8dea-931e9e0e8c6c",
+        "rechazadas": 487,
+        "revisadas": 996,
+        "proporcion_rechazadas": 0.489
+      },
+      {
+        "cliente_id": "14aa4e71-9d3c-4dec-80a6-1f933d6c51e3",
+        "proyecto_id": "a4c5fdf8-197b-46a3-a9f3-9668a0995504",
+        "rechazadas": 556,
+        "revisadas": 1060,
+        "proporcion_rechazadas": 0.5245
+      },
+      {
+        "cliente_id": "14aa4e71-9d3c-4dec-80a6-1f933d6c51e3",
+        "proyecto_id": "c0205f09-78b1-4b6c-aa1b-c2e33e1e8bd8",
+        "rechazadas": 601,
+        "revisadas": 1122,
+        "proporcion_rechazadas": 0.5357
+      },
+      {
+        "cliente_id": "1919e93a-d117-45ad-8988-93101c593af5",
+        "proyecto_id": "30d040ae-d180-4983-93a4-b8db1b00b05a",
+        "rechazadas": 529,
+        "revisadas": 1041,
+        "proporcion_rechazadas": 0.5082
+      },
+      {
+        "cliente_id": "1919e93a-d117-45ad-8988-93101c593af5",
+        "proyecto_id": "3ab8c535-6b1a-45c7-9fc9-f54d1bac05b5",
+        "rechazadas": 558,
+        "revisadas": 1102,
+        "proporcion_rechazadas": 0.5064
+      },
+      {
+        "cliente_id": "1919e93a-d117-45ad-8988-93101c593af5",
+        "proyecto_id": "f45a4dad-9b78-49eb-a8bd-454ef11e46f1",
+        "rechazadas": 532,
+        "revisadas": 1090,
+        "proporcion_rechazadas": 0.4881
+      },
+      {
+        "cliente_id": "24114258-751b-4c83-89a0-47dc4ac87fc0",
+        "proyecto_id": "5323873c-d4fa-4c6f-ba38-729318a2be86",
+        "rechazadas": 543,
+        "revisadas": 1077,
+        "proporcion_rechazadas": 0.5042
+      },
+      {
+        "cliente_id": "24114258-751b-4c83-89a0-47dc4ac87fc0",
+        "proyecto_id": "76b9b1fe-af8d-4b95-8545-8fc81756930d",
+        "rechazadas": 502,
+        "revisadas": 984,
+        "proporcion_rechazadas": 0.5102
+      },
+      {
+        "cliente_id": "24114258-751b-4c83-89a0-47dc4ac87fc0",
+        "proyecto_id": "ad2996da-8e86-4483-9efa-4b80ec192b67",
+        "rechazadas": 520,
+        "revisadas": 1059,
+        "proporcion_rechazadas": 0.491
+      },
+      {
+        "cliente_id": "2475263c-7854-4014-aded-c86a9f4fb02b",
+        "proyecto_id": "62d987bf-7760-45b4-b17d-9a8c1a61e6b0",
+        "rechazadas": 532,
+        "revisadas": 1037,
+        "proporcion_rechazadas": 0.513
+      },
+      {
+        "cliente_id": "2475263c-7854-4014-aded-c86a9f4fb02b",
+        "proyecto_id": "9d6cd5f1-db9b-40e6-ad4a-e6dd51b49326",
+        "rechazadas": 488,
+        "revisadas": 1018,
+        "proporcion_rechazadas": 0.4794
+      },
+      {
+        "cliente_id": "2475263c-7854-4014-aded-c86a9f4fb02b",
+        "proyecto_id": "e97732bd-4d89-44a3-8c90-680b9dcda265",
+        "rechazadas": 593,
+        "revisadas": 1136,
+        "proporcion_rechazadas": 0.522
+      },
+      {
+        "cliente_id": "265c28ea-0879-4955-825f-f87c44df8a13",
+        "proyecto_id": "1c3e16e0-4fb0-44de-83f6-697df3e25f12",
+        "rechazadas": 561,
+        "revisadas": 1089,
+        "proporcion_rechazadas": 0.5152
+      },
+      {
+        "cliente_id": "265c28ea-0879-4955-825f-f87c44df8a13",
+        "proyecto_id": "4085a320-8d63-4e14-b1b6-130e2650b3a1",
+        "rechazadas": 648,
+        "revisadas": 1200,
+        "proporcion_rechazadas": 0.54
+      },
+      {
+        "cliente_id": "265c28ea-0879-4955-825f-f87c44df8a13",
+        "proyecto_id": "838aed33-98bc-4fa9-8cb4-3d580941e6de",
+        "rechazadas": 543,
+        "revisadas": 1048,
+        "proporcion_rechazadas": 0.5181
+      },
+      {
+        "cliente_id": "2edc49c1-f71b-4135-ac06-43b173f29c6a",
+        "proyecto_id": "3e7705c8-cce3-429c-b1f6-7a20daa8f7b7",
+        "rechazadas": 586,
+        "revisadas": 1101,
+        "proporcion_rechazadas": 0.5322
+      },
+      {
+        "cliente_id": "2edc49c1-f71b-4135-ac06-43b173f29c6a",
+        "proyecto_id": "44abbde7-26df-4bfd-8e2e-ccd4eaca913e",
+        "rechazadas": 519,
+        "revisadas": 1029,
+        "proporcion_rechazadas": 0.5044
+      },
+      {
+        "cliente_id": "2edc49c1-f71b-4135-ac06-43b173f29c6a",
+        "proyecto_id": "5b315837-c2b8-496d-83b2-eb395bb70bfc",
+        "rechazadas": 574,
+        "revisadas": 1118,
+        "proporcion_rechazadas": 0.5134
+      },
+      {
+        "cliente_id": "33288e16-ebe8-4fa9-9c24-c1ae7d510557",
+        "proyecto_id": "2d903bb6-c293-4ca1-b00a-cd2130e95ec9",
+        "rechazadas": 587,
+        "revisadas": 1121,
+        "proporcion_rechazadas": 0.5236
+      },
+      {
+        "cliente_id": "33288e16-ebe8-4fa9-9c24-c1ae7d510557",
+        "proyecto_id": "ba5e8809-5177-4467-b279-f52b566f46d1",
+        "rechazadas": 586,
+        "revisadas": 1119,
+        "proporcion_rechazadas": 0.5237
+      },
+      {
+        "cliente_id": "33288e16-ebe8-4fa9-9c24-c1ae7d510557",
+        "proyecto_id": "e1bf119c-88ed-4b44-a1c1-dfa6a122d0d2",
+        "rechazadas": 513,
+        "revisadas": 1030,
+        "proporcion_rechazadas": 0.4981
+      },
+      {
+        "cliente_id": "4242c225-83e2-465a-b654-0600c8fb4456",
+        "proyecto_id": "08b6639f-ebfd-4dc5-a298-ab8779476af8",
+        "rechazadas": 516,
+        "revisadas": 1051,
+        "proporcion_rechazadas": 0.491
+      },
+      {
+        "cliente_id": "4242c225-83e2-465a-b654-0600c8fb4456",
+        "proyecto_id": "5d3c9ce7-e8d8-435c-a46c-71cf9f70b8ba",
+        "rechazadas": 601,
+        "revisadas": 1161,
+        "proporcion_rechazadas": 0.5177
+      },
+      {
+        "cliente_id": "4242c225-83e2-465a-b654-0600c8fb4456",
+        "proyecto_id": "609de50d-91c4-4ceb-930e-619295980705",
+        "rechazadas": 595,
+        "revisadas": 1138,
+        "proporcion_rechazadas": 0.5228
+      },
+      {
+        "cliente_id": "4a41f8e4-d4d6-4278-889b-5123e842997d",
+        "proyecto_id": "0c996f04-88ca-4ba0-8c55-3dfafb3defcc",
+        "rechazadas": 539,
+        "revisadas": 1060,
+        "proporcion_rechazadas": 0.5085
+      },
+      {
+        "cliente_id": "4a41f8e4-d4d6-4278-889b-5123e842997d",
+        "proyecto_id": "c051260e-59c9-4139-bd70-1a0dd4e8eabd",
+        "rechazadas": 562,
+        "revisadas": 1125,
+        "proporcion_rechazadas": 0.4996
+      },
+      {
+        "cliente_id": "4a41f8e4-d4d6-4278-889b-5123e842997d",
+        "proyecto_id": "f9c6a003-1b43-4030-acf6-077e605797b7",
+        "rechazadas": 612,
+        "revisadas": 1148,
+        "proporcion_rechazadas": 0.5331
+      },
+      {
+        "cliente_id": "5071950e-adec-4f11-bd83-6e77af67d461",
+        "proyecto_id": "0104a2ff-208e-4c04-9148-da691cf65d21",
+        "rechazadas": 511,
+        "revisadas": 1049,
+        "proporcion_rechazadas": 0.4871
+      },
+      {
+        "cliente_id": "5071950e-adec-4f11-bd83-6e77af67d461",
+        "proyecto_id": "2e5dc8af-982d-476b-9744-1efc7c57aeee",
+        "rechazadas": 536,
+        "revisadas": 1033,
+        "proporcion_rechazadas": 0.5189
+      },
+      {
+        "cliente_id": "5071950e-adec-4f11-bd83-6e77af67d461",
+        "proyecto_id": "caf3f372-cb53-42b5-9ada-81b0e867bc4e",
+        "rechazadas": 566,
+        "revisadas": 1123,
+        "proporcion_rechazadas": 0.504
+      },
+      {
+        "cliente_id": "59001ac9-4063-49bc-a5b0-0a2d35d14880",
+        "proyecto_id": "25cb4dc5-4fa3-4e0e-8707-72779ced4694",
+        "rechazadas": 593,
+        "revisadas": 1107,
+        "proporcion_rechazadas": 0.5357
+      },
+      {
+        "cliente_id": "59001ac9-4063-49bc-a5b0-0a2d35d14880",
+        "proyecto_id": "3c981c11-58af-4cb8-962b-1b921fe6bb9b",
+        "rechazadas": 625,
+        "revisadas": 1177,
+        "proporcion_rechazadas": 0.531
+      },
+      {
+        "cliente_id": "59001ac9-4063-49bc-a5b0-0a2d35d14880",
+        "proyecto_id": "dfd7dfe8-96db-42c5-bfb5-a97d126337d6",
+        "rechazadas": 505,
+        "revisadas": 1057,
+        "proporcion_rechazadas": 0.4778
+      },
+      {
+        "cliente_id": "5b4c8012-ede7-4d0c-bfb8-8309fadb8908",
+        "proyecto_id": "0531b3ae-4086-4dcb-b0b6-459a685fcb50",
+        "rechazadas": 577,
+        "revisadas": 1120,
+        "proporcion_rechazadas": 0.5152
+      },
+      {
+        "cliente_id": "5b4c8012-ede7-4d0c-bfb8-8309fadb8908",
+        "proyecto_id": "096b4ef8-635d-446d-b87f-2ab9bc2cc533",
+        "rechazadas": 490,
+        "revisadas": 999,
+        "proporcion_rechazadas": 0.4905
+      },
+      {
+        "cliente_id": "5b4c8012-ede7-4d0c-bfb8-8309fadb8908",
+        "proyecto_id": "f354230d-775c-4cba-b180-131f263ef4fc",
+        "rechazadas": 599,
+        "revisadas": 1149,
+        "proporcion_rechazadas": 0.5213
+      },
+      {
+        "cliente_id": "5ec0c260-7f98-40a6-a73c-49ea44371ff3",
+        "proyecto_id": "0b44e128-774a-472c-a9d1-aab65c340368",
+        "rechazadas": 610,
+        "revisadas": 1153,
+        "proporcion_rechazadas": 0.5291
+      },
+      {
+        "cliente_id": "5ec0c260-7f98-40a6-a73c-49ea44371ff3",
+        "proyecto_id": "371e40bf-3c72-4eb0-9b63-bb4d07758dc8",
+        "rechazadas": 578,
+        "revisadas": 1091,
+        "proporcion_rechazadas": 0.5298
+      },
+      {
+        "cliente_id": "5ec0c260-7f98-40a6-a73c-49ea44371ff3",
+        "proyecto_id": "4228718b-1fa0-45ae-8e93-2b83353434bf",
+        "rechazadas": 585,
+        "revisadas": 1160,
+        "proporcion_rechazadas": 0.5043
+      },
+      {
+        "cliente_id": "66e61127-e26b-424a-8e0d-8d877a98b9ac",
+        "proyecto_id": "29b91dd4-7117-40ad-972f-795aba52cc9c",
+        "rechazadas": 536,
+        "revisadas": 1052,
+        "proporcion_rechazadas": 0.5095
+      },
+      {
+        "cliente_id": "66e61127-e26b-424a-8e0d-8d877a98b9ac",
+        "proyecto_id": "ae50a592-7f34-41b9-a2e8-de7c600a0dc0",
+        "rechazadas": 632,
+        "revisadas": 1205,
+        "proporcion_rechazadas": 0.5245
+      },
+      {
+        "cliente_id": "66e61127-e26b-424a-8e0d-8d877a98b9ac",
+        "proyecto_id": "c95a93ae-5904-4079-8ee8-74c676c79a3b",
+        "rechazadas": 520,
+        "revisadas": 1074,
+        "proporcion_rechazadas": 0.4842
+      },
+      {
+        "cliente_id": "66eebc57-8f4e-4b4f-8041-f5ee8bae8e66",
+        "proyecto_id": "4ce06bdf-3205-4957-9324-e5299f067c31",
+        "rechazadas": 491,
+        "revisadas": 1004,
+        "proporcion_rechazadas": 0.489
+      },
+      {
+        "cliente_id": "66eebc57-8f4e-4b4f-8041-f5ee8bae8e66",
+        "proyecto_id": "4dbb0891-17c3-4b93-8191-a45357163595",
+        "rechazadas": 488,
+        "revisadas": 988,
+        "proporcion_rechazadas": 0.4939
+      },
+      {
+        "cliente_id": "66eebc57-8f4e-4b4f-8041-f5ee8bae8e66",
+        "proyecto_id": "69d529b9-4a46-4e1e-b5c8-84d786ffc468",
+        "rechazadas": 602,
+        "revisadas": 1145,
+        "proporcion_rechazadas": 0.5258
+      },
+      {
+        "cliente_id": "6bad6be2-8e7a-46e9-9f19-950499dd251d",
+        "proyecto_id": "3c295d1b-6a96-4f7e-9935-0059a0520eeb",
+        "rechazadas": 609,
+        "revisadas": 1130,
+        "proporcion_rechazadas": 0.5389
+      },
+      {
+        "cliente_id": "6bad6be2-8e7a-46e9-9f19-950499dd251d",
+        "proyecto_id": "5dfb9a8a-b56f-4076-8cba-e89f2d320bd1",
+        "rechazadas": 603,
+        "revisadas": 1198,
+        "proporcion_rechazadas": 0.5033
+      },
+      {
+        "cliente_id": "6bad6be2-8e7a-46e9-9f19-950499dd251d",
+        "proyecto_id": "bf1c0260-4e8f-4fe2-adfc-deaf9101b706",
+        "rechazadas": 511,
+        "revisadas": 1032,
+        "proporcion_rechazadas": 0.4952
+      },
+      {
+        "cliente_id": "70eb9a0a-9626-4ae6-85e8-18fac0433cbd",
+        "proyecto_id": "18da990c-9704-464a-b54b-82d3b6e57418",
+        "rechazadas": 555,
+        "revisadas": 1091,
+        "proporcion_rechazadas": 0.5087
+      },
+      {
+        "cliente_id": "70eb9a0a-9626-4ae6-85e8-18fac0433cbd",
+        "proyecto_id": "75ff71f6-2693-43f4-a8ac-3b26577d37a8",
+        "rechazadas": 553,
+        "revisadas": 1079,
+        "proporcion_rechazadas": 0.5125
+      },
+      {
+        "cliente_id": "70eb9a0a-9626-4ae6-85e8-18fac0433cbd",
+        "proyecto_id": "a200bce5-8423-4100-895b-f10a9cce902e",
+        "rechazadas": 672,
+        "revisadas": 1247,
+        "proporcion_rechazadas": 0.5389
+      },
+      {
+        "cliente_id": "7383d496-000e-45d0-9798-5d060397a31d",
+        "proyecto_id": "5fbe16a9-3083-40d7-8357-2d566f797e3e",
+        "rechazadas": 516,
+        "revisadas": 1043,
+        "proporcion_rechazadas": 0.4947
+      },
+      {
+        "cliente_id": "7383d496-000e-45d0-9798-5d060397a31d",
+        "proyecto_id": "c507a35a-1dbc-4b7e-8dfe-be14cb10c60b",
+        "rechazadas": 551,
+        "revisadas": 1079,
+        "proporcion_rechazadas": 0.5107
+      },
+      {
+        "cliente_id": "7383d496-000e-45d0-9798-5d060397a31d",
+        "proyecto_id": "f1147f4e-f8ad-46b0-a185-c6ea4c73cb96",
+        "rechazadas": 592,
+        "revisadas": 1133,
+        "proporcion_rechazadas": 0.5225
+      },
+      {
+        "cliente_id": "7608d942-5d11-4a9d-9e6c-9992b5fb12e0",
+        "proyecto_id": "193a1d06-bf47-412e-99ff-005c79bf3d29",
+        "rechazadas": 492,
+        "revisadas": 962,
+        "proporcion_rechazadas": 0.5114
+      },
+      {
+        "cliente_id": "7608d942-5d11-4a9d-9e6c-9992b5fb12e0",
+        "proyecto_id": "ee429e47-a3bb-4b8f-8479-ccc5264a1db3",
+        "rechazadas": 597,
+        "revisadas": 1163,
+        "proporcion_rechazadas": 0.5133
+      },
+      {
+        "cliente_id": "7608d942-5d11-4a9d-9e6c-9992b5fb12e0",
+        "proyecto_id": "f0b2a517-ba58-447b-b1aa-6f4bc4f27979",
+        "rechazadas": 494,
+        "revisadas": 1011,
+        "proporcion_rechazadas": 0.4886
+      },
+      {
+        "cliente_id": "7776c655-7c4e-4248-b151-5fff42969a50",
+        "proyecto_id": "1088a172-7944-4514-9c10-bb61f0248f25",
+        "rechazadas": 615,
+        "revisadas": 1150,
+        "proporcion_rechazadas": 0.5348
+      },
+      {
+        "cliente_id": "7776c655-7c4e-4248-b151-5fff42969a50",
+        "proyecto_id": "1f6eb192-a349-4a84-b5c6-bea9ebcd6d62",
+        "rechazadas": 581,
+        "revisadas": 1133,
+        "proporcion_rechazadas": 0.5128
+      },
+      {
+        "cliente_id": "7776c655-7c4e-4248-b151-5fff42969a50",
+        "proyecto_id": "82c87b83-f248-4943-b29c-72d9d4536fec",
+        "rechazadas": 550,
+        "revisadas": 1104,
+        "proporcion_rechazadas": 0.4982
+      },
+      {
+        "cliente_id": "7dabe929-c4a3-44bf-86cd-75e9bb049a79",
+        "proyecto_id": "2ceeed8c-bc7a-482d-ab95-1e7757b16995",
+        "rechazadas": 576,
+        "revisadas": 1097,
+        "proporcion_rechazadas": 0.5251
+      },
+      {
+        "cliente_id": "7dabe929-c4a3-44bf-86cd-75e9bb049a79",
+        "proyecto_id": "ad040b1f-1a66-48ba-b4c5-17a88a29fabd",
+        "rechazadas": 595,
+        "revisadas": 1152,
+        "proporcion_rechazadas": 0.5165
+      },
+      {
+        "cliente_id": "7dabe929-c4a3-44bf-86cd-75e9bb049a79",
+        "proyecto_id": "c302e4a4-10fa-4bc2-a3f8-992318c22f25",
+        "rechazadas": 578,
+        "revisadas": 1138,
+        "proporcion_rechazadas": 0.5079
+      },
+      {
+        "cliente_id": "7f45b096-d380-4b73-8446-ab8c82e26123",
+        "proyecto_id": "22a2ee31-9861-4fc2-a3c4-3d34e8d2c609",
+        "rechazadas": 561,
+        "revisadas": 1111,
+        "proporcion_rechazadas": 0.505
+      },
+      {
+        "cliente_id": "7f45b096-d380-4b73-8446-ab8c82e26123",
+        "proyecto_id": "a59ec30e-67ef-45ed-9620-e849a937cbcf",
+        "rechazadas": 509,
+        "revisadas": 1040,
+        "proporcion_rechazadas": 0.4894
+      },
+      {
+        "cliente_id": "7f45b096-d380-4b73-8446-ab8c82e26123",
+        "proyecto_id": "d4c09d4b-aa32-459b-8d12-59e2491b108f",
+        "rechazadas": 504,
+        "revisadas": 1020,
+        "proporcion_rechazadas": 0.4941
+      },
+      {
+        "cliente_id": "8350a73f-7aac-419f-bb75-9e0fed1d9d16",
+        "proyecto_id": "3112cdd6-6e04-4667-a0f7-b88ecbd79950",
+        "rechazadas": 552,
+        "revisadas": 1118,
+        "proporcion_rechazadas": 0.4937
+      },
+      {
+        "cliente_id": "8350a73f-7aac-419f-bb75-9e0fed1d9d16",
+        "proyecto_id": "398faf3a-6743-42dd-bec2-54bec28bc4a0",
+        "rechazadas": 549,
+        "revisadas": 1085,
+        "proporcion_rechazadas": 0.506
+      },
+      {
+        "cliente_id": "8350a73f-7aac-419f-bb75-9e0fed1d9d16",
+        "proyecto_id": "6f456bec-cd31-470e-86a9-5ffa42149a69",
+        "rechazadas": 595,
+        "revisadas": 1137,
+        "proporcion_rechazadas": 0.5233
+      },
+      {
+        "cliente_id": "85f184e0-b464-4554-b675-299b0c83e786",
+        "proyecto_id": "1530a3b7-a23d-4925-a04d-e64c6915f7fc",
+        "rechazadas": 547,
+        "revisadas": 1093,
+        "proporcion_rechazadas": 0.5005
+      },
+      {
+        "cliente_id": "85f184e0-b464-4554-b675-299b0c83e786",
+        "proyecto_id": "55d23105-99ff-41ed-a0e2-098d6299fc6c",
+        "rechazadas": 579,
+        "revisadas": 1120,
+        "proporcion_rechazadas": 0.517
+      },
+      {
+        "cliente_id": "85f184e0-b464-4554-b675-299b0c83e786",
+        "proyecto_id": "cd242df9-c351-4260-a8c3-33a952455f4e",
+        "rechazadas": 551,
+        "revisadas": 1076,
+        "proporcion_rechazadas": 0.5121
+      },
+      {
+        "cliente_id": "864fa3f3-eab0-4e9b-a5ed-0de47db4304d",
+        "proyecto_id": "0036d758-c8d0-4357-a59d-2f86a2ce7540",
+        "rechazadas": 546,
+        "revisadas": 1036,
+        "proporcion_rechazadas": 0.527
+      },
+      {
+        "cliente_id": "864fa3f3-eab0-4e9b-a5ed-0de47db4304d",
+        "proyecto_id": "2442df29-db47-4fab-82ce-b8ad2b3c179b",
+        "rechazadas": 556,
+        "revisadas": 1114,
+        "proporcion_rechazadas": 0.4991
+      },
+      {
+        "cliente_id": "864fa3f3-eab0-4e9b-a5ed-0de47db4304d",
+        "proyecto_id": "fd2a40c8-369c-4a50-b45f-2a1207d7ba06",
+        "rechazadas": 526,
+        "revisadas": 1074,
+        "proporcion_rechazadas": 0.4898
+      },
+      {
+        "cliente_id": "89be9c1c-8eb5-440f-96f4-488157241955",
+        "proyecto_id": "1f19c99c-9656-4697-b1af-265001484051",
+        "rechazadas": 588,
+        "revisadas": 1125,
+        "proporcion_rechazadas": 0.5227
+      },
+      {
+        "cliente_id": "89be9c1c-8eb5-440f-96f4-488157241955",
+        "proyecto_id": "21855bdd-f27e-4001-80eb-16336c70009f",
+        "rechazadas": 583,
+        "revisadas": 1139,
+        "proporcion_rechazadas": 0.5119
+      },
+      {
+        "cliente_id": "89be9c1c-8eb5-440f-96f4-488157241955",
+        "proyecto_id": "68b131ad-497d-411f-9cb4-f6cac53a1eb3",
+        "rechazadas": 535,
+        "revisadas": 1035,
+        "proporcion_rechazadas": 0.5169
+      },
+      {
+        "cliente_id": "8c53765f-4ec0-4954-bf8b-2a6aab74fe57",
+        "proyecto_id": "42b6be30-de7e-44ce-9a2f-6d41bd0b9cff",
+        "rechazadas": 602,
+        "revisadas": 1131,
+        "proporcion_rechazadas": 0.5323
+      },
+      {
+        "cliente_id": "8c53765f-4ec0-4954-bf8b-2a6aab74fe57",
+        "proyecto_id": "ab8e4041-6e35-4e9d-9904-8fce2b7a3cf0",
+        "rechazadas": 527,
+        "revisadas": 1059,
+        "proporcion_rechazadas": 0.4976
+      },
+      {
+        "cliente_id": "8c53765f-4ec0-4954-bf8b-2a6aab74fe57",
+        "proyecto_id": "d2fa3fdc-1c79-4d25-8ff0-624a89ffc0ad",
+        "rechazadas": 569,
+        "revisadas": 1113,
+        "proporcion_rechazadas": 0.5112
+      },
+      {
+        "cliente_id": "90624fe3-6b82-46c9-982f-b0f1423674a6",
+        "proyecto_id": "1832fc16-c7ea-4a3a-873c-8fc14994fc89",
+        "rechazadas": 534,
+        "revisadas": 1071,
+        "proporcion_rechazadas": 0.4986
+      },
+      {
+        "cliente_id": "90624fe3-6b82-46c9-982f-b0f1423674a6",
+        "proyecto_id": "4eba6849-ca8c-499f-9b3b-e0919a3df019",
+        "rechazadas": 594,
+        "revisadas": 1153,
+        "proporcion_rechazadas": 0.5152
+      },
+      {
+        "cliente_id": "90624fe3-6b82-46c9-982f-b0f1423674a6",
+        "proyecto_id": "fa8cacb5-b66b-4b7f-8b62-275fb2f53e5c",
+        "rechazadas": 588,
+        "revisadas": 1135,
+        "proporcion_rechazadas": 0.5181
+      },
+      {
+        "cliente_id": "93550840-067f-4cfc-8e1f-d3d9849acfb5",
+        "proyecto_id": "39f757bd-b1e2-4df5-9a32-96d7c9304f85",
+        "rechazadas": 560,
+        "revisadas": 1113,
+        "proporcion_rechazadas": 0.5031
+      },
+      {
+        "cliente_id": "93550840-067f-4cfc-8e1f-d3d9849acfb5",
+        "proyecto_id": "534f7317-aa29-49cf-b13c-e642de1cfb0a",
+        "rechazadas": 662,
+        "revisadas": 1239,
+        "proporcion_rechazadas": 0.5343
+      },
+      {
+        "cliente_id": "93550840-067f-4cfc-8e1f-d3d9849acfb5",
+        "proyecto_id": "7645642c-bd88-4ea5-b69e-75a3450da734",
+        "rechazadas": 527,
+        "revisadas": 1076,
+        "proporcion_rechazadas": 0.4898
+      },
+      {
+        "cliente_id": "a60741f3-1075-45b0-b0ac-debe7aa95416",
+        "proyecto_id": "0290b17a-7ad4-49dc-8846-f76540475fbf",
+        "rechazadas": 501,
+        "revisadas": 997,
+        "proporcion_rechazadas": 0.5025
+      },
+      {
+        "cliente_id": "a60741f3-1075-45b0-b0ac-debe7aa95416",
+        "proyecto_id": "1a753279-b6b5-42e5-b8c4-e658f2e212ca",
+        "rechazadas": 544,
+        "revisadas": 1070,
+        "proporcion_rechazadas": 0.5084
+      },
+      {
+        "cliente_id": "a60741f3-1075-45b0-b0ac-debe7aa95416",
+        "proyecto_id": "df22b435-dd72-4e1e-be3b-4bbfdd146260",
+        "rechazadas": 647,
+        "revisadas": 1252,
+        "proporcion_rechazadas": 0.5168
+      },
+      {
+        "cliente_id": "a9f5307c-8ece-48b0-af29-a9f1ced66b44",
+        "proyecto_id": "59a4d80e-818a-4b75-9d40-c7cef4f07584",
+        "rechazadas": 486,
+        "revisadas": 1007,
+        "proporcion_rechazadas": 0.4826
+      },
+      {
+        "cliente_id": "a9f5307c-8ece-48b0-af29-a9f1ced66b44",
+        "proyecto_id": "9bd59b24-7636-4b3d-9cbd-aa2c6c9f4860",
+        "rechazadas": 539,
+        "revisadas": 1029,
+        "proporcion_rechazadas": 0.5238
+      },
+      {
+        "cliente_id": "a9f5307c-8ece-48b0-af29-a9f1ced66b44",
+        "proyecto_id": "cc5e8817-4977-4d3e-be22-4cfc9f8abc76",
+        "rechazadas": 595,
+        "revisadas": 1146,
+        "proporcion_rechazadas": 0.5192
+      },
+      {
+        "cliente_id": "b2c55523-807c-4e30-a598-d0dbccbfd2ec",
+        "proyecto_id": "39a3fe7c-b090-485c-92ba-78458b23f006",
+        "rechazadas": 568,
+        "revisadas": 1069,
+        "proporcion_rechazadas": 0.5313
+      },
+      {
+        "cliente_id": "b2c55523-807c-4e30-a598-d0dbccbfd2ec",
+        "proyecto_id": "c5f2ac85-eeb1-4e04-b52d-b661353b014c",
+        "rechazadas": 548,
+        "revisadas": 1056,
+        "proporcion_rechazadas": 0.5189
+      },
+      {
+        "cliente_id": "b2c55523-807c-4e30-a598-d0dbccbfd2ec",
+        "proyecto_id": "fc9ab34b-71e0-4d0f-a002-59f894996ab9",
+        "rechazadas": 550,
+        "revisadas": 1110,
+        "proporcion_rechazadas": 0.4955
+      },
+      {
+        "cliente_id": "b3618e1c-a06d-4a69-9f3c-42b2e2cbbb93",
+        "proyecto_id": "0291bf4d-fe8f-4334-9b82-8663131f0462",
+        "rechazadas": 600,
+        "revisadas": 1162,
+        "proporcion_rechazadas": 0.5164
+      },
+      {
+        "cliente_id": "b3618e1c-a06d-4a69-9f3c-42b2e2cbbb93",
+        "proyecto_id": "861498b3-9ad6-4061-9325-eca6bddc0d5f",
+        "rechazadas": 589,
+        "revisadas": 1143,
+        "proporcion_rechazadas": 0.5153
+      },
+      {
+        "cliente_id": "b3618e1c-a06d-4a69-9f3c-42b2e2cbbb93",
+        "proyecto_id": "dd9a7e7d-58fe-4057-837e-f300b19037a2",
+        "rechazadas": 532,
+        "revisadas": 1031,
+        "proporcion_rechazadas": 0.516
+      },
+      {
+        "cliente_id": "b6eafff5-782a-4e6b-ac9f-21df74f09af5",
+        "proyecto_id": "17bc112f-ab86-4d7d-93b6-9dc25df6bd28",
+        "rechazadas": 559,
+        "revisadas": 1109,
+        "proporcion_rechazadas": 0.5041
+      },
+      {
+        "cliente_id": "b6eafff5-782a-4e6b-ac9f-21df74f09af5",
+        "proyecto_id": "2cf5e806-3e18-4088-b3c0-5765ec144f18",
+        "rechazadas": 562,
+        "revisadas": 1106,
+        "proporcion_rechazadas": 0.5081
+      },
+      {
+        "cliente_id": "b6eafff5-782a-4e6b-ac9f-21df74f09af5",
+        "proyecto_id": "40c87335-6b47-4bb8-870e-c7582e686d7e",
+        "rechazadas": 527,
+        "revisadas": 1037,
+        "proporcion_rechazadas": 0.5082
+      },
+      {
+        "cliente_id": "b766ff10-b437-4db5-a511-49bbe060a724",
+        "proyecto_id": "100e031d-fdd4-4732-a05a-fe026c4c9546",
+        "rechazadas": 572,
+        "revisadas": 1126,
+        "proporcion_rechazadas": 0.508
+      },
+      {
+        "cliente_id": "b766ff10-b437-4db5-a511-49bbe060a724",
+        "proyecto_id": "30aef2b6-70f1-46bf-8b33-48b8d5aabe96",
+        "rechazadas": 516,
+        "revisadas": 1068,
+        "proporcion_rechazadas": 0.4831
+      },
+      {
+        "cliente_id": "b766ff10-b437-4db5-a511-49bbe060a724",
+        "proyecto_id": "d884d50b-1179-43c6-8f49-199e719f9c8b",
+        "rechazadas": 474,
+        "revisadas": 970,
+        "proporcion_rechazadas": 0.4887
+      },
+      {
+        "cliente_id": "b76dc0c3-b078-42db-b03e-53cf192f09a9",
+        "proyecto_id": "46ab5ec5-b802-4168-b9f0-dffdef7d9ea2",
+        "rechazadas": 604,
+        "revisadas": 1153,
+        "proporcion_rechazadas": 0.5239
+      },
+      {
+        "cliente_id": "b76dc0c3-b078-42db-b03e-53cf192f09a9",
+        "proyecto_id": "632d5714-6de4-4594-8693-16c76bd8e83a",
+        "rechazadas": 575,
+        "revisadas": 1141,
+        "proporcion_rechazadas": 0.5039
+      },
+      {
+        "cliente_id": "b76dc0c3-b078-42db-b03e-53cf192f09a9",
+        "proyecto_id": "73f0994d-ae08-4785-8173-bada6e3ad149",
+        "rechazadas": 520,
+        "revisadas": 1067,
+        "proporcion_rechazadas": 0.4873
+      },
+      {
+        "cliente_id": "b7a1774f-1a42-421e-aba4-c70ee306f0c4",
+        "proyecto_id": "352991ba-6504-4bea-8957-fa1ba5008b67",
+        "rechazadas": 536,
+        "revisadas": 1052,
+        "proporcion_rechazadas": 0.5095
+      },
+      {
+        "cliente_id": "b7a1774f-1a42-421e-aba4-c70ee306f0c4",
+        "proyecto_id": "43a366d4-9e29-411d-84b0-1bdd93ef1690",
+        "rechazadas": 507,
+        "revisadas": 1020,
+        "proporcion_rechazadas": 0.4971
+      },
+      {
+        "cliente_id": "b7a1774f-1a42-421e-aba4-c70ee306f0c4",
+        "proyecto_id": "e2f4c4c9-07f2-464c-8b8c-1753b091d372",
+        "rechazadas": 604,
+        "revisadas": 1181,
+        "proporcion_rechazadas": 0.5114
+      },
+      {
+        "cliente_id": "b91dddd9-1389-4372-a341-738c837a7935",
+        "proyecto_id": "a0170756-a22e-4caa-a192-4ddf268b6be9",
+        "rechazadas": 574,
+        "revisadas": 1120,
+        "proporcion_rechazadas": 0.5125
+      },
+      {
+        "cliente_id": "b91dddd9-1389-4372-a341-738c837a7935",
+        "proyecto_id": "c1a52505-0623-4012-bc5a-b5838fd56b45",
+        "rechazadas": 554,
+        "revisadas": 1076,
+        "proporcion_rechazadas": 0.5149
+      },
+      {
+        "cliente_id": "b91dddd9-1389-4372-a341-738c837a7935",
+        "proyecto_id": "fb4a2d40-cbb0-49b2-8cfd-e05eff7f5ad6",
+        "rechazadas": 574,
+        "revisadas": 1131,
+        "proporcion_rechazadas": 0.5075
+      },
+      {
+        "cliente_id": "ba5c875c-d7aa-4208-acff-b0f0f79edc82",
+        "proyecto_id": "5b31c2c6-60be-4907-95a8-8aa68f289e42",
+        "rechazadas": 556,
+        "revisadas": 1100,
+        "proporcion_rechazadas": 0.5055
+      },
+      {
+        "cliente_id": "ba5c875c-d7aa-4208-acff-b0f0f79edc82",
+        "proyecto_id": "ca3702b2-e3b0-41de-a481-5ea7744be5da",
+        "rechazadas": 607,
+        "revisadas": 1175,
+        "proporcion_rechazadas": 0.5166
+      },
+      {
+        "cliente_id": "ba5c875c-d7aa-4208-acff-b0f0f79edc82",
+        "proyecto_id": "cad71eb4-59c8-40ea-bc48-ec7262e7825f",
+        "rechazadas": 569,
+        "revisadas": 1153,
+        "proporcion_rechazadas": 0.4935
+      },
+      {
+        "cliente_id": "bef7e268-ffe9-46ab-a058-1ccace1d62e0",
+        "proyecto_id": "d57eaf43-f85d-4813-b0d8-d03a230dad86",
+        "rechazadas": 545,
+        "revisadas": 1092,
+        "proporcion_rechazadas": 0.4991
+      },
+      {
+        "cliente_id": "bef7e268-ffe9-46ab-a058-1ccace1d62e0",
+        "proyecto_id": "eb0c1184-197c-473d-aa74-3faedad55473",
+        "rechazadas": 548,
+        "revisadas": 1085,
+        "proporcion_rechazadas": 0.5051
+      },
+      {
+        "cliente_id": "bef7e268-ffe9-46ab-a058-1ccace1d62e0",
+        "proyecto_id": "f2ca68b2-4ba5-45db-9bc7-d0e771be4d88",
+        "rechazadas": 586,
+        "revisadas": 1157,
+        "proporcion_rechazadas": 0.5065
+      },
+      {
+        "cliente_id": "cd73de00-81a0-4a05-ace9-da661dcf884c",
+        "proyecto_id": "3f81bdbf-8623-4fc0-8b86-d604b67eed92",
+        "rechazadas": 576,
+        "revisadas": 1096,
+        "proporcion_rechazadas": 0.5255
+      },
+      {
+        "cliente_id": "cd73de00-81a0-4a05-ace9-da661dcf884c",
+        "proyecto_id": "699f48c0-92fa-463f-b735-a91f741152c4",
+        "rechazadas": 555,
+        "revisadas": 1083,
+        "proporcion_rechazadas": 0.5125
+      },
+      {
+        "cliente_id": "cd73de00-81a0-4a05-ace9-da661dcf884c",
+        "proyecto_id": "d16d3411-502a-43b6-9c29-490a4be3bcf2",
+        "rechazadas": 543,
+        "revisadas": 1082,
+        "proporcion_rechazadas": 0.5018
+      },
+      {
+        "cliente_id": "cfd8c364-eab4-4bd6-b528-ea79511070a7",
+        "proyecto_id": "0374b64b-3876-4b7c-8697-e1b663b87d78",
+        "rechazadas": 560,
+        "revisadas": 1103,
+        "proporcion_rechazadas": 0.5077
+      },
+      {
+        "cliente_id": "cfd8c364-eab4-4bd6-b528-ea79511070a7",
+        "proyecto_id": "d8f5f877-585b-47a4-8e2e-b551fd33ff5b",
+        "rechazadas": 569,
+        "revisadas": 1088,
+        "proporcion_rechazadas": 0.523
+      },
+      {
+        "cliente_id": "cfd8c364-eab4-4bd6-b528-ea79511070a7",
+        "proyecto_id": "fe217fc4-d2dd-47e8-9e8f-5d0a5f649a87",
+        "rechazadas": 521,
+        "revisadas": 1023,
+        "proporcion_rechazadas": 0.5093
+      },
+      {
+        "cliente_id": "d1711cbd-2106-419e-840d-31b5397a7623",
+        "proyecto_id": "13683df3-c09e-42ff-aec4-283b5d69bfbe",
+        "rechazadas": 550,
+        "revisadas": 1124,
+        "proporcion_rechazadas": 0.4893
+      },
+      {
+        "cliente_id": "d1711cbd-2106-419e-840d-31b5397a7623",
+        "proyecto_id": "349f5a6c-2697-4eea-9f15-b224861beadf",
+        "rechazadas": 560,
+        "revisadas": 1097,
+        "proporcion_rechazadas": 0.5105
+      },
+      {
+        "cliente_id": "d1711cbd-2106-419e-840d-31b5397a7623",
+        "proyecto_id": "3ad7439a-19fc-4798-8cd2-fa2d2a76f010",
+        "rechazadas": 576,
+        "revisadas": 1123,
+        "proporcion_rechazadas": 0.5129
+      },
+      {
+        "cliente_id": "d4f398ee-4b5c-4a95-b3d9-18086edd77d8",
+        "proyecto_id": "2bb9dbd8-233f-4d7f-9e93-30e5c8b28d57",
+        "rechazadas": 494,
+        "revisadas": 1031,
+        "proporcion_rechazadas": 0.4791
+      },
+      {
+        "cliente_id": "d4f398ee-4b5c-4a95-b3d9-18086edd77d8",
+        "proyecto_id": "4f1843a7-8467-4b94-9094-b5e25b9a3886",
+        "rechazadas": 627,
+        "revisadas": 1228,
+        "proporcion_rechazadas": 0.5106
+      },
+      {
+        "cliente_id": "d4f398ee-4b5c-4a95-b3d9-18086edd77d8",
+        "proyecto_id": "bce6f38a-4e9f-4834-9ca1-45970f260a37",
+        "rechazadas": 566,
+        "revisadas": 1147,
+        "proporcion_rechazadas": 0.4935
+      },
+      {
+        "cliente_id": "d61b5e08-eea3-4d4e-8bed-5b6594a4d29c",
+        "proyecto_id": "0c1f82a3-d548-4b59-a90c-bd0bb3ba9cf3",
+        "rechazadas": 575,
+        "revisadas": 1124,
+        "proporcion_rechazadas": 0.5116
+      },
+      {
+        "cliente_id": "d61b5e08-eea3-4d4e-8bed-5b6594a4d29c",
+        "proyecto_id": "62495879-42f9-417e-ae87-86ac54b32368",
+        "rechazadas": 568,
+        "revisadas": 1123,
+        "proporcion_rechazadas": 0.5058
+      },
+      {
+        "cliente_id": "d61b5e08-eea3-4d4e-8bed-5b6594a4d29c",
+        "proyecto_id": "fb59acb3-15a6-4d41-8b9b-e80107f478d7",
+        "rechazadas": 550,
+        "revisadas": 1074,
+        "proporcion_rechazadas": 0.5121
+      },
+      {
+        "cliente_id": "d7a7a3cc-8c3d-4f16-9293-de8fc88b2875",
+        "proyecto_id": "00e164e8-e5c1-4a6f-8f83-d9755239e5bb",
+        "rechazadas": 535,
+        "revisadas": 1097,
+        "proporcion_rechazadas": 0.4877
+      },
+      {
+        "cliente_id": "d7a7a3cc-8c3d-4f16-9293-de8fc88b2875",
+        "proyecto_id": "074f30ec-f8f1-4b51-82af-2ef588000e81",
+        "rechazadas": 579,
+        "revisadas": 1103,
+        "proporcion_rechazadas": 0.5249
+      },
+      {
+        "cliente_id": "d7a7a3cc-8c3d-4f16-9293-de8fc88b2875",
+        "proyecto_id": "9e6aefc8-f604-4370-9e93-4250ef659464",
+        "rechazadas": 634,
+        "revisadas": 1180,
+        "proporcion_rechazadas": 0.5373
+      },
+      {
+        "cliente_id": "d9090b89-0655-4096-8f1a-8a1d93d20470",
+        "proyecto_id": "4fc70a2c-6a26-486f-8d12-833eee485694",
+        "rechazadas": 553,
+        "revisadas": 1079,
+        "proporcion_rechazadas": 0.5125
+      },
+      {
+        "cliente_id": "d9090b89-0655-4096-8f1a-8a1d93d20470",
+        "proyecto_id": "7053ce0b-4611-4a58-b409-24ff629cdb8f",
+        "rechazadas": 598,
+        "revisadas": 1167,
+        "proporcion_rechazadas": 0.5124
+      },
+      {
+        "cliente_id": "d9090b89-0655-4096-8f1a-8a1d93d20470",
+        "proyecto_id": "72e5e1de-0fb4-4bd2-bf74-a13571194f23",
+        "rechazadas": 547,
+        "revisadas": 1060,
+        "proporcion_rechazadas": 0.516
+      },
+      {
+        "cliente_id": "d9814559-3a9a-4a39-a261-e34a7b6bc3c6",
+        "proyecto_id": "3be343de-4f8e-46e5-9411-417edde34913",
+        "rechazadas": 556,
+        "revisadas": 1086,
+        "proporcion_rechazadas": 0.512
+      },
+      {
+        "cliente_id": "d9814559-3a9a-4a39-a261-e34a7b6bc3c6",
+        "proyecto_id": "60c7007e-f885-4531-89c9-0c598afd6238",
+        "rechazadas": 553,
+        "revisadas": 1087,
+        "proporcion_rechazadas": 0.5087
+      },
+      {
+        "cliente_id": "d9814559-3a9a-4a39-a261-e34a7b6bc3c6",
+        "proyecto_id": "f797cd65-6412-4585-9c02-400513ba2c7f",
+        "rechazadas": 485,
+        "revisadas": 997,
+        "proporcion_rechazadas": 0.4865
+      },
+      {
+        "cliente_id": "db4c9492-bf5f-45e2-b1d0-6d9c18bee074",
+        "proyecto_id": "64c2ce6b-9e26-4b74-bd93-57c32cc11466",
+        "rechazadas": 606,
+        "revisadas": 1153,
+        "proporcion_rechazadas": 0.5256
+      },
+      {
+        "cliente_id": "db4c9492-bf5f-45e2-b1d0-6d9c18bee074",
+        "proyecto_id": "6a149296-d275-4d42-ad88-b2c8f7b65da3",
+        "rechazadas": 549,
+        "revisadas": 1085,
+        "proporcion_rechazadas": 0.506
+      },
+      {
+        "cliente_id": "db4c9492-bf5f-45e2-b1d0-6d9c18bee074",
+        "proyecto_id": "b5828d47-dd19-470d-85ec-7d959a6aa668",
+        "rechazadas": 562,
+        "revisadas": 1075,
+        "proporcion_rechazadas": 0.5228
+      },
+      {
+        "cliente_id": "de0279e1-7f9a-4098-8df0-5f2595f19a51",
+        "proyecto_id": "1189eea9-0c7f-40b5-b743-433b65aea90b",
+        "rechazadas": 588,
+        "revisadas": 1138,
+        "proporcion_rechazadas": 0.5167
+      },
+      {
+        "cliente_id": "de0279e1-7f9a-4098-8df0-5f2595f19a51",
+        "proyecto_id": "4178161d-1195-4143-a3ea-5ba26d9b3805",
+        "rechazadas": 515,
+        "revisadas": 1036,
+        "proporcion_rechazadas": 0.4971
+      },
+      {
+        "cliente_id": "de0279e1-7f9a-4098-8df0-5f2595f19a51",
+        "proyecto_id": "78312688-6912-4372-9f3f-000cbd58668d",
+        "rechazadas": 596,
+        "revisadas": 1142,
+        "proporcion_rechazadas": 0.5219
+      },
+      {
+        "cliente_id": "e01c683e-99a4-4df0-9de3-a361c0099eba",
+        "proyecto_id": "8c447b9b-9cc6-4ea0-9a06-703f2b0c044d",
+        "rechazadas": 562,
+        "revisadas": 1080,
+        "proporcion_rechazadas": 0.5204
+      },
+      {
+        "cliente_id": "e01c683e-99a4-4df0-9de3-a361c0099eba",
+        "proyecto_id": "a2b57738-70eb-4571-ba5d-8682d242a6c7",
+        "rechazadas": 603,
+        "revisadas": 1175,
+        "proporcion_rechazadas": 0.5132
+      },
+      {
+        "cliente_id": "e01c683e-99a4-4df0-9de3-a361c0099eba",
+        "proyecto_id": "f381269b-599e-49cd-9be5-d38a6cb34e7e",
+        "rechazadas": 559,
+        "revisadas": 1105,
+        "proporcion_rechazadas": 0.5059
+      },
+      {
+        "cliente_id": "e4163207-d094-4996-82f0-ee99731c9452",
+        "proyecto_id": "111aadf8-ff87-43fb-b1db-09291dd60827",
+        "rechazadas": 572,
+        "revisadas": 1118,
+        "proporcion_rechazadas": 0.5116
+      },
+      {
+        "cliente_id": "e4163207-d094-4996-82f0-ee99731c9452",
+        "proyecto_id": "7a65e4e4-a981-4df8-aec8-8dfe80ab2e4b",
+        "rechazadas": 571,
+        "revisadas": 1096,
+        "proporcion_rechazadas": 0.521
+      },
+      {
+        "cliente_id": "e4163207-d094-4996-82f0-ee99731c9452",
+        "proyecto_id": "dc1ff4d2-8df0-4cd1-8c3a-398cdfca29dc",
+        "rechazadas": 599,
+        "revisadas": 1138,
+        "proporcion_rechazadas": 0.5264
+      },
+      {
+        "cliente_id": "e41686cd-6616-4227-9737-14726c167229",
+        "proyecto_id": "2e708b91-685b-48e8-8c0b-7c47ff69704a",
+        "rechazadas": 528,
+        "revisadas": 1056,
+        "proporcion_rechazadas": 0.5
+      },
+      {
+        "cliente_id": "e41686cd-6616-4227-9737-14726c167229",
+        "proyecto_id": "72299ee2-403b-4948-8c22-499dd4b25a27",
+        "rechazadas": 600,
+        "revisadas": 1141,
+        "proporcion_rechazadas": 0.5259
+      },
+      {
+        "cliente_id": "e41686cd-6616-4227-9737-14726c167229",
+        "proyecto_id": "9b491222-2a3c-4ad6-8943-0bf0fc2fc72f",
+        "rechazadas": 553,
+        "revisadas": 1118,
+        "proporcion_rechazadas": 0.4946
+      },
+      {
+        "cliente_id": "e5121482-3929-4d22-a255-accb1a466884",
+        "proyecto_id": "3a97c922-13f1-4b3c-8ec3-703b37e16834",
+        "rechazadas": 610,
+        "revisadas": 1175,
+        "proporcion_rechazadas": 0.5191
+      },
+      {
+        "cliente_id": "e5121482-3929-4d22-a255-accb1a466884",
+        "proyecto_id": "e1a86f74-fe59-41f2-8413-d5f1a2cbc514",
+        "rechazadas": 557,
+        "revisadas": 1132,
+        "proporcion_rechazadas": 0.492
+      },
+      {
+        "cliente_id": "e5121482-3929-4d22-a255-accb1a466884",
+        "proyecto_id": "fe6d44a6-ae1e-46a7-9385-38fcaceb11b8",
+        "rechazadas": 575,
+        "revisadas": 1130,
+        "proporcion_rechazadas": 0.5088
+      },
+      {
+        "cliente_id": "ea9e7ab5-730b-49dc-a577-c324694baad6",
+        "proyecto_id": "28448908-d065-44fa-bf5c-37e3790edbc8",
+        "rechazadas": 581,
+        "revisadas": 1152,
+        "proporcion_rechazadas": 0.5043
+      },
+      {
+        "cliente_id": "ea9e7ab5-730b-49dc-a577-c324694baad6",
+        "proyecto_id": "48b0d659-50f3-4102-ba90-d4df12643597",
+        "rechazadas": 576,
+        "revisadas": 1109,
+        "proporcion_rechazadas": 0.5194
+      },
+      {
+        "cliente_id": "ea9e7ab5-730b-49dc-a577-c324694baad6",
+        "proyecto_id": "8b71015b-f9c3-46f7-8a56-08104b410b7b",
+        "rechazadas": 562,
+        "revisadas": 1077,
+        "proporcion_rechazadas": 0.5218
+      },
+      {
+        "cliente_id": "ed4d19b8-85dc-4a68-8db5-4088754e64f4",
+        "proyecto_id": "5cf754a1-788c-438a-a58f-7fd596861512",
+        "rechazadas": 641,
+        "revisadas": 1205,
+        "proporcion_rechazadas": 0.532
+      },
+      {
+        "cliente_id": "ed4d19b8-85dc-4a68-8db5-4088754e64f4",
+        "proyecto_id": "984df6fc-99d2-4ac3-b2b5-e430eae75808",
+        "rechazadas": 599,
+        "revisadas": 1154,
+        "proporcion_rechazadas": 0.5191
+      },
+      {
+        "cliente_id": "ed4d19b8-85dc-4a68-8db5-4088754e64f4",
+        "proyecto_id": "b0f01c7e-fbe8-416e-b9cf-f72369fd7f44",
+        "rechazadas": 554,
+        "revisadas": 1119,
+        "proporcion_rechazadas": 0.4951
+      },
+      {
+        "cliente_id": "f38b2ffc-80a4-4f5a-91c9-bc701e7ea419",
+        "proyecto_id": "65c57560-37a4-4337-9dee-b9f319fbcf5c",
+        "rechazadas": 632,
+        "revisadas": 1153,
+        "proporcion_rechazadas": 0.5481
+      },
+      {
+        "cliente_id": "f38b2ffc-80a4-4f5a-91c9-bc701e7ea419",
+        "proyecto_id": "e0aef10b-6092-429a-9d96-bf663ced2681",
+        "rechazadas": 571,
+        "revisadas": 1104,
+        "proporcion_rechazadas": 0.5172
+      },
+      {
+        "cliente_id": "f38b2ffc-80a4-4f5a-91c9-bc701e7ea419",
+        "proyecto_id": "f3d8848a-dd61-4171-aa1b-c8a94cceeb0d",
+        "rechazadas": 573,
+        "revisadas": 1095,
+        "proporcion_rechazadas": 0.5233
+      },
+      {
+        "cliente_id": "f3f49249-dc28-4f90-a5ae-c7978306d03b",
+        "proyecto_id": "34cc2044-0092-4538-81e2-a2bbb5ab3e9a",
+        "rechazadas": 508,
+        "revisadas": 1049,
+        "proporcion_rechazadas": 0.4843
+      },
+      {
+        "cliente_id": "f3f49249-dc28-4f90-a5ae-c7978306d03b",
+        "proyecto_id": "58d5a0f7-99fb-4cf8-b515-d9ef1f850e07",
+        "rechazadas": 563,
+        "revisadas": 1123,
+        "proporcion_rechazadas": 0.5013
+      },
+      {
+        "cliente_id": "f3f49249-dc28-4f90-a5ae-c7978306d03b",
+        "proyecto_id": "983bab28-4dc1-4e06-b181-08d83ea87f15",
+        "rechazadas": 570,
+        "revisadas": 1095,
+        "proporcion_rechazadas": 0.5205
+      },
+      {
+        "cliente_id": "f5ee8c72-98e6-45b7-a1cd-7be8a7d83351",
+        "proyecto_id": "007edc7d-3f2d-4ed7-9b3d-bfaddf4a5fe5",
+        "rechazadas": 580,
+        "revisadas": 1122,
+        "proporcion_rechazadas": 0.5169
+      },
+      {
+        "cliente_id": "f5ee8c72-98e6-45b7-a1cd-7be8a7d83351",
+        "proyecto_id": "405a5332-63ed-4daf-9ea3-fcfbaee127e0",
+        "rechazadas": 502,
+        "revisadas": 1012,
+        "proporcion_rechazadas": 0.496
+      },
+      {
+        "cliente_id": "f5ee8c72-98e6-45b7-a1cd-7be8a7d83351",
+        "proyecto_id": "d61f7e74-4c46-4afb-8fd0-35b356627387",
+        "rechazadas": 622,
+        "revisadas": 1191,
+        "proporcion_rechazadas": 0.5223
+      },
+      {
+        "cliente_id": "f8de662a-a305-4a1c-8df9-f64565f9486c",
+        "proyecto_id": "6f8363ca-94e1-444f-83f2-e934740e5dfb",
+        "rechazadas": 0,
+        "revisadas": 5,
+        "proporcion_rechazadas": 0.0
+      },
+      {
+        "cliente_id": "fa97002c-fcba-4167-b5a9-ca5fedf165da",
+        "proyecto_id": "31c5c36d-3806-4896-8d6d-f84546c569ce",
+        "rechazadas": 569,
+        "revisadas": 1099,
+        "proporcion_rechazadas": 0.5177
+      },
+      {
+        "cliente_id": "fa97002c-fcba-4167-b5a9-ca5fedf165da",
+        "proyecto_id": "40724b33-9c0e-4880-8e36-749508b7b7c7",
+        "rechazadas": 627,
+        "revisadas": 1190,
+        "proporcion_rechazadas": 0.5269
+      },
+      {
+        "cliente_id": "fa97002c-fcba-4167-b5a9-ca5fedf165da",
+        "proyecto_id": "bc24bd96-0996-4085-8d51-7c7a82383ccc",
+        "rechazadas": 567,
+        "revisadas": 1121,
+        "proporcion_rechazadas": 0.5058
+      }
+    ],
+    "q5": [
+      {
+        "cliente_id": "14aa4e71-9d3c-4dec-80a6-1f933d6c51e3",
+        "tareas_aprobadas": 1534,
+        "p50_horas": 17.3192,
+        "p95_horas": 99.8411,
+        "porcentaje_incumple_sla": 21.1213
+      },
+      {
+        "cliente_id": "1919e93a-d117-45ad-8988-93101c593af5",
+        "tareas_aprobadas": 1614,
+        "p50_horas": 17.1128,
+        "p95_horas": 83.3542,
+        "porcentaje_incumple_sla": 19.6406
+      },
+      {
+        "cliente_id": "24114258-751b-4c83-89a0-47dc4ac87fc0",
+        "tareas_aprobadas": 1555,
+        "p50_horas": 17.7844,
+        "p95_horas": 93.0156,
+        "porcentaje_incumple_sla": 21.0289
+      },
+      {
+        "cliente_id": "2475263c-7854-4014-aded-c86a9f4fb02b",
+        "tareas_aprobadas": 1578,
+        "p50_horas": 18.4719,
+        "p95_horas": 94.3597,
+        "porcentaje_incumple_sla": 20.1521
+      },
+      {
+        "cliente_id": "265c28ea-0879-4955-825f-f87c44df8a13",
+        "tareas_aprobadas": 1585,
+        "p50_horas": 19.1286,
+        "p95_horas": 95.9764,
+        "porcentaje_incumple_sla": 22.2082
+      },
+      {
+        "cliente_id": "2edc49c1-f71b-4135-ac06-43b173f29c6a",
+        "tareas_aprobadas": 1569,
+        "p50_horas": 18.3606,
+        "p95_horas": 94.1719,
+        "porcentaje_incumple_sla": 21.0962
+      },
+      {
+        "cliente_id": "33288e16-ebe8-4fa9-9c24-c1ae7d510557",
+        "tareas_aprobadas": 1584,
+        "p50_horas": 18.6533,
+        "p95_horas": 93.8511,
+        "porcentaje_incumple_sla": 22.1591
+      },
+      {
+        "cliente_id": "4242c225-83e2-465a-b654-0600c8fb4456",
+        "tareas_aprobadas": 1638,
+        "p50_horas": 18.4139,
+        "p95_horas": 92.035,
+        "porcentaje_incumple_sla": 19.6581
+      },
+      {
+        "cliente_id": "4a41f8e4-d4d6-4278-889b-5123e842997d",
+        "tareas_aprobadas": 1620,
+        "p50_horas": 17.8836,
+        "p95_horas": 89.5508,
+        "porcentaje_incumple_sla": 19.5679
+      },
+      {
+        "cliente_id": "5071950e-adec-4f11-bd83-6e77af67d461",
+        "tareas_aprobadas": 1592,
+        "p50_horas": 16.7544,
+        "p95_horas": 86.6308,
+        "porcentaje_incumple_sla": 19.8492
+      },
+      {
+        "cliente_id": "59001ac9-4063-49bc-a5b0-0a2d35d14880",
+        "tareas_aprobadas": 1618,
+        "p50_horas": 18.0789,
+        "p95_horas": 88.9958,
+        "porcentaje_incumple_sla": 20.0865
+      },
+      {
+        "cliente_id": "5b4c8012-ede7-4d0c-bfb8-8309fadb8908",
+        "tareas_aprobadas": 1602,
+        "p50_horas": 17.2606,
+        "p95_horas": 89.7044,
+        "porcentaje_incumple_sla": 18.6642
+      },
+      {
+        "cliente_id": "5ec0c260-7f98-40a6-a73c-49ea44371ff3",
+        "tareas_aprobadas": 1631,
+        "p50_horas": 18.815,
+        "p95_horas": 95.6739,
+        "porcentaje_incumple_sla": 21.1527
+      },
+      {
+        "cliente_id": "66e61127-e26b-424a-8e0d-8d877a98b9ac",
+        "tareas_aprobadas": 1643,
+        "p50_horas": 17.4183,
+        "p95_horas": 90.3383,
+        "porcentaje_incumple_sla": 19.7809
+      },
+      {
+        "cliente_id": "66eebc57-8f4e-4b4f-8041-f5ee8bae8e66",
+        "tareas_aprobadas": 1556,
+        "p50_horas": 18.3494,
+        "p95_horas": 90.0508,
+        "porcentaje_incumple_sla": 19.3445
+      },
+      {
+        "cliente_id": "6bad6be2-8e7a-46e9-9f19-950499dd251d",
+        "tareas_aprobadas": 1637,
+        "p50_horas": 17.0831,
+        "p95_horas": 90.8439,
+        "porcentaje_incumple_sla": 20.7697
+      },
+      {
+        "cliente_id": "70eb9a0a-9626-4ae6-85e8-18fac0433cbd",
+        "tareas_aprobadas": 1637,
+        "p50_horas": 19.0939,
+        "p95_horas": 94.2408,
+        "porcentaje_incumple_sla": 20.3421
+      },
+      {
+        "cliente_id": "7383d496-000e-45d0-9798-5d060397a31d",
+        "tareas_aprobadas": 1596,
+        "p50_horas": 19.0172,
+        "p95_horas": 92.2608,
+        "porcentaje_incumple_sla": 20.614
+      },
+      {
+        "cliente_id": "7608d942-5d11-4a9d-9e6c-9992b5fb12e0",
+        "tareas_aprobadas": 1553,
+        "p50_horas": 19.3653,
+        "p95_horas": 92.1286,
+        "porcentaje_incumple_sla": 20.9916
+      },
+      {
+        "cliente_id": "7776c655-7c4e-4248-b151-5fff42969a50",
+        "tareas_aprobadas": 1641,
+        "p50_horas": 18.3756,
+        "p95_horas": 94.2314,
+        "porcentaje_incumple_sla": 21.3894
+      },
+      {
+        "cliente_id": "7dabe929-c4a3-44bf-86cd-75e9bb049a79",
+        "tareas_aprobadas": 1638,
+        "p50_horas": 18.4142,
+        "p95_horas": 98.8783,
+        "porcentaje_incumple_sla": 21.7338
+      },
+      {
+        "cliente_id": "7f45b096-d380-4b73-8446-ab8c82e26123",
+        "tareas_aprobadas": 1597,
+        "p50_horas": 18.0817,
+        "p95_horas": 89.3678,
+        "porcentaje_incumple_sla": 19.3488
+      },
+      {
+        "cliente_id": "8350a73f-7aac-419f-bb75-9e0fed1d9d16",
+        "tareas_aprobadas": 1644,
+        "p50_horas": 17.6683,
+        "p95_horas": 88.4658,
+        "porcentaje_incumple_sla": 19.2214
+      },
+      {
+        "cliente_id": "85f184e0-b464-4554-b675-299b0c83e786",
+        "tareas_aprobadas": 1612,
+        "p50_horas": 18.6025,
+        "p95_horas": 95.8822,
+        "porcentaje_incumple_sla": 20.9057
+      },
+      {
+        "cliente_id": "864fa3f3-eab0-4e9b-a5ed-0de47db4304d",
+        "tareas_aprobadas": 1596,
+        "p50_horas": 17.4053,
+        "p95_horas": 88.8625,
+        "porcentaje_incumple_sla": 19.1103
+      },
+      {
+        "cliente_id": "89be9c1c-8eb5-440f-96f4-488157241955",
+        "tareas_aprobadas": 1593,
+        "p50_horas": 17.9461,
+        "p95_horas": 95.2936,
+        "porcentaje_incumple_sla": 20.904
+      },
+      {
+        "cliente_id": "8c53765f-4ec0-4954-bf8b-2a6aab74fe57",
+        "tareas_aprobadas": 1605,
+        "p50_horas": 19.7069,
+        "p95_horas": 91.9353,
+        "porcentaje_incumple_sla": 21.5576
+      },
+      {
+        "cliente_id": "90624fe3-6b82-46c9-982f-b0f1423674a6",
+        "tareas_aprobadas": 1643,
+        "p50_horas": 18.8975,
+        "p95_horas": 87.805,
+        "porcentaje_incumple_sla": 18.5027
+      },
+      {
+        "cliente_id": "93550840-067f-4cfc-8e1f-d3d9849acfb5",
+        "tareas_aprobadas": 1679,
+        "p50_horas": 18.2031,
+        "p95_horas": 92.255,
+        "porcentaje_incumple_sla": 20.6075
+      },
+      {
+        "cliente_id": "a60741f3-1075-45b0-b0ac-debe7aa95416",
+        "tareas_aprobadas": 1627,
+        "p50_horas": 19.2864,
+        "p95_horas": 90.4111,
+        "porcentaje_incumple_sla": 20.2827
+      },
+      {
+        "cliente_id": "a9f5307c-8ece-48b0-af29-a9f1ced66b44",
+        "tareas_aprobadas": 1562,
+        "p50_horas": 18.7597,
+        "p95_horas": 93.9208,
+        "porcentaje_incumple_sla": 19.5903
+      },
+      {
+        "cliente_id": "b2c55523-807c-4e30-a598-d0dbccbfd2ec",
+        "tareas_aprobadas": 1569,
+        "p50_horas": 17.1233,
+        "p95_horas": 88.085,
+        "porcentaje_incumple_sla": 19.6303
+      },
+      {
+        "cliente_id": "b3618e1c-a06d-4a69-9f3c-42b2e2cbbb93",
+        "tareas_aprobadas": 1615,
+        "p50_horas": 18.1319,
+        "p95_horas": 94.3253,
+        "porcentaje_incumple_sla": 21.0526
+      },
+      {
+        "cliente_id": "b6eafff5-782a-4e6b-ac9f-21df74f09af5",
+        "tareas_aprobadas": 1604,
+        "p50_horas": 17.4314,
+        "p95_horas": 92.5936,
+        "porcentaje_incumple_sla": 20.0748
+      },
+      {
+        "cliente_id": "b766ff10-b437-4db5-a511-49bbe060a724",
+        "tareas_aprobadas": 1602,
+        "p50_horas": 16.7,
+        "p95_horas": 83.7464,
+        "porcentaje_incumple_sla": 17.9151
+      },
+      {
+        "cliente_id": "b76dc0c3-b078-42db-b03e-53cf192f09a9",
+        "tareas_aprobadas": 1662,
+        "p50_horas": 17.0372,
+        "p95_horas": 86.0067,
+        "porcentaje_incumple_sla": 20.0361
+      },
+      {
+        "cliente_id": "b7a1774f-1a42-421e-aba4-c70ee306f0c4",
+        "tareas_aprobadas": 1606,
+        "p50_horas": 17.6072,
+        "p95_horas": 95.775,
+        "porcentaje_incumple_sla": 21.3574
+      },
+      {
+        "cliente_id": "b91dddd9-1389-4372-a341-738c837a7935",
+        "tareas_aprobadas": 1625,
+        "p50_horas": 18.5308,
+        "p95_horas": 89.4481,
+        "porcentaje_incumple_sla": 21.1077
+      },
+      {
+        "cliente_id": "ba5c875c-d7aa-4208-acff-b0f0f79edc82",
+        "tareas_aprobadas": 1696,
+        "p50_horas": 17.7011,
+        "p95_horas": 88.2531,
+        "porcentaje_incumple_sla": 18.8679
+      },
+      {
+        "cliente_id": "bef7e268-ffe9-46ab-a058-1ccace1d62e0",
+        "tareas_aprobadas": 1655,
+        "p50_horas": 18.6069,
+        "p95_horas": 92.8456,
+        "porcentaje_incumple_sla": 20.6042
+      },
+      {
+        "cliente_id": "cd73de00-81a0-4a05-ace9-da661dcf884c",
+        "tareas_aprobadas": 1587,
+        "p50_horas": 16.9789,
+        "p95_horas": 94.6908,
+        "porcentaje_incumple_sla": 19.6597
+      },
+      {
+        "cliente_id": "cfd8c364-eab4-4bd6-b528-ea79511070a7",
+        "tareas_aprobadas": 1564,
+        "p50_horas": 18.2542,
+        "p95_horas": 87.3814,
+        "porcentaje_incumple_sla": 19.1176
+      },
+      {
+        "cliente_id": "d1711cbd-2106-419e-840d-31b5397a7623",
+        "tareas_aprobadas": 1658,
+        "p50_horas": 17.9036,
+        "p95_horas": 97.5911,
+        "porcentaje_incumple_sla": 20.1448
+      },
+      {
+        "cliente_id": "d4f398ee-4b5c-4a95-b3d9-18086edd77d8",
+        "tareas_aprobadas": 1719,
+        "p50_horas": 16.4836,
+        "p95_horas": 89.475,
+        "porcentaje_incumple_sla": 20.1862
+      },
+      {
+        "cliente_id": "d61b5e08-eea3-4d4e-8bed-5b6594a4d29c",
+        "tareas_aprobadas": 1628,
+        "p50_horas": 17.7764,
+        "p95_horas": 91.3892,
+        "porcentaje_incumple_sla": 20.6388
+      },
+      {
+        "cliente_id": "d7a7a3cc-8c3d-4f16-9293-de8fc88b2875",
+        "tareas_aprobadas": 1632,
+        "p50_horas": 18.2819,
+        "p95_horas": 95.6336,
+        "porcentaje_incumple_sla": 21.3848
+      },
+      {
+        "cliente_id": "d9090b89-0655-4096-8f1a-8a1d93d20470",
+        "tareas_aprobadas": 1608,
+        "p50_horas": 19.2239,
+        "p95_horas": 90.2169,
+        "porcentaje_incumple_sla": 21.0199
+      },
+      {
+        "cliente_id": "d9814559-3a9a-4a39-a261-e34a7b6bc3c6",
+        "tareas_aprobadas": 1576,
+        "p50_horas": 17.5119,
+        "p95_horas": 86.2644,
+        "porcentaje_incumple_sla": 19.8604
+      },
+      {
+        "cliente_id": "db4c9492-bf5f-45e2-b1d0-6d9c18bee074",
+        "tareas_aprobadas": 1596,
+        "p50_horas": 18.5522,
+        "p95_horas": 94.805,
+        "porcentaje_incumple_sla": 22.4937
+      },
+      {
+        "cliente_id": "de0279e1-7f9a-4098-8df0-5f2595f19a51",
+        "tareas_aprobadas": 1617,
+        "p50_horas": 17.085,
+        "p95_horas": 86.3397,
+        "porcentaje_incumple_sla": 19.9753
+      },
+      {
+        "cliente_id": "e01c683e-99a4-4df0-9de3-a361c0099eba",
+        "tareas_aprobadas": 1636,
+        "p50_horas": 17.2792,
+        "p95_horas": 87.2872,
+        "porcentaje_incumple_sla": 18.9487
+      },
+      {
+        "cliente_id": "e4163207-d094-4996-82f0-ee99731c9452",
+        "tareas_aprobadas": 1610,
+        "p50_horas": 19.6867,
+        "p95_horas": 97.7678,
+        "porcentaje_incumple_sla": 22.9814
+      },
+      {
+        "cliente_id": "e41686cd-6616-4227-9737-14726c167229",
+        "tareas_aprobadas": 1634,
+        "p50_horas": 18.3647,
+        "p95_horas": 88.7719,
+        "porcentaje_incumple_sla": 20.1346
+      },
+      {
+        "cliente_id": "e5121482-3929-4d22-a255-accb1a466884",
+        "tareas_aprobadas": 1695,
+        "p50_horas": 17.4928,
+        "p95_horas": 94.155,
+        "porcentaje_incumple_sla": 20.354
+      },
+      {
+        "cliente_id": "ea9e7ab5-730b-49dc-a577-c324694baad6",
+        "tareas_aprobadas": 1619,
+        "p50_horas": 18.7397,
+        "p95_horas": 85.1322,
+        "porcentaje_incumple_sla": 19.1476
+      },
+      {
+        "cliente_id": "ed4d19b8-85dc-4a68-8db5-4088754e64f4",
+        "tareas_aprobadas": 1684,
+        "p50_horas": 17.8808,
+        "p95_horas": 96.0481,
+        "porcentaje_incumple_sla": 20.5463
+      },
+      {
+        "cliente_id": "f38b2ffc-80a4-4f5a-91c9-bc701e7ea419",
+        "tareas_aprobadas": 1576,
+        "p50_horas": 20.3633,
+        "p95_horas": 92.9583,
+        "porcentaje_incumple_sla": 22.7157
+      },
+      {
+        "cliente_id": "f3f49249-dc28-4f90-a5ae-c7978306d03b",
+        "tareas_aprobadas": 1626,
+        "p50_horas": 17.0781,
+        "p95_horas": 86.8014,
+        "porcentaje_incumple_sla": 18.8192
+      },
+      {
+        "cliente_id": "f5ee8c72-98e6-45b7-a1cd-7be8a7d83351",
+        "tareas_aprobadas": 1621,
+        "p50_horas": 19.3356,
+        "p95_horas": 97.365,
+        "porcentaje_incumple_sla": 21.7767
+      },
+      {
+        "cliente_id": "f8de662a-a305-4a1c-8df9-f64565f9486c",
+        "tareas_aprobadas": 5,
+        "p50_horas": 0.0,
+        "p95_horas": 0.0003,
+        "porcentaje_incumple_sla": 0.0
+      },
+      {
+        "cliente_id": "fa97002c-fcba-4167-b5a9-ca5fedf165da",
+        "tareas_aprobadas": 1647,
+        "p50_horas": 18.3406,
+        "p95_horas": 94.5469,
+        "porcentaje_incumple_sla": 20.0971
+      }
+    ]
+  }
+}

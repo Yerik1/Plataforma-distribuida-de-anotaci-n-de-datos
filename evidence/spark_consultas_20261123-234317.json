@@ -1,0 +1,158 @@
+{
+  "fecha_utc": "2026-11-23T23:43:15.708745+00:00",
+  "objetivo": "Ejecutar Q1 a Q5 sobre Parquet y validarlas contra resultados conocidos",
+  "configuracion": {
+    "datos": "/opt/analitica/datos_prueba/parquet/eventos",
+    "fecha_referencia_q1": "2026-11-20",
+    "spark_version": "3.5.9",
+    "master": "spark://spark-master:7077",
+    "paralelismo_por_defecto": 2,
+    "repeticiones": 1,
+    "python": "3.10.12"
+  },
+  "eventos_unicos": 46,
+  "tiempos_s": {
+    "q1": [
+      20.435
+    ],
+    "q2": [
+      7.51
+    ],
+    "q3": [
+      6.829
+    ],
+    "q4": [
+      9.622
+    ],
+    "q5": [
+      4.903
+    ]
+  },
+  "resultados": {
+    "q1": [
+      {
+        "dia": "2026-11-02",
+        "modalidad": "lidar",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-05",
+        "modalidad": "imagen",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-05",
+        "modalidad": "lidar",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-08",
+        "modalidad": "texto",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-09",
+        "modalidad": "texto",
+        "aprobadas": 1
+      },
+      {
+        "dia": "2026-11-12",
+        "modalidad": "imagen",
+        "aprobadas": 1
+      }
+    ],
+    "q2": [
+      {
+        "equipo_id": "eqA",
+        "mes": "2026-07",
+        "aprobadas": 1,
+        "revisadas": 1,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "eqA",
+        "mes": "2026-11",
+        "aprobadas": 3,
+        "revisadas": 3,
+        "proporcion_aprobadas": 1.0
+      },
+      {
+        "equipo_id": "eqB",
+        "mes": "2026-11",
+        "aprobadas": 3,
+        "revisadas": 4,
+        "proporcion_aprobadas": 0.75
+      }
+    ],
+    "q3": [
+      {
+        "modalidad": "imagen",
+        "tipo_tarea": "bbox",
+        "anotaciones": 5,
+        "duracion_media_ms": 1440000.0,
+        "duracion_p95_ms": 2700000.0
+      },
+      {
+        "modalidad": "lidar",
+        "tipo_tarea": "cuboide_3d",
+        "anotaciones": 4,
+        "duracion_media_ms": 2250000.0,
+        "duracion_p95_ms": 3600000.0
+      },
+      {
+        "modalidad": "texto",
+        "tipo_tarea": "span",
+        "anotaciones": 3,
+        "duracion_media_ms": 1000000.0,
+        "duracion_p95_ms": 1800000.0
+      }
+    ],
+    "q4": [
+      {
+        "cliente_id": "c1",
+        "proyecto_id": "p1",
+        "rechazadas": 1,
+        "revisadas": 4,
+        "proporcion_rechazadas": 0.25
+      },
+      {
+        "cliente_id": "c1",
+        "proyecto_id": "p2",
+        "rechazadas": 3,
+        "revisadas": 5,
+        "proporcion_rechazadas": 0.6
+      },
+      {
+        "cliente_id": "c2",
+        "proyecto_id": "p3",
+        "rechazadas": 0,
+        "revisadas": 2,
+        "proporcion_rechazadas": 0.0
+      }
+    ],
+    "q5": [
+      {
+        "cliente_id": "c1",
+        "tareas_aprobadas": 5,
+        "p50_horas": 2.0,
+        "p95_horas": 49.0,
+        "porcentaje_incumple_sla": 20.0
+      },
+      {
+        "cliente_id": "c2",
+        "tareas_aprobadas": 2,
+        "p50_horas": 1.5,
+        "p95_horas": 50.0,
+        "porcentaje_incumple_sla": 50.0
+      }
+    ]
+  },
+  "validacion": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "todas": true
+  }
+}

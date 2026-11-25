@@ -1,0 +1,49 @@
+{
+  "fecha_utc": "2026-11-23T23:58:45.486787+00:00",
+  "objetivo": "Contrastar Q1 a Q5 de Spark con un cálculo independiente sobre el mismo Parquet",
+  "configuracion": {
+    "datos": "datalake/eventos",
+    "tolerancia_percentil": 0.01,
+    "maquina": {
+      "sistema": "Windows-11-10.0.26200-SP0",
+      "procesador": "Intel64 Family 6 Model 126 Stepping 5, GenuineIntel",
+      "cpus": 8,
+      "python": "3.13.2"
+    },
+    "gateway": "http://localhost:8000"
+  },
+  "comando": "python.exe pruebas/verificar_consultas.py --spark evidence/spark_consultas_20261123-235722.json --datos datalake/eventos",
+  "resultado": {
+    "archivo_spark": "evidence/spark_consultas_20261123-235722.json",
+    "eventos_unicos_spark": 798736,
+    "eventos_unicos_referencia": 798736,
+    "consultas": {
+      "q1": {
+        "coincide": true,
+        "filas": 360,
+        "diferencias": []
+      },
+      "q2": {
+        "coincide": true,
+        "filas": 390,
+        "diferencias": []
+      },
+      "q3": {
+        "coincide": true,
+        "filas": 5,
+        "diferencias": []
+      },
+      "q4": {
+        "coincide": true,
+        "filas": 180,
+        "diferencias": []
+      },
+      "q5": {
+        "coincide": true,
+        "filas": 60,
+        "diferencias": []
+      }
+    },
+    "coinciden_todas": true
+  }
+}

@@ -1,0 +1,220 @@
+name: proyecto2
+
+x-mongo: &mongo
+  image: mongo:7.0
+  command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
+  networks: [interna]
+  restart: unless-stopped
+  healthcheck:
+    test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+    interval: 5s
+    timeout: 5s
+    retries: 20
+
+services:
+  mongo1:
+    <<: *mongo
+    hostname: mongo1
+    volumes: [mongo1-datos:/data/db]
+
+  mongo2:
+    <<: *mongo
+    hostname: mongo2
+    volumes: [mongo2-datos:/data/db]
+
+  mongo3:
+    <<: *mongo
+    hostname: mongo3
+    volumes: [mongo3-datos:/data/db]
+
+  mongo-init:
+    image: mongo:7.0
+    entrypoint: ["mongosh", "--host", "mongo1:27017", "--quiet", "/init-replica.js"]
+    volumes: [./infra/mongo/init-replica.js:/init-replica.js:ro]
+    networks: [interna]
+    restart: "no"
+    depends_on:
+      mongo1: {condition: service_healthy}
+      mongo2: {condition: service_healthy}
+      mongo3: {condition: service_healthy}
+
+  valkey:
+    image: valkey/valkey:8.0
+    command: ["valkey-server", "--appendonly", "yes", "--appendfsync", "everysec"]
+    volumes: [valkey-datos:/data]
+    networks: [interna]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  registro:
+    build: ./servicios/registro
+    environment:
+      MONGO_URI: mongodb://mongo1:27017,mongo2:27017,mongo3:27017/?replicaSet=rs0
+      MONGO_W: ${MONGO_W:-majority}
+      LOCK_MS: ${LOCK_MS:-120000}
+    networks: [interna]
+    restart: unless-stopped
+    depends_on:
+      mongo-init: {condition: service_completed_successfully}
+
+  sesion:
+    build: ./servicios/sesion
+    environment:
+      VALKEY_HOST: valkey
+      LOCK_MS: ${LOCK_MS:-120000}
+    networks: [interna]
+    restart: unless-stopped
+    depends_on:
+      valkey: {condition: service_healthy}
+
+  gateway:
+    build: ./servicios/gateway
+    ports: ["8000:8000"]
+    environment:
+      REGISTRO_URL: http://registro:8000
+      SESION_URL: http://sesion:8000
+      HISTORIAL_URL: http://historial:8000
+      ANALITICA_URL: http://analitica:8000
+      VALKEY_HOST: valkey
+      CAPAS: registro,sesion,historial,analitica
+      CAPAS_CRITICAS: registro,sesion
+    networks: [publica, interna]
+    restart: unless-stopped
+    depends_on: [registro, sesion, historial]
+
+  historial:
+    build: ./servicios/historial
+    environment:
+      VALKEY_HOST: valkey
+      DATALAKE: /datalake
+      LOTE_EVENTOS: ${LOTE_EVENTOS:-500}
+      LOTE_SEGUNDOS: ${LOTE_SEGUNDOS:-2}
+    volumes: [./datalake:/datalake]
+    networks: [interna]
+    restart: unless-stopped
+    depends_on:
+      valkey: {condition: service_healthy}
+
+  generador-catalogo:
+    build: ./dataset
+    profiles: [datos]
+    entrypoint:
+      - python
+      - generador_catalogo.py
+      - --mongo-uri
+      - mongodb://mongo1:27017,mongo2:27017,mongo3:27017/?replicaSet=rs0
+      - --salida
+      - /dataset/salida
+      - --evidencia
+      - /evidence
+    volumes:
+      - ./dataset/salida:/dataset/salida
+      - ./evidence:/evidence
+    networks: [interna]
+    depends_on:
+      mongo-init: {condition: service_completed_successfully}
+
+  generador-historial:
+    build: ./dataset
+    profiles: [datos]
+    entrypoint: [python, generador_historial.py, --salida, /datalake/eventos, --evidencia, /evidence]
+    volumes:
+      - ./datalake:/datalake
+      - ./evidence:/evidence
+    networks: [interna]
+
+  spark-master:
+    image: spark:3.5.9-java17-python3
+    profiles: [analitica]
+    hostname: spark-master
+    # El master está en dos redes y /etc/hosts lista ambas IP de spark-master en orden aleatorio. Si gana
+    # la de administracion, el master escucha solo ahí y los workers (en interna) reciben "connection
+    # refused". Al arrancar se pone primero la IP de interna (alias spark-master-interna) y luego se
+    # baja al usuario spark. Por eso el contenedor arranca como root.
+    user: root
+    command:
+      - sh
+      - -c
+      - |
+        ip=$$(getent hosts spark-master-interna | awk '{print $$1}')
+        { echo "$$ip spark-master"; grep -vw spark-master /etc/hosts; } > /tmp/hosts && cat /tmp/hosts > /etc/hosts
+        exec gosu spark /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master --host spark-master
+    ports:
+      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:4040:4040"
+    environment:
+      PYSPARK_PYTHON: python3
+    volumes:
+      - ./servicios/analitica/spark:/opt/analitica
+      - ./datalake:/opt/datalake:ro
+      - ./evidence:/opt/evidence
+    networks:
+      interna:
+        aliases: [spark-master-interna]
+      administracion: {}
+
+  spark-worker-1:
+    image: spark:3.5.9-java17-python3
+    profiles: [analitica]
+    hostname: spark-worker-1
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077",
+              "--cores", "${SPARK_WORKER_CORES:-2}", "--memory", "${SPARK_WORKER_MEMORY:-2g}"]
+    cpus: ${SPARK_WORKER_CORES:-2}
+    mem_limit: ${SPARK_WORKER_LIMITE:-3g}
+    environment:
+      PYSPARK_PYTHON: python3
+    volumes:
+      - ./servicios/analitica/spark:/opt/analitica
+      - ./datalake:/opt/datalake:ro
+    networks: [interna]
+    restart: unless-stopped
+    depends_on: [spark-master]
+
+  spark-worker-2:
+    image: spark:3.5.9-java17-python3
+    profiles: [spark2]
+    hostname: spark-worker-2
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077",
+              "--cores", "${SPARK_WORKER_CORES:-2}", "--memory", "${SPARK_WORKER_MEMORY:-2g}"]
+    cpus: ${SPARK_WORKER_CORES:-2}
+    mem_limit: ${SPARK_WORKER_LIMITE:-3g}
+    environment:
+      PYSPARK_PYTHON: python3
+    volumes:
+      - ./servicios/analitica/spark:/opt/analitica
+      - ./datalake:/opt/datalake:ro
+    networks: [interna]
+    restart: unless-stopped
+    depends_on: [spark-master]
+
+  analitica:
+    build: ./servicios/analitica
+    profiles: [analitica]
+    hostname: analitica
+    environment:
+      SPARK_MASTER: spark://spark-master:7077
+      SPARK_DRIVER_HOST: analitica
+      VALKEY_HOST: valkey
+      ANALITICA_CORES: ${ANALITICA_CORES:-2}
+    volumes:
+      - ./datalake:/opt/datalake:ro
+      - ./servicios/analitica/spark:/opt/analitica:ro
+    networks: [interna]
+    restart: unless-stopped
+    depends_on: [spark-master, valkey]
+
+networks:
+  publica: {}
+  interna:
+    internal: true
+  administracion: {}
+
+volumes:
+  mongo1-datos:
+  mongo2-datos:
+  mongo3-datos:
+  valkey-datos:
